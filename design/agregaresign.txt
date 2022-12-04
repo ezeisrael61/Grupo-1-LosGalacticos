@@ -1,1 +1,4 @@
-
+● Logo
+● Colores
+● Tipografías
+Tip: les recomendamos crear la carpeta design para incluir este contenido.
