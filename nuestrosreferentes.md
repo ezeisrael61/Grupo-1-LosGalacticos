@@ -1,4 +1,4 @@
-·Nuestros referentes del mercado
+#Nuestros referentes del mercado
 
 ·https://www.mercadolibre.com elegido por ser el e-comerce mas usado de latam·
 ·https://www.compragamer.com elegido por su diseño y formato en registro de usuario·    ·
