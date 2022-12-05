@@ -1,8 +1,0 @@
-Entregable: Wireframe digital o analógico de las siguientes secciones del sitio:
-● Home
-● Detalle de producto
-● Carrito de compras
-● Formulario de registro
-● Formulario de login
-Tip: les recomendamos crear la carpeta wireframes para incluir este contenido.
-
