@@ -1,1 +1,74 @@
+@import url("styles.css");
 
+main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5px;
+      margin-bottom: 10px;
+      background-color: var(--gris-claro);
+      border-radius: 5px;
+}
+/* PRODUCTOS */
+main section {
+      background-color: white;
+      padding: 7px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+}
+main section.product-container article.product {
+      display: flex;
+}
+main section.product-container article.product div.title-container {
+      padding-top: 10px;
+      text-align: center;
+}
+main section.product-container article.product div.imagen img {
+      width: 100px;
+      margin-right: 5px;
+}
+main section.product-container div div.cant {
+      display: flex;
+      justify-content: space-between;
+}
+main section.product-container div div.cant div.input-container {
+      margin-right: 20px;
+      margin-bottom: 20px;
+}
+main section.product-container div.descript {
+      text-align: right;
+      color: var(--bordo);
+}
+p.price-total {
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: var(--bordo);
+}
+main section.product-container div i {
+      color: var(--gris-oscuro);
+}
+/* END PRODUCTOS */
+/* CUPON */
+main section.cupon-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+main section.cupon-container div.input-container input {
+      margin-right: 5px;
+}
+main section.cupon-container div.input-container span.error-message {
+      font-size: 10px;
+      display: none;
+}
+main section.cupon-container div.input-container p.direccion {
+      font-size: 13px;
+      margin-bottom: 5px;
+}
+main section.cupon-container div.input-container p.price {
+      color: var(--bordo);
+      margin: 5px 0;
+}
+/* END CUPON */

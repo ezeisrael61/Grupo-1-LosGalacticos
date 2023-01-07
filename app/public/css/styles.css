@@ -84,6 +84,10 @@ header.main-header div.main-top nav.main-nav-rigth ul li {
       margin: 2px;
       text-align: center;
 }
+
+header.main-header div.main-top nav.main-nav-rigth ul li:hover {
+      transform: scale(1.2);
+}
 header.main-header div.main-top nav.main-nav-rigth ul li i {
       color: var(--bordo);
 }
@@ -136,6 +140,13 @@ header.main-header nav.main-nav ul li {
       padding: 5px;
       text-align: center;
 }
+header.main-header nav.main-nav ul li:hover {
+      border-bottom: 2px solid var(--rojo);
+      background-color: var(--bordo);
+      box-shadow: 3px 3px 8px rgb(0, 0, 0, 0.5);
+      color: var(--bordo);
+      transition: all 1s ease;
+}
 /* END HEADER */
 
 /* Media queries */
@@ -150,21 +161,24 @@ header.main-header nav.main-nav ul li {
             border-radius: 50%;
             margin-right: 5px;
       }
-      header.main-header div.main-top div.logo-nombre {
-            font-size: 18px;
-      }
+      /* header.main-header div.main-top div.logo-nombre {
+            font-size: 20px;
+      }*/
       header.main-header div.main-top nav.main-nav-rigth ul li {
-            font-size: 13px;
+            font-size: 12px;
             margin: 5px;
-      }
+      } /*
+      header.main-header div.main-top nav.main-nav-rigth ul li i {
+            font-size: 18px;
+      } */
       header.main-header div.main-search .toggle-nav {
             display: none;
       }
       header.main-header div.main-search {
-            /* top: 30px;
-                position: absolute; */
-            padding-bottom: 15px;
-            width: 70%;
+            position: absolute;
+            top: 30px;
+            margin-left: 10px;
+            width: 50%;
       }
       header.main-header nav.main-nav ul {
             display: flex;
@@ -187,42 +201,4 @@ header.main-header nav.main-nav ul li {
             width: 85%;
             margin: auto;
       }
-      /* HEADER */
-      /*     header.main-header {
-            position: relative;
-      } */
-      header.main-header div.main-top div.logo-nombre img.logo {
-            width: 75px;
-            border-radius: 50%;
-            margin-right: 5px;
-      }
-      header.main-header div.main-top div.logo-nombre {
-            font-size: 18px;
-      }
-      header.main-header div.main-top nav.main-nav-rigth ul li {
-            font-size: 13px;
-            margin: 5px;
-      }
-      header.main-header div.main-search .toggle-nav {
-            display: none;
-      }
-      header.main-header div.main-search {
-            /* top: 30px;
-                position: absolute; */
-            padding-bottom: 15px;
-            width: 70%;
-      }
-      header.main-header nav.main-nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-      }
-      header.main-header nav.main-nav ul li {
-            width: 150px;
-            height: 35px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-      }
-      /* END HEADER */
 }
