@@ -72,3 +72,14 @@ main section.cupon-container div.input-container p.price {
       margin: 5px 0;
 }
 /* END CUPON */
+@media (min-width: 768px) {
+      main section.cupon-container {
+            width: 75%;
+      }
+      main section.product-container article.product div.title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+      }
+}
