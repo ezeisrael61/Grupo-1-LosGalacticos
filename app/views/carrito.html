@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="/css/carrito.css">
       <!-- FontAwesome -->
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
-      <title>Document</title>
+      <title>Carrito de compras</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                                           <p>Favoritos</p>
                                     </li>
                                     <li>
-                                          <i class="fa-solid fa-cart-shopping"></i>
+                                          <a href="carrito"><i class="fa-solid fa-cart-shopping"></i></a>
                                           <p>$ 0.00</p>
                                     </li>
                                     <li>
@@ -62,23 +62,25 @@
 
             </header>
             <main>
-                  <h4>CARRITO DE COMPRAS</h4>
-
+                  <h3 class="titulo-carrito">Carrito de compras</h3>
+      
                   <section class="product-container">
+                        
                         <article class="product">
 
                               <div class="imagen">
                                     <img class="photo" src="img/Combo Moladora-Taladro.png" alt="plato nuevo">
                               </div>
-
+                              
                               <div class="title-container">
                                     <h4 class="name">Combo Amoladora Gladiator + Taladro Percutor + 5 Discos</h4>
 
                                     <p class="price">Breve Descripcion</>
 
                               </div>
+                              <span  id="close"><i class="fa-solid fa-xmark"></i></span>
                         </article>
-                        <div class="descript">
+                        <form><div class="descript">
                               <div class="cant">
                                     <div class="input-container">
                                           <select name="unidad" class="input-select">
@@ -93,14 +95,14 @@
                                     <p class="price">$ 11.461</p>
                               </div>
                               <p class="price-total">Total: $ xxxx,xx</p>
-                              <i class="fa-regular fa-trash-can"></i>
-                        </div>
-
+                              <button type="reset" class="reseteo"><i class="fa-regular fa-trash-can"></i> </button>
+                         </div>
+                        </form>
                   </section>
 
                   <section class="product-container">
                         <article class="product">
-
+                           
                               <div class="imagen">
                                     <img class="photo" src="img/Combo Moladora-Taladro.png" alt="plato nuevo">
                               </div>
@@ -111,8 +113,9 @@
                                     <p>Breve Descripcion</>
 
                               </div>
+                              <span id="close1"><i class="fa-solid fa-xmark"></i></span>
                         </article>
-                        <div class="descript">
+                        <form><div class="descript">
                               <div class="cant">
                                     <div class="input-container">
                                           <select name="unidad" class="input-select">
@@ -127,14 +130,19 @@
                                     <p class="price">$ 11.461</p>
                               </div>
                               <p class="price-total">Total: $ xxxx,xx</p>
-                              <i class="fa-regular fa-trash-can"></i>
-                        </div>
+                              <button type="reset" class="reseteo"><i class="fa-regular fa-trash-can"></i> </button>
+                              </div>
+                              
+                        </form>
+                        
 
                   </section>
 
                   <section class="cupon-container">
                         <div class="input-container">
-                              <input class="input-style" type="text" name="name" placeholder="Ingrese cupon">
+                            <div class="input">
+                              <input class="input-style" type="text" name="name" placeholder="Ingrese su cupon">
+                            </div>
                               <span class="error-message">Debe ingresar su cupon</span>
                               <button type="submit" class="btn btn-edit">Validar</button>
                               <p class="direccion">Avenida Juan V. Justo 9 B, La Plata, Buenos Aires</p>
@@ -142,12 +150,30 @@
                               <p>Total con Envio</p>
                               <p class="price-total">$ ####,##</p>
                         </div>
-                        <button type="submit" class="btn btn-edit">confirmar compra</button>
+                        <div class="boton-comprar">
+                              <button type="submit" class="btn btn-edit">confirmar compra</button>
+                        </div>
                   </section>
 
 
             </main>
       </div>
 </body>
+<script>
+      /*close product carrito*/
+window.onload = function(){
+      document.getElementById('close').onclick = function(){
+          this.parentNode.parentNode.parentNode
+          .removeChild(this.parentNode.parentNode);
+          return false;
+      };
+  };
+      document.getElementById('close1').onclick = function(){
+          this.parentNode.parentNode.parentNode
+          .removeChild(this.parentNode.parentNode);
+          return false;
+      };
+       /*end close product carrito*/
+  </script>
 
 </html>
