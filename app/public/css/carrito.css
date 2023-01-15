@@ -120,11 +120,8 @@ main section.cupon-container div.input-container p.price {
             
       }
       .input {
-            background-color: aquamarine;
             margin-right: 20px;
             margin-bottom: 20px;
       }
-      .direccion {
-            background-color: blueviolet;
-      }
+      
 }

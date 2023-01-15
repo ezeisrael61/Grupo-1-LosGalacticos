@@ -5,5 +5,5 @@ Es apto para todo tipo de público, de hecho, a estos negocios suelen acudir tod
 En este equipo de trabajo se encuentran; 
 Susana sayas, empleada y estudiante; 
 Leonel Mamani, 17 años, estudiante ; 
-Nestor Daniel Sebastian Feliani, empleado, estudiante de la facultad de informatica UNLP; 
+Nestor Daniel Sebastian Faliani, empleado, estudiante de la facultad de informatica UNLP; 
 Ezequiel Jaime, operario en una fabrica de heladeras.
