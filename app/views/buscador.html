@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/buscador.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Filtro de elementos</title>
+</head>
+<body>
+    <header class="main-header">
+
+        <div class="main-top">
+              <div class="logo-nombre">
+                    <img src="/img/Logo.png" alt="Logo" class="logo">
+                    <div>
+                          <h4>FERRETERÍA</h4>
+                          <p>PICO & PALA</p>
+                    </div>
+              </div>
+              <nav class="main-nav-rigth">
+                    <ul>
+                          <li>
+                                <i class="fa-sharp fa-solid fa-star"></i>
+                                <p>Favoritos</p>
+                          </li>
+                          <li>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <p>$ 0.00</p>
+                          </li>
+                          <li>
+                                <i class="fa-solid fa-user"></i>
+                                <p>Mi Cuenta</p>
+                          </li>
+                    </ul>
+              </nav>
+        </div>
+        <div class="main-search">
+              <a href="#" class="toggle-nav">
+                    <span class="fas fa-bars"></span>
+              </a>
+              <input type="text" name="search" id="search" placeholder="Buscar...">
+              
+
+              <i class='fa-solid fa-magnifying-glass'></i>
+        </div>
+
+
+        <nav class="main-nav">
+              <ul>
+                    <li><a href="#">Climatización</a></li>
+                    <li><a href="#">Jardín y Piscinas</a></li>
+                    <li><a href="#">Para el Hogar</a></li>
+                    <li><a href="#">Electricidad</a></li>
+                    <li><a href="#">Herramientas</a></li>
+                    <li><a href="#">Ferreteria</a></li>
+              </ul>
+        </nav>
+
+  </header>
+  <div class="Filter">
+    <div class="Filter__Container">
+    <button class="Filter__Title">Ordenar por:</button>
+    <ul class="Filter__Options">
+        <li class="Filter__Option"><a class="Filter__Option-link" >Menor precio</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Mayor precio</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Más vendidos</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Mejor calificación</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >A - Z</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Z - A</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Fecha de lanzamiento</a></li>
+        <li class="Filter__Option"><a class="Filter__Option-link" >Mejor descuento</a></li>
+    </ul>
+    </div>
+</div>
+<section id="contenedor-main">
+
+    <div>
+    
+
+        <ul id="listaArticulos">
+            <li class="articulo">Amoladora</li>
+            <li class="articulo">Soldador</li>
+            <li class="articulo">Destornillador</li>
+            <li class="articulo">Estante</li>
+            <li class="articulo">Martillo</li>
+            <li class="articulo">Lamparitas</li>
+            <li class="articulo">Tornillos</li>
+            <li class="articulo">Pinza</li>
+
+    </div>
+
+
+</section>
+<footer class="main-footer">
+    <div class="container-footer">
+          <div class="container-image">
+                <img src="img/qr.png" alt="">
+                <img src="img/googlePlay.png" alt="" id="googlePlay">
+          </div>
+          <div class="our-networks">
+                <p>Buscano en nuestras redes</p>
+                <div class="container-networks">
+                      <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                      <div class="icon"><i class="fa-brands fa-telegram"></i></div>
+                      <div class="icon"><i class="fa-brands fa-youtube"></i></div>
+                      <div class="icon"><i class="fa-brands fa-twitter"></i></div>
+                      <div class="icon"><i class="fa-brands fa-square-instagram"></i></div>
+                </div>
+          </div>
+          <div class="nav-bottom">
+                <ul>
+                      <li><a href="#">Contactos</a></li>
+                      <li><a href="#">¿Quienes somos?</a></li>
+                      <li><a href="#">Politicas de Privacidad</a></li>
+                      <li><a href="#">Aviso legal y condiciones de uso</a></li>
+                      <li><a href="#">Politicas de Cookies</a></li>
+                </ul>
+          </div>
+          <p>Ferreteria Pico y Pala ©2022</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
