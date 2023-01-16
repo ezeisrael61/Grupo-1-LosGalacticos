@@ -23,7 +23,6 @@ app.get("/carrito", (req, res) => {
 app.get("/descripcion", (req, res) => {
       res.sendFile(path.join(__dirname, "./views/descripcion.html"));
 });
-
 /* LOGIN */
 app.get("/login", (req, res) => {
       res.sendFile(path.join(__dirname, "./views/login.html"));
@@ -32,4 +31,8 @@ app.get("/login", (req, res) => {
 /* REGISTRO */
 app.get("/registro", (req, res) => {
       res.sendFile(path.join(__dirname, "./views/registro.html"));
+});
+/* BUSQUEDA */
+app.get("/buscador", (req, res) => {
+      res.sendFile(path.join(__dirname,"./views/buscador.html" ));
 });
