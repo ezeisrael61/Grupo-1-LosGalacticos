@@ -99,7 +99,7 @@ header.main-header {
       justify-content: center;
       padding: 5px;
       margin-bottom: 10px;
-      background-image: url("img/fondo\ banner.png");
+      background-image: url("/img/fondo\ banner.png");
       border-radius: 5px;
 }
 header.main-header div.main-top {
