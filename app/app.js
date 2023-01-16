@@ -4,7 +4,7 @@ const app = express();
 const PORT = 3030;
 
 app.listen(PORT, () =>
-      console.log(`Servidor funcionando en puerto ${PORT}
+      console.log(`Servidor funcionando en puerto ${PORT} 
 http://localhost:${PORT}`)
 );
 app.use(express.static("public"));
@@ -19,7 +19,17 @@ app.get("/carrito", (req, res) => {
       res.sendFile(path.join(__dirname, "./views/carrito.html"));
 });
 
-/* CARRITO */
+/* DESCRIPCION */
 app.get("/descripcion", (req, res) => {
       res.sendFile(path.join(__dirname, "./views/descripcion.html"));
+});
+
+/* LOGIN */
+app.get("/login", (req, res) => {
+      res.sendFile(path.join(__dirname, "./views/login.html"));
+});
+
+/* REGISTRO */
+app.get("/registro", (req, res) => {
+      res.sendFile(path.join(__dirname, "./views/registro.html"));
 });
