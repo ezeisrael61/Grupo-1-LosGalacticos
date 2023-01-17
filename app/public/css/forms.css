@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --grey : #444444;
+    --red : #b92519;
+}
+
+a {
+    color: var(--red);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-image: url('/images/bg-body.png');
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+/* Header */
+header.main-header {
+    display: flex;
+    flex-direction: column;
+    border: #444444 1px;
+    margin-top: 10px;
+   
+}
+
+header.main-header .logo {
+    width: 90px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+header.main-header nav.main-nav {
+    width: 100%;
+}
+
+header.main-header nav.main-nav ul li{
+    margin-bottom: 1px;
+    padding: 5px;
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+}
+
+header div.name {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    height: 40px;
+}
+
+header div.name p.title {
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+header div.name p.subtitle {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+
+
+/* Barra de Iconos */
+
+.secondary-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-bar {
+    width: 100%;
+    overflow: auto;
+    margin: 10px;
+    padding: 0;
+  }
+  
+  .icon-bar a {
+    float: right;
+    width: 10%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: black;
+    font-size: 16px;
+  }
+  
+  .icon-bar a:hover {
+    background-color: #000;
+  }
+
+  div.combo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  /* Style the search field */
+
+  div.buscar {
+    margin: 0;
+    padding: 0;
+  }
+
+div.buscar input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 94%;
+    margin-left: 10px;
+  }
+  
+  /* Style the submit button */
+  div.buscar button {
+    float: left;
+    width: 5%;
+    padding: 10px;
+    background: white;
+    color: grey;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+ 
+  
+  
+/* Fin Header */
+
+/* Formulario */
+
+.form {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.btn {
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    height: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    margin: 1rem;
+    width: 8rem;
+}
+
+.btn-submit {
+    background: grey;
+    color: black;
+    font-weight: bold;
+    transition: all 1s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    color: rgb(175,175,175);
+    box-shadow: -5px -5px 10px rgb(255,255,255,0.7);
+    background: linear-gradient(285deg, rgba(255,255,255,1) 0%, rgba(39,200,150,1) 90%);
+}
+
+
+span.error-message {
+    color: tomato;
+    font-size: 0.7rem;
+    display: none;
+}
+
+input.input-style {
+    border: none;
+    border-radius: 0.2rem;
+    height: 2.5rem;
+    padding: 0 0.5rem;
+    outline: none;
+    border: 1px solid rgb(175,175,175);
+}
+
+label {
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.form-container {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+/* Media Queries */
+    @media (min-width: 768px) {
+    header.main-header .toggle-nav {
+        display: none;
+    }
+
+    header.main-header nav.main-nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header.main-header nav.main-nav ul li {
+        width: 120px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
+   
+
+    /* Footer*/
+    
+
+    footer.main-footer {
+        width: 100%;
+        background-color: #999999;
+        height: 300px;
+    }
+
+    footer.main-footer .grupo1 {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px;
+    }
+
+    footer.main-footer .grupo1 .box figure {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer.main-footer .grupo1 .box figure img {
+        width: 150px;
+    }
+
+    footer.main-footer .grupo1 .box h2 {
+        color: white;
+        margin-bottom: 25px;
+        font-size: 20px;
+
+    }
+
+    footer.main-footer .grupo1 .box p {
+        color: #efefef;
+        margin-bottom: 10px;
+    }
+
+    footer.main-footer .grupo1 .redsocial a {
+        display: inline-block;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        color: white;
+        margin-right: 10px;
+        background-color: #0d2323;
+        text-align: center;
+        transition: all 300ms ease;
+    }
+
+    footer.main-footer .grupo1 .redsocial a:hover {
+        color: aqua;
+    }
+
+    footer.main-footer .grupo2 {
+        padding: 15px 10px;
+        text-align: center;
+        color: white;
+    }
+
+    footer.main-footer .grupo2 small {
+        font-size: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+        footer.main-footer .grupo1 {
+            width: 100%;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 30px;
+            padding: 35px 0px;
+        }
+    }
+    
+    footer.main-footer ul {
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
+        
+    }
+
+    footer.main-footer ul li{
+
+        margin-bottom: 1px;
+        padding: 5px 10px;
+        text-transform: capitalize;
+        background-color: #999999;
+        text-align: left;
+    }
+
+    footer.main-footer ul li a{
+        color: black;
+        background-color: #999999;
+
+    }
+
+    footer.main-footer ul li:last-child {
+        border-right: none;
+    }
+    
+    /* Fin Footer */
+}
+
+/* Fin MediaQUeries */
