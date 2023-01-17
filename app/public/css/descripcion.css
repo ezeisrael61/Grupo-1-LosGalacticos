@@ -38,6 +38,7 @@ main section.container div.image img {
 main section.container div.conteiner-compra {
       font-size: 13px;
       margin-bottom: 10px;
+      line-height: 10px;
 }
 main section.container div.conteiner-compra a {
       color: var(--celeste);
@@ -91,6 +92,7 @@ main section.container div.conteineir-decrip p {
       main section.container div.conteiner-compra {
             font-size: 17px;
             margin-bottom: 14px;
+            line-height: 10px;
       }
       main section.container div.conteiner-compra a {
             color: var(--celeste);
@@ -144,6 +146,7 @@ main section.container div.conteineir-decrip p {
       main section.container div.conteiner-compra {
             font-size: 17px;
             margin-bottom: 14px;
+            line-height: 10px;
       }
       main section.container div.conteiner-compra a {
             color: var(--celeste);
