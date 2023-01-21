@@ -1,4 +1,4 @@
-@import url("styles.css");
+@import url("forms.css");
 
 /* BANNER */
 main.main-section {
@@ -123,8 +123,8 @@ main.main-section section.payment-methods div div.icon {
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background-color: var(--gris-medio);
-      color: var(--bordo);
+      background-color: var(--bordo);
+      color: white;
       padding: 9px;
       text-align: center;
 }
@@ -135,7 +135,7 @@ main.main-section section.payment-methods span {
 /* END PAYMENT METHODS */
 
 /* REGISTER TO OUR OFFERS */
-.form-container {
+/* .form-container {
       margin: 10px 0;
 }
 .form {
@@ -162,7 +162,6 @@ section div.form-container div.form div.check label {
 }
 span.error-message {
       color: tomato;
-      /* font-size: 0.7rem; */
 }
 input.input-style {
       margin-top: 10px;
@@ -174,7 +173,7 @@ input.input-style {
 }
 input.input-style::placeholder {
       color: lightgray;
-}
+} */
 /* END REGISTER TO OUR OFFERS */
 
 /* Media queries */
