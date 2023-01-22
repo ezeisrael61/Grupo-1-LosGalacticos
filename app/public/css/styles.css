@@ -33,6 +33,15 @@ a {
 ul {
       list-style: none;
 }
+p.price {
+      color: var(--bordo);
+      margin: 5px 0;
+      font-weight: bold;
+}
+p.send {
+      font-size: 11px;
+      color: var(--celeste);
+}
 body {
       padding: 15px 10px 0px;
       background-color: var(--gris-oscuro);

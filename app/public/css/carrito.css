@@ -1,6 +1,7 @@
 @import url("forms.css");
+@import url("products.css");
 
-main {
+main.main-section {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -9,122 +10,73 @@ main {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
-
-main h2.titulo-carrito {
+main.main-section h2.titulo-carrito {
       color: var(--bordo);
       margin-bottom: 15px;
 }
-/* PRODUCTOS */
-main section {
+
+/* CARRITO DE COMPRAS */
+main.main-section section.shopping-cart-container {
       background-color: white;
       padding: 7px;
       border-radius: 15px;
       margin-bottom: 15px;
 }
-
-main section.product-container article.product {
+main.main-section section.shopping-cart-container article.product {
       display: flex;
 }
-main section.product-container article.product div.imagen img {
+main.main-section section.shopping-cart-container article.product div.imagen img {
       width: 80px;
       margin-right: 15px;
 }
-main section.product-container article.product div.title-container {
+main.main-section section.shopping-cart-container article.product div.title-container {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: flex-start;
       font-size: 13px;
 }
-main section.product-container article.product div.title-container .envio {
+/* main.main-section section.shopping-cart-container article.product div.title-container .envio {
       color: var(--celeste);
       font-size: 11px;
-}
-/* main section.product-container div div.cant {
-      display: flex;
-      justify-content: space-between;
 } */
-/* main section.product-container div div.cant div.input-container {
-      margin-right: 20px;
-      margin-bottom: 20px;
-} */
-main section.product-container div.form-container div.select-container p.price {
-      font-size: 16px;
-}
-main section.product-container div.form-container div.total-container p.price-total {
+
+main.main-section section.shopping-cart-container div.form-container div.total-container p.price-total {
       text-align: left;
       font-size: 17px;
       color: var(--celeste);
 }
-/* main section.product-container div i {
-      color: var(--gris-oscuro);
-} */
-/* .reseteo {
-      border: 0;
-      cursor: pointer;
-      background-color: white;
-} */
-
-/* span {
-      cursor: pointer;
-      color: var(--gris-oscuro);
-      text-align: right;
-      padding: 2px 3px 3px 400px;
-} */
-/* END PRODUCTOS */
+/* END CARRITO DE COMPRAS */
 
 /* CUPON */
-main section.cupon-container {
+main.main-section section.cupon-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 }
-/*.input-style {
-      margin-top: 5px;
-      justify-content: space-between;
-}
-main section.cupon-container div.input-container input {
-      margin-right: 5px;
-      display: flex;
-}
-main section.cupon-container div.input-container span.error-message {
-      font-size: 10px;
-      display: none;
-}
-main section.cupon-container div.input-container p.direccion {
-      font-size: 13px;
-      margin-bottom: 5px;
-}
-main section.cupon-container div.input-container p.price {
-      color: var(--bordo);
-      margin: 5px 0;
-}
-.boton-comprar {
-      text-align: center;
-} */
 /* END CUPON */
 
 /*media querie*/
 
 @media (min-width: 768px) {
-      main section {
+      main.main-section section.shopping-cart-container {
             background-color: white;
             padding: 10px;
             border-radius: 15px;
             margin-bottom: 15px;
             width: 80%;
       }
-      main section.product-container {
+      main.main-section section.shopping-cart-container {
             display: flex;
             justify-content: space-between;
       }
 }
 @media (min-width: 1024px) {
-      main section.product-container article.product div.imagen img {
+      main.main-section section.shopping-cart-container article.product div.imagen img {
             width: 100px;
       }
-      main section.product-container article.product div.title-container {
+      main.main-section section.shopping-cart-container article.product div.title-container {
             font-size: 16px;
       }
 }
