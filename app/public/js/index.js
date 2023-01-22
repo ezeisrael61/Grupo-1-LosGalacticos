@@ -9,3 +9,16 @@ burgerMenu.addEventListener("click", () => {
 btnclose.addEventListener("click", () => {
       menuContainer.classList.remove("active");
 });
+
+/* document.querySelector(".icon-delete").addEventListener("click", () => {
+      console.log("eliminar");
+}); */
+
+const collection = document.querySelectorAll(".icon-delete");
+const collectionShopping = document.querySelectorAll(".shopping-cart-container");
+
+for (let i = 0; i < collection.length; i++) {
+      collection[i].addEventListener("click", () => {
+            collectionShopping[i].classList.add("quitar");
+      });
+}

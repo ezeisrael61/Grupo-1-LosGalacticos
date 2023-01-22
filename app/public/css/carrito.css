@@ -55,6 +55,9 @@ main.main-section section.cupon-container {
       justify-content: center;
       align-items: center;
 }
+.quitar {
+      display: none;
+}
 /* END CUPON */
 
 /*media querie*/
