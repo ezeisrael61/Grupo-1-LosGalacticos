@@ -1,6 +1,7 @@
-@import url("styles.css");
+@import url("forms.css");
+@import url("products.css");
 
-main {
+main.main-section {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -9,51 +10,68 @@ main {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
-main section.container div.container-title p {
+main.main-section section.container div.container-title p {
       color: var(--gris-oscuro);
       font-size: 14px;
+      margin-bottom: 10px;
 }
-main section.container div.container-title h3 {
-      font-weight: normal;
-      margin-bottom: 2px;
-}
-main section.container div.container-title p.price {
-      color: var(--bordo);
-      font-size: 18px;
-      margin-bottom: 2px;
-}
-
-main section.container div.container-title p.cuotas {
-      margin-bottom: 5px;
-}
-main section.container div.image {
+main.main-section section.container div.image {
       display: flex;
       justify-content: center;
       align-items: center;
 }
-main section.container div.image img {
+main.main-section section.container div.image img {
+      width: 75%;
       border-radius: 20px;
       margin-bottom: 10px;
 }
-main section.container div.conteiner-compra {
-      font-size: 13px;
+main.main-section section.container div.container-details {
+      background-color: white;
+      border-radius: 5px;
+}
+main.main-section div.compra-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+main.main-section section.container div.container-compra,
+main.main-section section.container div.conteineir-decription {
+      font-size: 12px;
+      margin: 10px 0;
+      padding: 10px 2px;
+}
+main.main-section section.container div.container-compra p {
+      margin: 5px 0;
+}
+main.main-section section.container div.container-compra a {
+      color: var(--celeste);
+      font-size: 14px;
+}
+/* main.main-section section.container p.cuotas {
+      margin-bottom: 5px;
+}
+main.main-section section.container div.conteiner-compra {
+      font-size: 14px;
       margin-bottom: 10px;
       line-height: 10px;
 }
-main section.container div.conteiner-compra a {
-      color: var(--celeste);
-}
-main section.container div.conteiner-compra p {
+main.main-section section.container div.conteiner-compra p {
       margin-top: 10px;
 }
-main section.container div.conteineir-decrip p {
+main.main-section section.container div.conteineir-decrip p {
       margin-top: 10px;
-      font-size: 11px;
+      font-size: 15px;
 }
+main.main-section section.container div.conteineir-decrip div {
+      line-height: 10px;
+      margin-top: 15px;
+} */
 
 /* Media queries */
 @media (min-width: 768px) {
-      main {
+      main.main-section {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -62,52 +80,56 @@ main section.container div.conteineir-decrip p {
             background-color: var(--gris-claro);
             border-radius: 9px;
       }
-      main section.container div.container-title p {
+      main.main-section section.container div.container-title p {
             color: var(--gris-oscuro);
             font-size: 19px;
       }
-      main section.container div.container-title h3 {
+      main.main-section section.container div.container-title h3 {
             font-weight: normal;
             margin-bottom: 6px;
             font-size: 21px;
       }
-      main section.container div.container-title p.price {
-            color: var(--bordo);
-            font-size: 22px;
-            margin-bottom: 6px;
-      }
-      
-      main section.container div.container-title p.cuotas {
+
+      main.main-section section.container div.container-title p.cuotas {
             margin-bottom: 9px;
       }
-      main section.container div.image {
+      main.main-section section.container div.image {
             display: flex;
             justify-content: center;
             align-items: center;
       }
-      main section.container div.image img {
+      main.main-section section.container div.image img {
+            width: 60%;
             border-radius: 24px;
             margin-bottom: 14px;
       }
-      main section.container div.conteiner-compra {
+      main.main-section section.container div.conteiner-compra {
             font-size: 17px;
             margin-bottom: 14px;
             line-height: 10px;
       }
-      main section.container div.conteiner-compra a {
+      main.main-section section.container div.conteiner-compra a {
             color: var(--celeste);
       }
-      main section.container div.conteiner-compra p {
-            margin-top: 14px;
+      main.main-section section.container div.conteiner-compra p {
+            font-size: 22px;
+            margin-top: 18px;
       }
-      main section.container div.conteineir-decrip p {
+      main.main-section section.container div.conteineir-decrip h3 {
+            font-size: 23px;
+      }
+      main.main-section section.container div.conteineir-decrip p {
             margin-top: 14px;
-            font-size: 15px;
+            font-size: 18px;
+      }
+      main.main-section section.container div.conteineir-decrip div {
+            line-height: 10px;
+            margin-top: 20px;
       }
 }
 
 @media (min-width: 1024px) {
-      main {
+      main.main-section {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -116,49 +138,49 @@ main section.container div.conteineir-decrip p {
             background-color: var(--gris-claro);
             border-radius: 13px;
       }
-      main section.container div.container-title p {
+      main.main-section section.container div.container-title p {
             color: var(--gris-oscuro);
             font-size: 24px;
       }
-      main section.container div.container-title h3 {
+      main.main-section section.container div.container-title h3 {
             font-weight: normal;
             margin-bottom: 6px;
             font-size: 26px;
       }
-      main section.container div.container-title p.price {
-            color: var(--bordo);
-            font-size: 22px;
-            margin-bottom: 6px;
-      }
-      
-      main section.container div.container-title p.cuotas {
+
+      main.main-section section.container div.container-title p.cuotas {
             margin-bottom: 13px;
       }
-      main section.container div.image {
+      main.main-section section.container div.image {
             display: flex;
             justify-content: center;
             align-items: center;
       }
-      main section.container div.image img {
+      main.main-section section.container div.image img {
+            width: 50%;
             border-radius: 24px;
             margin-bottom: 14px;
       }
-      main section.container div.conteiner-compra {
+      main.main-section section.container div.conteiner-compra {
             font-size: 17px;
             margin-bottom: 14px;
             line-height: 10px;
       }
-      main section.container div.conteiner-compra a {
+      main.main-section section.container div.conteiner-compra a {
             color: var(--celeste);
       }
-      main section.container div.conteiner-compra p {
+      main.main-section section.container div.conteiner-compra p {
             margin-top: 18px;
       }
-      main section.container div.conteineir-decrip p {
-            margin-top: 18px;
-            font-size: 17px;
+      main.main-section section.container div.conteineir-decrip p {
+            margin-top: 15px;
+            font-size: 18px;
       }
-      main section.container div.conteineir-decrip h3 {
+      main.main-section section.container div.conteineir-decrip h3 {
             font-size: 29px;
       }
+      main.main-section section.container div.conteineir-decrip div {
+            line-height: 10px;
+            margin-top: 29px;
       }
+}
