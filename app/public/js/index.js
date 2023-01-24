@@ -19,6 +19,7 @@ const collectionShopping = document.querySelectorAll(".shopping-cart-container")
 
 for (let i = 0; i < collection.length; i++) {
       collection[i].addEventListener("click", () => {
+            console.log("hola");
             collectionShopping[i].classList.add("quitar");
       });
 }

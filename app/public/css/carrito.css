@@ -46,6 +46,12 @@ main.main-section section.shopping-cart-container div.form-container div.total-c
       font-size: 17px;
       color: var(--celeste);
 }
+.boton-reset {
+      background-color: white;
+      border: none;
+      text-decoration: none;
+      cursor: pointer;
+}
 /* END CARRITO DE COMPRAS */
 
 /* CUPON */
