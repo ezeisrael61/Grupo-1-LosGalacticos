@@ -1,11 +1,11 @@
 module.exports = {
       carrito: (req, res) => {
-            res.render("carrito");
+            res.render("products/carrito");
       },
       descripcion: (req, res) => {
-            res.render("descripcion");
+            res.render("products/descripcion");
       },
       busqueda: (req, res) => {
-            res.render("buscador");
+            res.render("products/buscador");
       },
 };

@@ -1,6 +1,3 @@
-@import url("forms.css");
-@import url("products.css");
-
 main.main-section {
       display: flex;
       flex-direction: column;

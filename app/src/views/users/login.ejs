@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <%- include("../partials/header") %>
+
+                  <main>
+                        <div class="form-container">
+                              <form action="" method="">
+                                    <div class="form">
+                                          <h2>Login</h2>
+                                          <p>Inicio de sección</p>
+
+                                          <div class="input-container">
+                                                <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                                                <span class="error-message">Debe ingresar su email</span>
+                                          </div>
+                                          <div class="input-container">
+                                                <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                                                <span class="error-message">Debe ingresar su contraseña</span>
+                                          </div>
+                                          <div class="check">
+                                                <label for="recordar"> Recordarme </label>
+                                                <input type="checkbox" name="recordar" id="recordar">
+                                          </div>
+                                          <div class="button-container">
+                                                <span class="error-message">Credenciales inválidas</span>
+                                                <button type="submit" class="btn btn-submit">Ingresar</button>
+                                          </div>
+                                          <span><a href="">¿Olvidaste tu contraseña?</a></span>
+                                          <span><a href="/usuarios/registro">Aún no tengo cuenta</a></span>
+
+                                    </div>
+                              </form>
+                        </div>
+                  </main>
+
+                  <%- include("../partials/footer") %>
+
+                        <script src="js/index.js"></script>
+
+
+                        <div>
+
+
+      </body>
+
+</html>

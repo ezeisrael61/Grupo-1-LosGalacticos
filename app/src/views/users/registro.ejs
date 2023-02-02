@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div>
+                  <%- include("../partials/header") %>
+
+                        <main>
+                              <div class="form-container">
+                                    <h2>Registrarse</h2>
+                                    <p>Ingresá tus datos para crear la cuenta</p>
+
+                                    <form action="" method="">
+                                          <div class="form">
+                                                <div class="input-container">
+                                                      <input class="input-style" type="text" name="nombre" placeholder="Ingrese su nombre">
+                                                      <span class="error-message">Debe ingresar su nombre</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="text" name="apellido" placeholder="Ingrese su apellido">
+                                                      <span class="error-message">Debe ingresar su apellido</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                                                      <span class="error-message">Debe ingresar su email</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                                                      <span class="error-message">Debe ingresar su contraseña</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
+                                                      <span class="error-message">Debe re-ingresar su contraseña</span>
+                                                </div>
+                                                <div class="check">
+                                                      <div>
+                                                            <label for="recordar"> <a href="">Acepto los términos y condiciones</a> </label>
+                                                            <input type="checkbox" name="terms" id="recordar">
+                                                      </div>
+                                                      <span class="error-message">Debe aceptar los términos y condiciones</span>
+                                                </div>
+                                                <div class="button-container">
+                                                      <span class="error-message">Credenciales inválidas</span>
+                                                      <button type="submit" class="btn btn-submit">Registrarme</button>
+                                                </div>
+                                                <span>¿Ya tienes cuenta? iniciá sesión <a href="/usuarios/login">aca</a></span>
+                                          </div>
+                                    </form>
+                              </div>
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <script src="js/index.js"></script>
+            </div>
+
+      </body>
+
+</html>
