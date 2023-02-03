@@ -21,6 +21,7 @@ main.main-section section.container div.image img {
       width: 75%;
       border-radius: 20px;
       margin-bottom: 10px;
+      max-width: 350px;
 }
 main.main-section section.container div.container-details {
       background-color: white;
@@ -95,10 +96,15 @@ main.main-section section.container div.conteineir-decrip div {
             justify-content: center;
             align-items: center;
       }
+
       main.main-section section.container div.image img {
             width: 60%;
             border-radius: 24px;
             margin-bottom: 14px;
+      }
+      main.main-section section.container div.container-details {
+            padding: 10px;
+            width: 700px;
       }
       main.main-section section.container div.conteiner-compra {
             font-size: 17px;

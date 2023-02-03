@@ -12,12 +12,12 @@
                               <section class="container">
 
                                     <div class="container-title">
-                                          <p>Nuevo| 31 vendidos</p>
-                                          <p>Combo Amoladora Gladiator + Taladro Percutor + 5 Discos</p>
+                                          <p>Nuevo| <%- product.sold %> vendidos</p>
+                                          <p><%- product.name %></p>
                                     </div>
 
                                     <div class="image">
-                                          <img src="/img/Herramientas/Combo Moladora-Taladro.png" alt="Combo Moladora-Taladro">
+                                          <img src="/img/<%- product.category %>/<%- product.image %>" alt="">
                                     </div>
 
                                     <div class="compra-container">
@@ -51,8 +51,8 @@
 
                                     <div class="container-details">
                                           <div class="pago">
-                                                <p class="price">$11.461</p>
-                                                <p>en 12x $1.250</p>
+                                                <p class="price">$ <%- product.price %></p>
+                                                <p>en 12x $ <%- (product.price*1.5)/12%></p>
                                           </div>
                                           <div class="container-compra">
                                                 <p>
@@ -61,45 +61,13 @@
                                                       Devolución gratis<br>
                                                       Tenes 30 días desde que lo recibís<br>
                                                       Stock disponible<br>
-                                                      cantidad: 1 unidad (1 disponibles)
+                                                      cantidad unidades (<%- product.stock - product.sold %> disponibles)
                                                 </p>
                                           </div>
 
                                           <h3>Descripción del Producto</h3>
                                           <div class="conteineir-decription">
-                                                <p>Descripción
-                                                      COMBO AMOLADORA GLADIATOR + TALADRO PERCUTOR + 5 DISCOS <br>
-                                                      AMOLADORA ANGULAR AA 700W GLADIATOR + TALADRO PERCUTOR 13mm REVERSIBLE VELOCIDAD VARIABLE 550W
-                                                      ENERGY
-                                                      +
-                                                      DISCO DE
-                                                      CORTE 1,2MM GLADIATOR PRO<br>
-
-                                                      AMOLADORA ANGULAR GLADIATOR AA 415/2/220<br>
-                                                      Voltaje-Frecuencia: 220V - 50-60Hz<br>
-                                                      Velocidad en vacío: n0: 11000/min<br>
-                                                      Potencia: 700w<br>
-                                                      Capacidad: 115m - 4 1/2"<br>
-                                                      Tipo de aislación: Clase II<br>
-                                                      Peso: 1,8 kg<br>
-                                                      <br>
-                                                      TALADRO PERCUTOR ENERGY ID13/2/220<br>
-                                                      Contenido:<br>
-                                                      1 taladro percutor<br>
-                                                      1 tope de profundidad<br>
-                                                      1 llave de mandril<br>
-                                                      <br>
-                                                      Voltaje-Frecuencia: 220V - 50-60Hz<br>
-                                                      Potencia: 550W<br>
-                                                      Velocidad en vacío: n0: 0-2800/min<br>
-                                                      Capacidad: 13mm 1/2"<br>
-                                                      Tipo de aislación: Clase II<br>
-                                                      Peso: 1,5 kg<br>
-                                                      <br>
-                                                      DISCO DE CORTE GLADIATOR DAC811512<br>
-                                                      Medidas: 115 x 1,2 x22,2 mm<br>
-                                                      Máx. 13300 rpm<br>
-                                                      80 m/seg.<br>
+                                                <p><%- product.description.replace(/\n/g, "<br />" ) %>
                                                 </p>
 
                                           </div>
@@ -107,7 +75,9 @@
 
                               </section>
 
-                              <section class="vip-products">
+                              <%- include("../partials/product", {title:"✨PRODUCTOS DESTACADOS ✨", products: featured }) %>
+
+                                    <!-- <section class="vip-products">
                                     <div class="container-title">
                                           <h3 class="title">✨PRODUCTOS DESTACADOS ✨</h3>
                                           <a href="#">ver mas...</a>
@@ -168,7 +138,7 @@
                                           <p class="price">$ 30.999</p>
                                           <p class="send">Envio Gratis</p>
                                     </article>
-                              </section>
+                              </section> -->
                         </main>
 
                         <%- include("../partials/footer") %>

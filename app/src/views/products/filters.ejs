@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sp">
+
+<%- include("../partials/head") %>
+
+      <body>
+            <div class="container">
+
+                  <%- include("../partials/header") %>
+
+                        <main class="main-section">
+
+                              <!-- banner -->
+                              <section class="banner">
+                                    <img src="/img/banner.png" alt="banner">
+                              </section>
+
+                              <%- include("../partials/product", {title: category , products: products }) %>
+
+                        </main>
+
+                        <%- include("../partials/footer") %>
+                              <script src="js/index.js"></script>
+
+            </div>
+      </body>
+
+</html>

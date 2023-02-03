@@ -3,7 +3,7 @@
             "id": 1,
             "name": "Combo Amoladora Gladiator + Taladro Percutor + 5 Discos",
             "price": 11461,
-            "description": "COMBO AMOLADORA GLADIATOR + TALADRO PERCUTOR + 5 DISCOS\nAMOLADORA ANGULAR AA 700W GLADIATOR + TALADRO PERCUTOR 13mm REVERSIBLE VELOCIDAD VARIABLE 550W ENERGY + DISCO DE CORTE 1,2MM GLADIATOR PRO\nAMOLADORA ANGULAR GLADIATOR AA 415/2/220\nVoltaje-Frecuencia: 220V - 50-60Hz\nVelocidad en vacío: n0: 11000/min\nPotencia: 700w\nCapacidad: 115m - 4 1/2'\nTipo de aislación: Clase II\nPeso: 1,8 kg\n\nTALADRO PERCUTOR ENERGY ID13/2/220\nContenido:\n1 taladro percutor\n1 tope de profundidad\n1 llave de mandril\n\nVoltaje-Frecuencia: 220V - 50-60Hz\nPotencia: 550W\nVelocidad en vacío: n0: 0-2800/min\nCapacidad: 13mm 1/2'\nTipo de aislación: Clase II\nPeso: 1,5 kg\n\nDISCO DE CORTE GLADIATOR DAC811512\nMedidas: 115 x 1,2 x22,2 mm\nMáx. 13300 rpm\n80 m/seg.",
+            "description": "COMBO AMOLADORA GLADIATOR + TALADRO PERCUTOR + 5 DISCOS\r\nAMOLADORA ANGULAR AA 700W GLADIATOR + TALADRO PERCUTOR 13mm REVERSIBLE VELOCIDAD VARIABLE 550W ENERGY + DISCO DE CORTE 1,2MM GLADIATOR PRO\nAMOLADORA ANGULAR GLADIATOR AA 415/2/220\nVoltaje-Frecuencia: 220V - 50-60Hz\nVelocidad en vacío: n0: 11000/min\nPotencia: 700w\nCapacidad: 115m - 4 1/2'\nTipo de aislación: Clase II\nPeso: 1,8 kg\n\nTALADRO PERCUTOR ENERGY ID13/2/220\nContenido:\n1 taladro percutor\n1 tope de profundidad\n1 llave de mandril\n\nVoltaje-Frecuencia: 220V - 50-60Hz\nPotencia: 550W\nVelocidad en vacío: n0: 0-2800/min\nCapacidad: 13mm 1/2'\nTipo de aislación: Clase II\nPeso: 1,5 kg\n\nDISCO DE CORTE GLADIATOR DAC811512\nMedidas: 115 x 1,2 x22,2 mm\nMáx. 13300 rpm\n80 m/seg.",
             "discount": 0,
             "category": "Herramientas",
             "subcategory": "Electricas",
@@ -29,7 +29,7 @@
             "price": 11325,
             "description": "INSTALACIÓN DOMICILIARIA\n• 5 LLAVES DE LUZ PUNTO Y TOMA\n• 5 LLAVES DE LUZ DOBLE TOMA\n• 10 CAJAS DE CHAPAS RECTANGULARES\n• 1 TÉRMICA BIPOLAR A ELECCIÓN ( 5-10-15-20-25-32)\n• 1 BUSCAPOLO\n• 1 CAJA PARA TERMICA 4 MODULOS\n• 1 CINTA AISLADORA 20MTS",
             "discount": 0,
-            "category": "Electricidad",
+            "category": "Eléctricidad",
             "subcategory": "Interruptores y enchufes",
             "image": ["instalacionElectrica.png"],
             "sold": 56,
@@ -41,7 +41,7 @@
             "price": 30999,
             "description": "COMBO DE 4 SILLONES MIAMI CON MESA SUNSET. COLORES: NEGRO, BLANCO, GRIS Y BEIGE.\n\nMAXIMO DE 1 (UNA) UNIDAD POR COMPRA PARA SU CORRECTO DESPACHO.\n\nMEDIDAS DEL SILLON\nAlto: 91 cm\nAlto del Piso al Asiento: 26 cm\nAncho: 83 cm\nProfundidad: 74,5 cm\n\nMEDIDAS DE LA MESA\nAlto: 41 cm.\nProfundidad: 41 cm.\nPeso: 2 kg.\nSoporta: 95 kg",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Muebles para exterior",
             "image": ["sillonesJardin.png"],
             "sold": 80,
@@ -77,7 +77,7 @@
             "price": 12558,
             "description": "Refresca los ambientes sin ruidos molestos.\nSe ajusta a diferentes alturas\nCuenta con rejilla extraíble.\nIdeal para refrigerar.\nPuede ser usado: De pared / De pie / De piso\n\nCARACTERISTICAS:\n\n- Marca: Pektra\n- Potencia: 90W\n- Voltaje: 220V (Monofasico)\n- Diámetro total: 20 Pulgadas (50cm aprox)\n- Oscilación: Si\n- Color del ventilador: Plateado\n- Cantidad de velocidades: 3\n- Alimentación: Corriente directa\n- Material de las aspas: Metal\n- El ventilador viene desarmado en caja.\n- Garantía: 12 meses\n- Industria Argentina",
             "discount": 14,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Ventiladores",
             "image": ["ventilador.png"],
             "sold": 25,
@@ -101,7 +101,7 @@
             "price": 145499,
             "description": "Capacidad de refrigeración de 3.45 kW.\nCapacidad de calefacción de 3.55 kW.\nFrigorías: 3000.\nPotencia de refrigeración de 1060W y de calefacción de 970W.\nEficiencia energética: A.\nCon función deshumidificación.\nTiene temporizador.\nCuenta con función de dormir.\nIncluye control remoto.\nDimensiones de la unidad externa: 720mm de ancho x 495mm de alto x 270mm de profundidad.\nDimensiones de la unidad interna: 802mm de ancho x 297mm de alto x 189mm de profundidad.\nElegí la mejor opción para disfrutar de cada temporada del año.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Aire acondicionado",
             "image": ["AireAcondicionadoBGH.png"],
             "sold": 15,
@@ -113,7 +113,7 @@
             "price": 186999,
             "description": "Capacidad de refrigeración de 3.45 kW.\nCapacidad de calefacción de 3.55 kW.\nFrigorías: 3000.\nPotencia de refrigeración de 1060W y de calefacción de 970W.\nEficiencia energética: A.\nCon función deshumidificación.\nTiene temporizador.\nCuenta con función de dormir.\nIncluye control remoto.\nDimensiones de la unidad externa: 720mm de ancho x 495mm de alto x 270mm de profundidad.\nDimensiones de la unidad interna: 802mm de ancho x 297mm de alto x 189mm de profundidad.\nElegí la mejor opción para disfrutar de cada temporada del año.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Aire acondicionado",
             "image": ["AireAcondicionadoHITACHI.png"],
             "sold": 6,
@@ -125,10 +125,10 @@
             "price": 164999,
             "description": "Capacidad de refrigeración de 3.5 kW.\nCapacidad de calefacción de 3.5 kW.\nFrigorías: 3010.\nPotencia de refrigeración de 935W y de calefacción de 1110W.\nEficiencia energética: A.\nCon función deshumidificación.\nTiene temporizador.\nCuenta con función de dormir.\nIncluye control remoto.\nDimensiones: 454mm de ancho x 700mm de alto x 365mm de profundidad.\nElegí la mejor opción para disfrutar de cada temporada del año.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Aire acondicionado",
             "image": ["AireAcondicionadoPortatilPHILCO.png"],
-            "sold": 5,
+            "sold": 15,
             "stock": 50
       },
       {
@@ -137,7 +137,7 @@
             "price": 27999,
             "description": "Refresca los ambientes sin ruidos molestos.\nEs programable.\nSe ajusta a diferentes alturas.\nVentilador de 22 velocidades.\nPotencia de 35 W.\nIncluye control remoto.\nIdeal para refrigerar.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Ventiladores",
             "image": ["VentiladorPeabody.png"],
             "sold": 5,
@@ -149,10 +149,10 @@
             "price": 10601,
             "description": "Refresca los ambientes sin ruidos molestos.\nVentilador de 3 velocidades.\nPotencia de 90 W.\nIdeal para refrigerar",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Ventiladores",
             "image": ["VentiladorMagiclick.png"],
-            "sold": 5,
+            "sold": 29,
             "stock": 50
       },
       {
@@ -161,11 +161,11 @@
             "price": 38299,
             "description": "• Potencia 2000 k/cal.\n• Diseño sólido y compactor de muy bajo mantenimiento.\n• Frente frío y de bordes redondeados, más seguridad en su hogar.\n• Bajo consumo y óptima distribución de calor.\n• Cámara de combustión enlozada de.gran resistencia a la corrosión.\n• Quemador de alto rendimiento.\n• Encendido piezoeléctrico.\n• Temperatura regulable.\n• Válvula de seguridad termoeléctrica.\n• Conductos de tiraje balanceado compatible con el estándar del mercado\n• Gas Natural\n• Eficiencia energética A\n\n• Dimensiones:\n• Ancho: 30,5 Cm.\n• Alto: 63,5 Cm.\n• Prof.: 17,7 Cm.\n• Tiraje 17,5 Cm.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Estufas y Calefactores ",
             "image": ["CalefactorVolcan.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 85,
+            "stock": 140
       },
       {
             "id": 15,
@@ -173,7 +173,7 @@
             "price": 34320,
             "description": "• INFRARROJA 3600KCAL /H.\n• 3 NIVELES DE TEMPERATURA.\n• CON MANGUERA Y REGULADOR.\n• APTA PARA USO GAS GARRAFA 10 KG.\n\nCARACTERÍSTICAS:\n\n• Marca: Bram Metal.\n• Modelo: PT-N02.\n• Rango de calentamiento 3 niveles.\n- Bajo / Medio / Alto.\n• Cubre aproximadamente: 40 m3.\n• Consumo aproximado: 400/500grs x hora.\n• 4 ruedas para fácil traslado (4cm de diámetro).\n• Material: chapa de acero al carbono.\n• Sistema electrónico de encendido.\n• Piloto de análisis ambiental (ODS y FFD).\n• Corte por volcamiento.\n• Con termocupla de seguridad por falta de llama.\n• Diseño delgado y plegable en la parte posterior para\nun mejor almacenamiento.\n• Embalaje: 50 x 30 x 80 cm | Peso: 9 kg.\n• NO Incluye garrafa.\n• Origen: China.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Estufas y Calefactores ",
             "image": ["CalefactorBramMetal.png"],
             "sold": 5,
@@ -185,11 +185,11 @@
             "price": 63979,
             "description": "Tiro balanceado 5000 kcal frente de vidrio templado Negro.\nEste producto viene con el frente Blanco, consultar disponibilidad en este color.\n\nFuncionamiento por Convección:\nEl aire que circula por debajo de la estufa se calienta en contacto con la cámara y es expulsado a temperatura por la parte superior de la estufa\n\nRadiación:\nEl calefactor al estar caliente emite calor en forma de ondas invisibles al ojo humano, que pueden sentirse si nos ubicamos frente al calefactor.\n\n-Rápida Instalación\n- Durabilidad garantizada\n- Línea europea\n- Vidrio Templado\n- No se raya el frente\n- Bajo consumo\n- Alta eficiencia\n- Contiene Kit de Instalación\n\nDimensiones\nAncho 85 CM\nAlto 54 CM\nProfundidad 18 CM\nGarantía de Fabrica\nDuración 2 Años\nCalorias K.Cal. 5000\nLinea de Calefactor Modelo Tiro Balanceado 5.0",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Estufas y Calefactores ",
             "image": ["CalefactorCalden.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 105,
+            "stock": 200
       },
       {
             "id": 17,
@@ -197,11 +197,11 @@
             "price": 59800,
             "description": "Porque este modelo es uno de los mejores del mercado en relación precio, calidad y ventajas:\n\n• Porque está elaborada completamente en chapa plegada con frente en chapa laminado en caliente 3.2 mm y cuerpo en chapa de 2.5 mm.\n• Porque posee sistema de doble combustión.\n• Tienen una mejor disipación de calor al ambiente por radiación y convección.\n• Está pintada con Pintura Ultra Alta Temperatura (no se quema).\n• Cuentan con regulador de entrada de oxígeno con modo nocturno y combustión lenta.\n• La Manija es desmontable con madera para brindar mejor aislación térmica.\n• Cuenta con ladrillos refractarios en el suelo de la cámara de combustión.\n• Incorpora apoya objetos para mantener caliente alimentos y líquidos.\n• Incluye el accesorio para la manipulación de las brazas y cenizas.\n• Posee un templador de acero inoxidable (únicas en el mercado).\n• Utiliza un sistema de ingeniería con cascada de aire que evita la fuga de humo cuando se abre la puerta para su recarga.\n• Son aptas tanto para usar con leña o con pellets.\n• Se fabrican en Argentina lo cual garantiza repuestos por cualquier percance futuro.\n• Salida de humo Ø 4 o 100 mm.\n• Dimensión: 39 cm de Profundidad x 36 cm de Ancho x 40 cm de Alto.\n• 7500 Kcal – Rendimiento en habitaciones hasta 60 m2 o 150 m3.\n• Peso: 25 kg.",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Estufas y Calefactores ",
             "image": ["EstufaALenia.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 75,
+            "stock": 90
       },
       {
             "id": 18,
@@ -209,10 +209,10 @@
             "price": 17999,
             "description": "PANTALLA INFRAROJA 4000 CAL\nCon válvula de seguridad\nGarantía de 6 meses con el fabricante\nMEDIDA 60CM X 20CM\nQUEMADOR 46,5CM X 7CM",
             "discount": 0,
-            "category": "Climatizacion",
+            "category": "Climatización",
             "subcategory": "Estufas y Calefactores ",
             "image": ["PantallaInfraroja.png"],
-            "sold": 5,
+            "sold": 7,
             "stock": 50
       },
       {
@@ -221,7 +221,7 @@
             "price": 8767,
             "description": "HAMACA PARAGUAYA CON BOLSO\nSTOCK PERMANENTE PARA ENTREGA INMEDIATA\n\nHamaca de polietileno trenzado y tejido premium para soportar alto peso, con amarre super resistente\n- Medidas: 2.20 mts ( de punta a punta ) 1.00 mts de ancho\n-Soga para amarrar, 0.90 por lado, extensible hasta 1.80 mts\n- Medida en su bolso: 20 x 25 cms",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Muebles para exterior",
             "image": ["HamacaPraguaya.png"],
             "sold": 5,
@@ -233,10 +233,10 @@
             "price": 89000,
             "description": "Materiales de la estructura: Acero\nTipo de mesa: De comedor\nTipos de asientos: Silla\nCantidad de piezas: 8\nRequiere ensamblado: Sí",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Muebles para exterior",
             "image": ["JuegoComedor.png"],
-            "sold": 5,
+            "sold": 10,
             "stock": 50
       },
       {
@@ -245,10 +245,10 @@
             "price": 20999,
             "description": "COMBO ACCESORIOS DE INSTALACIÓN PARA PISCINA // HORMIGÓN ESTÁNDAR VULCANO\n\n¿QUÉ INCLUYE ESTE COMBO?\nEl combo incluye los siguientes accesorios para realizar la instalación fija a la piscina:\n- 1 SKIMMER 20 CM\n- 1 TOMA DE FONDO\n- 3 RETORNOS ORIENTABLES\n- 1 VIROLA",
             "discount": 11,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Piscinas y accesorios",
             "image": ["KitPiscina.png"],
-            "sold": 5,
+            "sold": 45,
             "stock": 50
       },
       {
@@ -257,10 +257,10 @@
             "price": 19099,
             "description": "Con esta pileta Nahuel N°2 con accesorios tu diversión, en los días calurosos, está asegurada. Además es práctica y fácil de armar, solo necesitás un espacio despejado en tu patio para armarla y ¡listo! Queda inaugurado el verano, ¡prohibido no disfrutarlo!\n\nPara todo tipo de espacios\nPor su forma rectangular y su tamaño amplio y cómodo de 1.6 m de largo y 1.1 m de ancho, los meses de calor serán tus preferidos del año para compartir momentos únicos junto a quienes más querés.\n\nComodidad y cuidado\nCon su válvula de desagüe, vas a poder sacar el agua de una manera mucho más rápida y simple cuando desees limpiarla o vaciarla.",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Piscinas y accesorios",
             "image": ["pileta.png"],
-            "sold": 5,
+            "sold": 35,
             "stock": 50
       },
       {
@@ -269,10 +269,10 @@
             "price": 31999,
             "description": "KIT DE LIMPIEZA PELOPINCHO\n\nPRODUCTO 100% ORIGINAL PELOPINCHO\n\nLa caja incluye:\n\n- 1 barral extensible de hasta 1,60mts.\n- 1 barrefondo.\n- 1 saca hojas.\n- 1 manguera de 6mts.\n- 1 adaptador.",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Piscinas y accesorios",
             "image": ["KitLimpieza.png"],
-            "sold": 5,
+            "sold": 24,
             "stock": 50
       },
       {
@@ -281,10 +281,10 @@
             "price": 843,
             "description": "**Pistola de riego\n**Puntera de Bronce\n**Regulable\n**Acople incluido",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Riego",
             "image": ["PistolaDeRiego.png"],
-            "sold": 5,
+            "sold": 12,
             "stock": 50
       },
       {
@@ -293,10 +293,10 @@
             "price": 7882,
             "description": "ASPERSOR REGADOR GIRATORIO CROSSMASTER 9937933\n\nVersátil para el jardín\n\n- 3 Picos de Bronce ajustables\n- Base de Aluminio Reforzada con 2 ruedas\n- Conector para Acople Rápido de 1/2' Incluido ( Medida de rosca del regador: 3/4' ) No incluye acople rápido.\n- Área de Riego 360º.\n- Giratorio con 3 brazos de latón para mayor durabilidad, resistente a la corrosión.",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Riego",
             "image": ["AspersorRegador.png"],
-            "sold": 5,
+            "sold": 28,
             "stock": 50
       },
       {
@@ -305,11 +305,11 @@
             "price": 5499,
             "description": "Odranid 50 años fabricando artículos de goma\n\n(Manguera De Riego 1/2 Pulgada Verde)\n\n* Largo 25 mts\n* Espesor Pared 2.0mm\n* Reforzada Flexible\n* Con Accesorios Pico y Lanza",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Riego",
             "image": ["manguera.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 145,
+            "stock": 250
       },
       {
             "id": 27,
@@ -317,11 +317,11 @@
             "price": 1190,
             "description": "Línea: ambiental\nFormato del insecticida: granos\nTipos de insecto: hormigas\nPeso de la unidad: 750 g\nPeso neto: 750 g\nUnidades por envase: 1\nFormato de venta: Unidad\nUnidades por pack: 2\nTipo de envase: Bolsa",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Insecticidas y repelentes",
             "image": ["hormiguicida.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 83,
+            "stock": 130
       },
       {
             "id": 28,
@@ -329,10 +329,10 @@
             "price": 5452,
             "description": "Farol insectocutor\n\nLongitud de onda: 365 nm\nMedidas: 11,8 cm × 11,8 cm × 26,5 cm\nVoltaje: 220V / 50HZ.\nSin ventiladores, sin químicos, sin venenos.\nUso: Sirve para mantener una area de mesa/cena libre de insectos",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Insecticidas y repelentes",
             "image": ["Farolinsectocutor.png"],
-            "sold": 5,
+            "sold": 14,
             "stock": 50
       },
       {
@@ -341,10 +341,10 @@
             "price": 3350,
             "description": "BARRERA ANTIHORMIGA 10mts\n** La mejor manera de frenar a las hormigas, orugas u otro insecto, impidiéndoles que suban a las plantas, cultivos, arboles, etc.\n** Es los más económico, de fácil aplicación y eficaz método preventivo, para evitar que los insectos, trepen por el tronco/tallo y produzcan mucho daño en plantas ornamentales, frutales y árboles en general.\n** Barrera con un film deslizante, posee gran durabilidad a la intemperie\n** La barrera es un método físico natural, 100% ecológico, detiene a las hormigas sin necesidad de aplicar venenos tóxicos o agroquímicos.\n** Presentación: 10 tiras de 1mt lineal",
             "discount": 0,
-            "category": "Jardin y piscinas",
+            "category": "Jardín y piscinas",
             "subcategory": "Insecticidas y repelentes",
             "image": ["BarrerasAntiHormigas.png"],
-            "sold": 5,
+            "sold": 31,
             "stock": 50
       },
       {
@@ -352,12 +352,12 @@
             "name": "Cesto De Basura 16 l Reciclaje Dos Compartimentos Begonia",
             "price": 7299,
             "description": "1. Color: Metálico\n2. Material: Acero Inoxidable\n3. Operación con el pie, manos libres\n4. Pedal de metal integrado a la base\n5. Contenedor interior higiénico con asa y removible\n6. Doble Compartimiento para separación de residuos. Cada compartimento tiene su propio bote en material plástico\n7. Medidas:\nTotales: 31 cm x 26,5 cm x 39,5 cm (capacidad total 16L)\nCada compartimento: 22 x 14.5 x 34.5cm (capacidad 8L cada uno)\n8. Altura con tapa abierta: 63,2 cm/ Altura con tapa cerrada: 45,5 cm\n9. Peso: 2,9 kg\n10. Capacidad: 16L (cada compartimiento 8L)",
-            "discount": 0,
+            "discount": 10,
             "category": "Para el hogar",
             "subcategory": "Cuidado y lavanderia",
             "image": ["cesto.png"],
-            "sold": 5,
-            "stock": 50
+            "sold": 55,
+            "stock": 85
       },
       {
             "id": 31,

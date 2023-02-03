@@ -8,6 +8,5 @@ module.exports = {
                   return product.discount > 0;
             });
             return res.render("home", { featured, inSale });
-            //res.send(products);
       },
 };

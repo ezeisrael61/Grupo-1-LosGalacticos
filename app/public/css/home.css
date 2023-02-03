@@ -11,6 +11,10 @@ main.main-section {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
+main.main-section a {
+      color: var(--celeste);
+      margin-bottom: 15px;
+}
 section.banner {
       display: block;
       margin-bottom: 5px;
