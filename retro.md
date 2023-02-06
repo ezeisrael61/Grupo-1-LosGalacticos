@@ -24,8 +24,8 @@ Dejar de hacer:✋
 ## ➤ Retrospectiva Estrella Sprint 2
 
 Empezar a hacer: 💪
-(ser mas comunicativos cuando no podemos reunirnos (avisar minimo))
-(tomar mas protagonismo en lo grupal)
+- Mas comunicacion cuando no podemos reunirnos. (avisar minimo) ✔
+- Tomar mas protagonismo en lo grupal. ✔
 
 Hacer más: 💪💪
 - ser mas independientes en las modulos que nos toca en trello. ✔
@@ -33,10 +33,9 @@ Hacer más: 💪💪
 Seguir haciendo:💪💪💪
 - Comunicación fluida. ✔
 - Cumplir tiempos de entrega. ✔
-(- Practicas grupales de programación. ✔)
 
 Hacer menos:👎
 - Procrastinar. ✔
 
 Dejar de hacer:✋
-(dejar de ser pasivos)
+- Dejar de ser pasivos. ✔
