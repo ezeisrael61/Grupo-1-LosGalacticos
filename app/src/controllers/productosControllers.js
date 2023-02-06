@@ -8,25 +8,41 @@ const writeJson = (products) => {
       fs.writeFileSync(productsFilePath, JSON.stringify(dbProducts), { encoding: "utf-8" });
 };
 
-const featured = dbProducts.filter((product) => {
-      return product.sold > 50;
-});
+const inSale = dbProducts
+      .filter((product) => {
+            return product.discount > 0;
+      })
+      .slice(0, 5);
 
 module.exports = {
       carrito: (req, res) => {
-            res.render("products/carrito", { featured });
+            res.render("products/carrito", { inSale });
       },
       descripcion: (req, res) => {
             const product = dbProducts.find((product) => {
                   return product.id === Number(req.params.id);
             });
-            res.render("products/descripcion", { product, featured });
-            //res.send(product);
+            res.render("products/descripcion", { product, inSale });
       },
       filters: (req, res) => {
             const category = req.params.category;
             const products = dbProducts.filter((product) => {
                   return product.category == category;
+            });
+            res.render("products/filters", { products, category });
+            //res.send(product);
+      },
+      inSale: (req, res) => {
+            const category = "🔥 ¡OFERTAS SÓLO POR HOY! 🔥;";
+            const products = dbProducts.filter((product) => {
+                  return product.discount > 0;
+            });
+            res.render("products/filters", { products, category });
+      },
+      featured: (req, res) => {
+            const category = "✨PRODUCTOS DESTACADOS ✨";
+            const products = dbProducts.filter((product) => {
+                  return product.sold > 50;
             });
             res.render("products/filters", { products, category });
       },

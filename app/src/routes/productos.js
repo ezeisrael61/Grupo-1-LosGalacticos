@@ -4,6 +4,8 @@ const controller = require("../controllers/productosControllers");
 
 router.get("/carrito", controller.carrito);
 router.get("/descripcion/:id", controller.descripcion);
+router.get("/inSale", controller.inSale);
+router.get("/featured", controller.featured);
 router.get("/filters/:category", controller.filters);
 
 /* Agrega producto */
