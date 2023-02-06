@@ -3,7 +3,10 @@ const path = require("path");
 const app = express();
 const PORT = 3030;
 
+const methodOverride = require("method-override"); // Pasar poder usar los métodos PUT y DELETE
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
+app.use(methodOverride("_method")); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 
 /*  Template Engine */
 app.set("view engine", "ejs");

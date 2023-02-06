@@ -26,6 +26,7 @@ main.main-section section.container div.image img {
 main.main-section section.container div.container-details {
       background-color: white;
       border-radius: 5px;
+      margin: 0 auto;
 }
 main.main-section div.compra-container {
       display: flex;

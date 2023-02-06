@@ -38,7 +38,7 @@ h4 {
 .input-container {
       display: flex;
       flex-direction: column;
-      margin-top: 1rem;
+      margin-top: 5px;
       width: 100%;
 }
 
@@ -127,15 +127,27 @@ span.error-message {
 input.input-style {
       border: none;
       border-radius: 0.2rem;
-      height: 2.3rem;
+      height: 2rem;
       padding: 0 0.5rem;
       outline: none;
       border: 1px solid rgb(175, 175, 175);
 }
-
+textarea.textarea-style {
+      height: 200px;
+      border: none;
+      border-radius: 0.2rem;
+      padding: 0.5rem;
+}
+select.select-style {
+      border: none;
+      border-radius: 0.2rem;
+      height: 2rem;
+      padding: 0 0.5rem;
+}
 label {
       font-size: 0.8rem;
       margin-top: 10px;
+      font-weight: bold;
 }
 @media (min-width: 768px) {
       .send-container {

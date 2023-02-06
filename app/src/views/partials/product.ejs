@@ -5,18 +5,14 @@
             </h3>
       </div>
 
-      <% products.forEach((product, index)=> { %>
-
-
-
-
-
-
+      <% products.forEach((product)=> { %>
             <article class="product">
                   <div class="product-container">
                         <a class="photo-container" href="/productos/descripcion/<%- product.id  %> ">
                               <img class="photo" src="/img/<%- product.category  %>/<%- product.image %>" alt="">
                         </a>
+
+
                         <div class="valoracion">
                               <% if (product.sold>5 & product.sold<=10) { %>
                                           <i class="fa-sharp fa-solid fa-star"></i>

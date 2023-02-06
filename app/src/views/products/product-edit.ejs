@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="sp">
+<%- include("../partials/head") %>
+
+      <body>
+            <div>
+                  <%- include("../partials/header") %>
+                        <main>
+                              <div class="form-container">
+                                    <h2>Editar Producto</h2>
+                                    <p>Ingresá los datos a modificar</p>
+                                    <form action="/productos/edit/<%= productToEdit.id  %>?_method=PUT" method="POST">
+                                          <div class="form">
+                                                <div class="input-container">
+                                                      <label for="name" class="form-label">Nombre:</label>
+                                                      <input class="input-style" type="text" name="name" placeholder="Ej: Pico & Pala"
+                                                            value="<%= productToEdit.name  %>">
+                                                      <span class="error-message">Debe ingresar su nombre</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="price" class="form-label">Precio:</label>
+                                                      <input class="input-style" type="number" name="price" placeholder="Ej: 2500"
+                                                            value="<%= productToEdit.price  %>">
+                                                      <span class="error-message">Debe ingresar el precio</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="discount" class="form-label">Descuento:</label>
+                                                      <input class="input-style" type="number" name="discount" placeholder="Ej: 10"
+                                                            value="<%= productToEdit.discount  %>">
+                                                      <span class="error-message">Debe ingresar el descuento %</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="description" class="form-label">Descripción:</label>
+                                                      <textarea name="description" id="description" class="textarea-style"
+                                                            placeholder="Ingrese la descripción"><%= productToEdit.description %></textarea>
+                                                      <span class="error-message">Debe ingresar la descripción del producto</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="category" class="form-label">Categoría:</label>
+                                                      <select name="category" id="category" class="select-style">
+                                                            <option value="Climatización" <%=productToEdit.category==="Climatización" && "selected" %>
+                                                                  >Climatización
+                                                            </option>
+                                                            <option value="Eléctricidad" <%=productToEdit.category==="Eléctricidad" && "selected" %>
+                                                                  >Eléctricidad
+                                                            </option>
+                                                            <option value="Herramientas" <%=productToEdit.category==="Herramientas" && "selected" %>
+                                                                  >Herramientas
+                                                            </option>
+                                                            <option value="Jardín y piscinas" <%=productToEdit.category==="Jardín y piscinas"
+                                                                  && "selected" %>
+                                                                  >Jardín y
+                                                                  piscinas</option>
+                                                            <option value="Para el hogar" <%=productToEdit.category==="Para el hogar" && "selected" %>
+                                                                  >Para
+                                                                  el
+                                                                  hogar
+                                                            </option>
+                                                            <option value="Ferretería" <%=productToEdit.category==="Ferretería" && "selected" %>
+                                                                  >Ferretería
+                                                            </option>
+                                                      </select>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="subcategory" class="form-label">SubCategoria:</label>
+                                                      <select name="subcategory" id="subcategory" class="select-style">
+                                                            <option value="Aire acondicionado" <%=productToEdit.subcategory==="Aire acondicionado"
+                                                                  && "selected" %>>Aire
+                                                                  acondicionado
+                                                            </option>
+                                                            <option value="Ventiladores" <%=productToEdit.subcategory==="Ventiladores" && "selected"
+                                                                  %>
+                                                                  >Ventiladores
+                                                            </option>
+                                                            <option value="Estufas y Calefactores"
+                                                                  <%=productToEdit.subcategory==="Estufas y Calefactores" && "selected" %>>Estufas y
+                                                                  Calefactores</option>
+                                                            <option value="Muebles para exterior"
+                                                                  <%=productToEdit.subcategory==="Muebles para exterior" && "selected" %>>Muebles para
+                                                                  exterior</option>
+                                                            <option value="Piscinas y accesorios"
+                                                                  <%=productToEdit.subcategory==="Piscinas y accesorios" && "selected" %>>Piscinas y
+                                                                  accesorios</option>
+                                                            <option value="Riego" <%=productToEdit.subcategory==="Riego" && "selected" %>>Riego
+                                                            </option>
+                                                            <option value="Insecticidas y repelentes"
+                                                                  <%=productToEdit.subcategory==="Insecticidas y repelentes" && "selected" %>
+                                                                  >Insecticidas y
+                                                                  repelentes</option>
+                                                            <option value="Cuidado y lavandería" <%=productToEdit.subcategory==="Cuidado y lavandería"
+                                                                  && "selected" %>
+                                                                  >Cuidado y lavandería</option>
+                                                            <option value="Bazar y Cocina" <%=productToEdit.subcategory==="Bazar y Cocina"
+                                                                  && "selected" %>
+                                                                  >Bazar
+                                                                  y
+                                                                  Cocina</option>
+                                                            <option value="Adornos y Decoración" <%=productToEdit.subcategory==="Adornos y Decoración"
+                                                                  && "selected" %>
+                                                                  >Adornos y Decoración</option>
+                                                      </select>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="sold" class="form-label">Ventas:</label>
+                                                      <input class="input-style" type="number" name="sold" placeholder="Ej: 0"
+                                                            value="<%= productToEdit.sold  %>">
+                                                      <span class="error-message">Debe ingresar la cantidad vendida</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="stock" class="form-label">Stock:</label>
+                                                      <input class="input-style" type="number" name="stock" placeholder="Ej: 150"
+                                                            value="<%= productToEdit.stock  %>">
+                                                      <span class="error-message">Debe ingresar el stock</span>
+                                                </div>
+                                                <div class="button-container">
+                                                      <button type="submit" class="btn btn-submit">Guardar</button>
+                                                </div>
+                                          </div>
+                                    </form>
+                              </div>
+
+                        </main>
+
+                        <%- include("../partials/footer") %>
+
+                              <script src="/js/script.js"></script>
+            </div>
+      </body>
+
+</html>
