@@ -59,7 +59,7 @@ module.exports = {
                   description: req.body.description,
                   category: req.body.category,
                   subcategory: req.body.subcategory,
-                  image: "default-image.png",
+                  image: req.body.img,
                   sold: req.body.sold,
                   stock: req.body.stock,
             };
