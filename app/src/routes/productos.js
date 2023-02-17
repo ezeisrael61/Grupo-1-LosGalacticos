@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/productosControllers");
+const {uploadImageProduct} = require('../middlewares/upload')
 
 router.get("/carrito", controller.carrito);
 router.get("/descripcion/:id", controller.descripcion);
@@ -10,7 +11,7 @@ router.get("/:category", controller.filters);
 
 /* Agrega producto */
 router.get("/create", controller.create);
-router.post("/", controller.store);
+router.post("/", uploadImageProduct.single('img'),controller.store);
 
 /* Edit producto */
 router.get("/edit/:id", controller.edit);
