@@ -15,7 +15,9 @@
                                     <img src="/img/banner.png" alt="banner">
                               </section>
 
-
+                              <!-- Llama a products.ejs que esta en la carpeta partials, y en el segundo parametro paso un
+                               objeto literal con la propiedad title que es un string y la propiedad products que recibe un array 
+                               que viene de productosController.js -->
                               <%- include("partials/product", {title:"✨PRODUCTOS DESTACADOS ✨", products: featured }) %>
                                     <a href="productos/featured">ver mas...</a>
 

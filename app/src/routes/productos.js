@@ -6,7 +6,7 @@ router.get("/carrito", controller.carrito);
 router.get("/descripcion/:id", controller.descripcion);
 router.get("/inSale", controller.inSale);
 router.get("/featured", controller.featured);
-router.get("/filters/:category", controller.filters);
+router.get("/:category", controller.filters);
 
 /* Agrega producto */
 router.get("/create", controller.create);

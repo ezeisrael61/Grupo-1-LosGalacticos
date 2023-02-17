@@ -50,6 +50,8 @@ module.exports = {
             res.render("products/product-create");
       },
       store: (req, res) => {
+            /* Otra forma de sacar el id mas grande */
+            /* let lastId = Math.max(...dbProducts.map(product => product.id)); */
             let lastId = dbProducts[dbProducts.length - 1].id;
             let newProduct = {
                   id: lastId + 1,

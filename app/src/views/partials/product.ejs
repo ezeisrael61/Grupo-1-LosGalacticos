@@ -1,3 +1,6 @@
+<!-- Recibo desde el home.ejs  un string title y un array product, 
+el cual itero con un forEach y cargo cada campo donde corresponde  -->
+
 <section class="vip-products">
       <div class="container-title">
             <h3 class="title">
@@ -21,12 +24,12 @@
                                                       <% } else if (product.sold>20 & product.sold<=30) { %>
                                                                   <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i
                                                                         class="fa-sharp fa-solid fa-star"></i>
-                                                                  <% } else if (product.sold>30 & product.sold<=50) { %>
+                                                                  <% } else if (product.sold>30 & product.sold<=40) { %>
                                                                               <i class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i>
-                                                                              <% } else if (product.sold>30 &
+                                                                              <% } else if (product.sold>40 &
                                                                                     product.sold
                                                                                     >50){ %>
                                                                                     <i class="fa-sharp fa-solid fa-star"></i><i
