@@ -47,6 +47,7 @@ module.exports = {
             res.render("products/filters", { products, category });
       },
       create: (req, res) => {
+            //res.send("pp");
             res.render("products/product-create");
       },
       store: (req, res) => {
