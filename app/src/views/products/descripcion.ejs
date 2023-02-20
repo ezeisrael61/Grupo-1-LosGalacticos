@@ -43,7 +43,12 @@
                                                 </form>
                                                 <a href="/productos/edit/<%- product.id %>" class="action-button edit">EDITAR
                                                       PRODUCTO</a>
-                                                <a href="" class="action-button edit">BORRAR PRODUCTO</a>      
+                                                <!--<a href="/productos/delete/<%- product.id %>" class="action-button delete">BORRAR PRODUCTO</a>
+                                                -->
+                                                <form action="/productos/delete/<%- product.id %>?_method=DELETE" method="POST"
+                                                      style="display: inline-flex">
+                                                      <button type="submit" class="action-button delete">ELIMINAR PRODUCTO</button>
+                                                </form>
                                           </div>
                                     </div>
 

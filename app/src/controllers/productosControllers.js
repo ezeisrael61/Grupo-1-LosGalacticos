@@ -95,4 +95,27 @@ module.exports = {
             writeJson(dbProducts);
             res.redirect("/");
       },
+       // Delete - Delete one product from DB
+       destroy: (req, res) => {
+            // obtengo el id del req.params
+            let productId = Number(req.params.id);
+
+            // busco el producto a eliminar y lo borro del array
+            dbProducts.forEach((product) => {
+                  if (product.id === productId) {
+                        let productToDestroy = dbProducts.indexOf(product);
+                        dbProducts.splice(productToDestroy, 1);
+                  }
+            });
+
+            writeJson(dbProducts);
+
+            //let newProductsArray = products.filter(product => product.id !== productId)
+
+            // sobreescribo el json con el array de productos modificado
+            //writeJson(newProductsArray)
+
+            // retorno un mensaje de exito
+            res.redirect("/");
+      },
 };

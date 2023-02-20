@@ -18,4 +18,7 @@ router.get("/:category", controller.filters);
 router.get("/edit/:id", controller.edit);
 router.put("/edit/:id", controller.update);
 
+/*** DELETE ONE PRODUCT***/
+router.delete("/delete/:id", controller.destroy);
+
 module.exports = router;
