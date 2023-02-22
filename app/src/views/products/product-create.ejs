@@ -8,7 +8,7 @@
                         <div class="form-container">
                               <h2>Agregar Producto</h2>
                               <p>Ingresá los datos</p>
-                              <form action="/productos/" method="POST">
+                              <form action="/productos/" method="POST" enctype="multipart/form-data">
                                     <div class="form">
                                           <div class="input-container">
                                                 <label for="name" class="form-label">Nombre:</label>
@@ -17,7 +17,7 @@
                                           </div>
                                           <div class="input-container">
                                                 <label for="img" class="form-label">Imagen:</label>
-                                                <input class="input-style" type="file" id="img" name="img">
+                                                <input class="input-style" type="file" id="image" name="image">
                                           </div>
                                           <div class="input-container">
                                                 <label for="price" class="form-label">Precio:</label>

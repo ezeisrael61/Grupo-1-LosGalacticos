@@ -62,13 +62,14 @@ module.exports = {
                   description: req.body.description,
                   category: req.body.category,
                   subcategory: req.body.subcategory,
-                  image: req.body.img,
+                  image: req.file ? req.file.filename : null,
                   sold: req.body.sold,
                   stock: req.body.stock,
             };
             dbProducts.push(newProduct);
             writeJson(dbProducts);
-            res.redirect("/");
+            return res.redirect("/")
+            
       },
       edit: (req, res) => {
             let productId = Number(req.params.id);

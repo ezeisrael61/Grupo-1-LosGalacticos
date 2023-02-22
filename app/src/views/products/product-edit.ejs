@@ -9,13 +9,17 @@
                               <div class="form-container">
                                     <h2>Editar Producto</h2>
                                     <p>Ingresá los datos a modificar</p>
-                                    <form action="/productos/edit/<%= productToEdit.id  %>?_method=PUT" method="POST">
+                                    <form action="/productos/edit/<%= productToEdit.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
                                           <div class="form">
                                                 <div class="input-container">
                                                       <label for="name" class="form-label">Nombre:</label>
                                                       <input class="input-style" type="text" name="name" placeholder="Ej: Pico & Pala"
                                                             value="<%= productToEdit.name  %>">
                                                       <span class="error-message">Debe ingresar su nombre</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="img" class="form-label">Imagen:</label>
+                                                      <input class="input-style" type="file" id="image" name="image">
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="price" class="form-label">Precio:</label>

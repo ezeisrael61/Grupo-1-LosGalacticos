@@ -11,6 +11,7 @@ module.exports = {
                         return product.discount > 0;
                   })
                   .slice(0, 5);
-            return res.render("home", { featured, inSale });
+            const imageMain = dbProducts;      
+            return res.render("home", { featured, inSale, imageMain });
       },
 };

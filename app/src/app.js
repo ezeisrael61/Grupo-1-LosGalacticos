@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const PORT = 3030;
+const PORT = 3060;
 const methodOverride = require("method-override"); // Para poder usar los métodos PUT y DELETE
 
 app.use(express.urlencoded({ extended: false })); // Para poder usar el metodo POST
