@@ -39,15 +39,19 @@
                                                             <div class="button-container">
                                                                   <button type="submit" class="btn btn-confirm">Confirmar Compra</button>
                                                             </div>
+                                                            <div class="button-container">
+                                                                  <button class="btn btn-confirm">
+                                                                         <a href="/productos/edit/<%- product.id %>" class= "editarProduc">EDITAR PRODUCTO</a>
+                                                                  </button>
+                                                            </div>
                                                       </div>
                                                 </form>
-                                                <a href="/productos/edit/<%- product.id %>" class="action-button edit">EDITAR
-                                                      PRODUCTO</a>
+                                                
                                                 <!--<a href="/productos/delete/<%- product.id %>" class="action-button delete">BORRAR PRODUCTO</a>
                                                 -->
                                                 <form action="/productos/delete/<%- product.id %>?_method=DELETE" method="POST"
                                                       style="display: inline-flex">
-                                                      <button type="submit" class="action-button delete">ELIMINAR PRODUCTO</button>
+                                                      <button type="submit" class="btn btn-submit">ELIMINAR PRODUCTO</button>
                                                 </form>
                                           </div>
                                     </div>

@@ -118,6 +118,7 @@ h4 {
       background: linear-gradient(285deg, rgba(255, 255, 255, 1) 0%, var(--celeste));
 }
 
+
 span.error-message {
       color: tomato;
       font-size: 0.7rem;
