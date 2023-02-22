@@ -62,7 +62,7 @@ module.exports = {
                   description: req.body.description,
                   category: req.body.category,
                   subcategory: req.body.subcategory,
-                  image: req.file ? req.file.filename : null,
+                  image: req.file ? req.file.filename : 'defauld.png',
                   sold: req.body.sold,
                   stock: req.body.stock,
             };
@@ -83,15 +83,15 @@ module.exports = {
 
             dbProducts.forEach((product) => {
                   if (product.id === productId) {
-                        (product.name = req.body.name),
-                              (product.price = req.body.price),
-                              (product.discount = req.body.discount),
-                              (product.description = req.body.description),
-                              (product.category = req.body.category),
-                              (product.subcategory = req.body.subcategory),
-                              (product.image= req.file.filename),
-                              (product.sold = req.body.sold),
-                              (product.stock = req.body.stock);
+                              product.name = req.body.name
+                              product.price = req.body.price
+                              product.discount = req.body.discount
+                              product.description = req.body.description
+                              product.category = req.body.category
+                              product.subcategory = req.body.subcategory
+                              product.image= req.file ? req.file.filename :  'defauld.png'
+                              product.sold = req.body.sold
+                              product.stock = req.body.stock
                   }
             });
             writeJson(dbProducts);
