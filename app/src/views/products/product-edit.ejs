@@ -18,10 +18,6 @@
                                                       <span class="error-message">Debe ingresar su nombre</span>
                                                 </div>
                                                 <div class="input-container">
-                                                      <label for="img" class="form-label">Imagen:</label>
-                                                      <input class="input-style" type="file" id="image" name="image" value="<%= productToEdit.image %>">
-                                                </div>
-                                                <div class="input-container">
                                                       <label for="price" class="form-label">Precio:</label>
                                                       <input class="input-style" type="number" name="price" placeholder="Ej: 2500"
                                                             value="<%= productToEdit.price  %>">
@@ -115,6 +111,10 @@
                                                       <input class="input-style" type="number" name="stock" placeholder="Ej: 150"
                                                             value="<%= productToEdit.stock  %>">
                                                       <span class="error-message">Debe ingresar el stock</span>
+                                                </div>
+                                                <div class="input-container">
+                                                      <label for="img" class="form-label">Imagen:</label>
+                                                      <input class="input-style" type="file" id="image" name="image" value="<%= productToEdit.image %>">
                                                 </div>
                                                 <div class="button-container">
                                                       <button type="submit" class="btn btn-submit">Guardar</button>
