@@ -89,6 +89,7 @@ module.exports = {
                               (product.description = req.body.description),
                               (product.category = req.body.category),
                               (product.subcategory = req.body.subcategory),
+                              (product.image= req.file.filename),
                               (product.sold = req.body.sold),
                               (product.stock = req.body.stock);
                   }

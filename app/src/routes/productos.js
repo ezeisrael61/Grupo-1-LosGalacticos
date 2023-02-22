@@ -16,7 +16,7 @@ router.get("/:category", controller.filters);
 
 /* Edit producto */
 router.get("/edit/:id", controller.edit);
-router.put("/edit/:id", controller.update);
+router.put("/edit/:id",upload.single("image"), controller.update);
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/delete/:id", controller.destroy);
