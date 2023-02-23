@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/productosControllers");
-const {upload} = require("../middlewares/upload");
+const { upload } = require("../middlewares/upload");
 
 router.get("/carrito", controller.carrito);
 router.get("/descripcion/:id", controller.descripcion);
@@ -16,7 +16,7 @@ router.get("/:category", controller.filters);
 
 /* Edit producto */
 router.get("/edit/:id", controller.edit);
-router.put("/edit/:id",upload.single("image"), controller.update);
+router.put("/edit/:id", upload.single("image"), controller.update);
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/delete/:id", controller.destroy);
