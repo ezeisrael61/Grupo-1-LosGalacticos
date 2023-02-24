@@ -89,7 +89,7 @@ module.exports = {
                               product.description = req.body.description
                               product.category = req.body.category
                               product.subcategory = req.body.subcategory
-                              product.image= req.file ? req.file.filename :  'defauld.png'
+                              product.image= req.file ? req.file.filename :  product.image
                               product.sold = req.body.sold
                               product.stock = req.body.stock
                   }
