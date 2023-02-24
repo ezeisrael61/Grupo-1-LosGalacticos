@@ -26,9 +26,14 @@ module.exports = {
       },
       filters: (req, res) => {
             const category = req.params.category;
-            const products = dbProducts.filter((product) => {
-                  return product.category == category;
-            });
+            let products = "";
+            if (category === "all") {
+                  products = dbProducts;
+            } else {
+                  products = dbProducts.filter((product) => {
+                        return product.category == category;
+                  });
+            }
             res.render("products/filters", { products, category });
             //res.send(product);
       },
@@ -62,14 +67,13 @@ module.exports = {
                   description: req.body.description,
                   category: req.body.category,
                   subcategory: req.body.subcategory,
-                  image: req.file ? req.file.filename : 'defauld.png',
+                  image: req.file ? req.file.filename : "defauld.png",
                   sold: req.body.sold,
                   stock: req.body.stock,
             };
             dbProducts.push(newProduct);
             writeJson(dbProducts);
-            return res.redirect("/")
-            
+            return res.redirect("/");
       },
       edit: (req, res) => {
             let productId = Number(req.params.id);
@@ -83,6 +87,7 @@ module.exports = {
 
             dbProducts.forEach((product) => {
                   if (product.id === productId) {
+
                               product.name = req.body.name
                               product.price = req.body.price
                               product.discount = req.body.discount
@@ -93,12 +98,12 @@ module.exports = {
                               product.sold = req.body.sold
                               product.stock = req.body.stock
                   }
-            });
-            writeJson(dbProducts);
+            }),
+                  writeJson(dbProducts);
             res.redirect("/");
       },
-       // Delete - Delete one product from DB
-       destroy: (req, res) => {
+      // Delete - Delete one product from DB
+      destroy: (req, res) => {
             // obtengo el id del req.params
             let productId = Number(req.params.id);
 
