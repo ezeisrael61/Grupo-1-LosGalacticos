@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/productosControllers");
 const { upload } = require("../middlewares/upload");
+const productValidator = require("../validator/productsValidator");
 
 router.get("/carrito", controller.carrito);
 router.get("/descripcion/:id", controller.descripcion);
@@ -10,7 +11,7 @@ router.get("/featured", controller.featured);
 
 /* Agrega producto */
 router.get("/create", controller.create);
-router.post("/", upload.single("image"), controller.store);
+router.post("/", upload.single("image"), productValidator, controller.store);
 
 router.get("/:category", controller.filters);
 

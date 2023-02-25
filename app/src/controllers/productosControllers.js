@@ -1,12 +1,7 @@
-const fs = require("fs");
-const path = require("path");
+const { validationResult } = require("express-validator");
+const { readJSON, writeJSON } = require("../database");
 
-const productsFilePath = path.join(__dirname, "../database/products.json");
-const dbProducts = require("../database/index");
-
-const writeJson = (products) => {
-      fs.writeFileSync(productsFilePath, JSON.stringify(dbProducts), { encoding: "utf-8" });
-};
+const dbProducts = readJSON("products.json");
 
 const inSale = dbProducts
       .filter((product) => {
@@ -53,27 +48,43 @@ module.exports = {
       },
       create: (req, res) => {
             //res.send("pp");
-            res.render("products/product-create");
+
+            res.render("products/product-create", {
+                  dbcategory: readJSON("categorys.json"),
+                  dbSubCategory: readJSON("subCategorys.json"),
+            });
       },
       store: (req, res) => {
             /* Otra forma de sacar el id mas grande */
             /* let lastId = Math.max(...dbProducts.map(product => product.id)); */
-            let lastId = dbProducts[dbProducts.length - 1].id;
-            let newProduct = {
-                  id: lastId + 1,
-                  name: req.body.name,
-                  price: req.body.price,
-                  discount: req.body.discount,
-                  description: req.body.description,
-                  category: req.body.category,
-                  subcategory: req.body.subcategory,
-                  image: req.file ? req.file.filename : "defauld.png",
-                  sold: req.body.sold,
-                  stock: req.body.stock,
-            };
-            dbProducts.push(newProduct);
-            writeJson(dbProducts);
-            return res.redirect("/");
+
+            const errors = validationResult(req);
+
+            if (errors.isEmpty()) {
+                  let lastId = dbProducts[dbProducts.length - 1].id;
+                  let newProduct = {
+                        id: lastId + 1,
+                        name: req.body.name,
+                        price: req.body.price,
+                        discount: req.body.discount,
+                        description: req.body.description,
+                        category: req.body.category,
+                        subcategory: req.body.subcategory,
+                        image: req.file ? req.file.filename : "defauld.png",
+                        sold: req.body.sold,
+                        stock: req.body.stock,
+                  };
+                  dbProducts.push(newProduct);
+                  writeJSON("products.json", dbProducts);
+                  return res.redirect("/");
+            } else {
+                  res.render("products/product-create", {
+                        dbcategory: readJSON("categorys.json"),
+                        dbSubCategory: readJSON("subCategorys.json"),
+                        errors: errors.mapped(),
+                        old: req.body,
+                  });
+            }
       },
       edit: (req, res) => {
             let productId = Number(req.params.id);
@@ -84,22 +95,20 @@ module.exports = {
       },
       update: (req, res) => {
             let productId = Number(req.params.id);
-
             dbProducts.forEach((product) => {
                   if (product.id === productId) {
-
-                              product.name = req.body.name
-                              product.price = req.body.price
-                              product.discount = req.body.discount
-                              product.description = req.body.description
-                              product.category = req.body.category
-                              product.subcategory = req.body.subcategory
-                              product.image= req.file ? req.file.filename :  product.image
-                              product.sold = req.body.sold
-                              product.stock = req.body.stock
+                        product.name = req.body.name;
+                        product.price = req.body.price;
+                        product.discount = req.body.discount;
+                        product.description = req.body.description;
+                        product.category = req.body.category;
+                        product.subcategory = req.body.subcategory;
+                        product.image = req.file ? req.file.filename : product.image;
+                        product.sold = req.body.sold;
+                        product.stock = req.body.stock;
                   }
             }),
-                  writeJson(dbProducts);
+                  writeJSON("products.json", dbProducts);
             res.redirect("/");
       },
       // Delete - Delete one product from DB
@@ -115,7 +124,7 @@ module.exports = {
                   }
             });
 
-            writeJson(dbProducts);
+            writeJSON("products.json", dbProducts);
 
             //let newProductsArray = products.filter(product => product.id !== productId)
 
