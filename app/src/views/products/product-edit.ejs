@@ -114,7 +114,10 @@
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="img" class="form-label">Imagen:</label>
-                                                      <input class="input-style" type="file" id="image" name="image" value="<%= productToEdit.image %>">
+                                                      <div class="input-file-container">
+                                                            <p>Agregar Imagen</p>
+                                                            <input class="input-file" type="file" id="image" name="image" value="<%= productToEdit.image %>">
+                                                      </div>                                                      
                                                 </div>
                                                 <div class="button-container">
                                                       <button type="submit" class="btn btn-submit">Guardar</button>
