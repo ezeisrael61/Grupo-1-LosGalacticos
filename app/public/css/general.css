@@ -119,24 +119,41 @@ header.main-header div.main-search .toggle-nav {
       height: 30px;
       margin-right: 5px;
 }
-header.main-header div.main-search input.search {
+header.main-header div.main-search div.div-search input.search {
       /* border: var(--gris-oscuro) 1px solid;
       border-radius: 25px;
       height: 2em; */
       width: 100%;
       margin-right: 0.2em;
-      border: 1px var(--gris-medio) solid;
-      border-radius: 0.7rem;
-      height: 1.8rem;
+      border: none;
+      
       /*  padding: 0 0.5rem;
       outline: none; */
 }
 
-header.main-header div.main-search i {
-      position: absolute;
+header.main-header div.main-search div.div-search i {
+      
       color: var(--bordo);
-      padding-right: 10px;
+      background-color: white;
+      border: none;
 }
+header.main-header div.main-search div.div-search{
+      display: flex;
+      background-color: white;
+      flex-direction:row;
+      width: 100%;
+      border: 1px var(--gris-medio) solid;
+      border-radius: 0.7rem;
+      box-shadow: 0 0 4px rgb(0 0 0 / 50%);
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 10px;
+}
+header.main-header div.main-search div.div-search button.button-search{
+      border: none;
+      background-color: white;
+}
+
 header.main-header nav.main-nav {
       display: none;
       width: 100%;
