@@ -7,6 +7,17 @@ module.exports = {
       login: (req, res) => {
             return res.render("users/login");
       },
+      storeLogin: (req,res) => {
+            let errors = validationResult(req)
+            if (errors.isEmpty()) {
+               res.redirect("/")   
+            }else {
+                  return res.render("users/login",{
+                        errors: errors.mapped()
+                  })
+            }
+            
+      },
       registro: (req, res) => {
             return res.render("users/registro");
       },
