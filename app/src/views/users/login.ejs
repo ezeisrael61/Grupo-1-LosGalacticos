@@ -8,18 +8,22 @@
 
                   <main>
                         <div class="form-container">
-                              <form action="" method="">
+                              <form action="" method="POST">
                                     <div class="form">
                                           <h2>Login</h2>
                                           <p>Inicio de sección</p>
 
                                           <div class="input-container">
                                                 <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                                                <span class="error-message">Debe ingresar su email</span>
+                                                  <span class="error-message">
+                                                      <%= locals.errors && locals.errors.email ? locals.errors.email.msg : null %>
+                                                </span>
                                           </div>
                                           <div class="input-container">
                                                 <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
-                                                <span class="error-message">Debe ingresar su contraseña</span>
+                                                <span class="error-message">
+                                                      <%= locals.errors && locals.errors.pass ? locals.errors.pass.msg : null %>
+                                                </span>
                                           </div>
                                           <div class="check">
                                                 <label for="recordar"> Recordarme </label>
