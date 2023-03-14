@@ -7,7 +7,7 @@ module.exports = {
       login: (req, res) => {
             return res.render("users/login");
       },
-      registro: (req, res) => {
+      register: (req, res) => {
             return res.render("users/registro");
       },
       store: (req, res) => {

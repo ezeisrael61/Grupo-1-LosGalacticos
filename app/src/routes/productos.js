@@ -1,25 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/productosControllers");
-const { upload } = require("../middlewares/upload");
-const productValidator = require("../validator/productsValidator");
+const { carrito, description, inSale, featured, filters } = require("../controllers/productosControllers");
 
-router.get("/carrito", controller.carrito);
-router.get("/descripcion/:id", controller.descripcion);
-router.get("/inSale", controller.inSale);
-router.get("/featured", controller.featured);
+router.get("/carrito", carrito);
+router.get("/descripcion/:id", description);
+router.get("/inSale", inSale);
+router.get("/featured", featured);
 
-/* Agrega producto */
-router.get("/create", controller.create);
-router.post("/", upload.single("image"), productValidator, controller.store);
-
-router.get("/:category", controller.filters);
-
-/* Edit producto */
-router.get("/edit/:id", controller.edit);
-router.put("/edit/:id", upload.single("image"), controller.update);
-
-/*** DELETE ONE PRODUCT***/
-router.delete("/delete/:id", controller.destroy);
+router.get("/:category", filters);
 
 module.exports = router;

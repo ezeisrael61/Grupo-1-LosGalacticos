@@ -1078,15 +1078,15 @@
       "stock": 50
    },
    {
-      "id": 78,
+      "id": 79,
       "name": "tornillo",
       "price": "50",
       "discount": "10",
-      "description": "dasdasdasdas asd asd asd asd asd ",
+      "description": "fgdfgdfgdfg gf df dfg df gdfg ",
       "category": "Climatización",
-      "subcategory": "Riego",
-      "image": "1677435988455_products_.png",
+      "subcategory": "Ventiladores",
+      "image": "1678812174850_products_.png",
       "sold": "0",
-      "stock": "150"
+      "stock": "45"
    }
 ]

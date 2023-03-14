@@ -17,11 +17,13 @@ app.set("views", "./src/views");
 const homeRouter = require("./routes/home");
 const productosRouter = require("./routes/productos");
 const usuariosRouter = require("./routes/usuarios");
+const adminRouter = require("./routes/admin");
 
 /* MODDLEWARES ROUTES */
 app.use("/", homeRouter);
 app.use("/productos", productosRouter);
 app.use("/usuarios", usuariosRouter);
+app.use("/admin", adminRouter);
 
 app.listen(PORT, () =>
       console.log(`Servidor funcionando en puerto ${PORT} 

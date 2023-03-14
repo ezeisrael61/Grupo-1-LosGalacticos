@@ -41,15 +41,16 @@
                                                             </div>
                                                             <div class="button-container">
                                                                   <button class="btn btn-confirm">
-                                                                         <a href="/productos/edit/<%- product.id %>" class= "editarProduc">EDITAR PRODUCTO</a>
+                                                                        <a href="/admin/products/edit/<%- product.id %>" class="editarProduc">EDITAR
+                                                                              PRODUCTO</a>
                                                                   </button>
                                                             </div>
                                                       </div>
                                                 </form>
-                                                
+
                                                 <!--<a href="/productos/delete/<%- product.id %>" class="action-button delete">BORRAR PRODUCTO</a>
                                                 -->
-                                                <form action="/productos/delete/<%- product.id %>?_method=DELETE" method="POST"
+                                                <form action="/admin/products/delete/<%- product.id %>?_method=DELETE" method="POST"
                                                       style="display: inline-flex">
                                                       <button type="submit" class="btn btn-submit">ELIMINAR PRODUCTO</button>
                                                 </form>
