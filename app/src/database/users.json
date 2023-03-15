@@ -15,5 +15,21 @@
       "email": "fsf@mail.com",
       "password": "12345678",
       "avatar": "defauld.png"
+   },
+   {
+      "id": 3,
+      "firstName": "pruebahash",
+      "lastName": "uno",
+      "email": "pruebahash@mail.com",
+      "password": "123456",
+      "avatar": "defauld.png"
+   },
+   {
+      "id": 4,
+      "firstName": "susana",
+      "lastName": "zayas",
+      "email": "susizayas@hotmail.com",
+      "password": "123456",
+      "avatar": "defauld.png"
    }
 ]
