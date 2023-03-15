@@ -5,10 +5,10 @@ const dbProducts = readJSON("products.json");
 
 module.exports = {
       index: (req, res) => {
-            return res.render("admin/adminIndex");
+            return res.render("admin/adminIndex", { session: req.session });
       },
       products: (req, res) => {
-            return res.render("admin/adminproducts", { products: dbProducts });
+            return res.render("admin/adminproducts", { products: dbProducts, session: req.session });
       },
       create: (req, res) => {
             //res.send("pp");
@@ -16,6 +16,7 @@ module.exports = {
             res.render("admin/product-create", {
                   dbcategory: readJSON("categorys.json"),
                   dbSubCategory: readJSON("subCategorys.json"),
+                  session: req.session,
             });
       },
       store: (req, res) => {
@@ -46,6 +47,7 @@ module.exports = {
                         dbSubCategory: readJSON("subCategorys.json"),
                         errors: errors.mapped(),
                         old: req.body,
+                        session: req.session,
                   });
             }
       },
@@ -54,7 +56,7 @@ module.exports = {
             let productToEdit = dbProducts.find((product) => {
                   return product.id === productId;
             });
-            res.render("admin/product-edit", { productToEdit });
+            res.render("admin/product-edit", { productToEdit, session: req.session });
       },
       update: (req, res) => {
             let productId = Number(req.params.id);

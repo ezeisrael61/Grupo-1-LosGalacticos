@@ -10,13 +10,13 @@ const inSale = dbProducts
 
 module.exports = {
       carrito: (req, res) => {
-            res.render("products/carrito", { inSale });
+            res.render("products/carrito", { inSale, session: req.session });
       },
       description: (req, res) => {
             const product = dbProducts.find((product) => {
                   return product.id === Number(req.params.id);
             });
-            res.render("products/descripcion", { product, inSale });
+            res.render("products/descripcion", { product, inSale, session: req.session });
       },
       filters: (req, res) => {
             const category = req.params.category;
@@ -28,7 +28,7 @@ module.exports = {
                         return product.category == category;
                   });
             }
-            res.render("products/filters", { products, category });
+            res.render("products/filters", { products, category, session: req.session });
             //res.send(product);
       },
       inSale: (req, res) => {
@@ -36,13 +36,25 @@ module.exports = {
             const products = dbProducts.filter((product) => {
                   return product.discount > 0;
             });
-            res.render("products/filters", { products, category });
+            res.render("products/filters", { products, category, session: req.session });
       },
       featured: (req, res) => {
             const category = "✨PRODUCTOS DESTACADOS ✨";
             const products = dbProducts.filter((product) => {
                   return product.sold > 50;
             });
-            res.render("products/filters", { products, category });
+            res.render("products/filters", { products, category, session: req.session });
+      },
+      buscar: (req, res) => {
+            let valor = req.query.valor;
+            products = dbProducts.filter((product) => {
+                  product.name = product.name.toLowerCase();
+                  if (product.name.includes(valor.toLowerCase())) {
+                        return product;
+                  }
+            });
+
+            category = "all";
+            res.render("products/filters", { products, category, session: req.session });
       },
 };

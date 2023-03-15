@@ -5,7 +5,7 @@ const { readJSON } = require("../database");
 const users = readJSON("users.json");
 
 module.exports = [
-      check("nombre").notEmpty().withMessage("El nombre es obligatorio").bail().isLength({ min: 3, max: 20 }).withMessage("En nombre debe tener entre 3 y 20 caracteres"),
+      check("nombre").notEmpty().withMessage("El nombre es obligatorio").bail().isLength({ min: 3, max: 30 }).withMessage("En nombre debe tener entre 3 y 20 caracteres"),
       check("apellido").notEmpty().withMessage("El apellido es obligatorio").bail().isLength({ min: 3, max: 20 }).withMessage("En apellido debe tener entre 3 y 20 caracteres"),
 
       check("email").notEmpty().withMessage("El email es obligatorio").bail().isEmail().withMessage("Email invalido"),

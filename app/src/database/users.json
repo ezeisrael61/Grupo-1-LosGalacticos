@@ -1,28 +1,38 @@
 [
-      {
-            "id": 1,
-            "firstName": "",
-            "lastName": "",
-            "email": "",
-            "password": "",
-            "avata": "",
-            "typeOfAccess": ""
-      },
-      {
-            "id": 2,
-            "firstName": "fff",
-            "lastName": "maa",
-            "email": "fsf@mail.com",
-            "password": "12345678",
-            "avatar": "defauld.png"
-      },
-      {
-            "id": 1,
-            "firstName": "nedase",
-            "lastName": "admin",
-            "email": "admin@mail.com",
-            "password": "123456",
-            "avata": "defauld.png",
-            "typeOfAccess": "admin"
-      }
+   {
+      "id": 1,
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "avatar": "",
+      "typeOfAccess": "user"
+   },
+   {
+      "id": 2,
+      "firstName": "fff",
+      "lastName": "maa",
+      "email": "fsf@mail.com",
+      "password": "12345678",
+      "avatar": "default-image.png",
+      "typeOfAccess": "user"
+   },
+   {
+      "id": 1,
+      "firstName": "nedase",
+      "lastName": "admin",
+      "email": "admin@mail.com",
+      "password": "123456",
+      "avatar": "1678838731508_avatar.png",
+      "typeOfAccess": "admin"
+   },
+   {
+      "id": 2,
+      "firstName": "Nestor Daniel Sebastian",
+      "lastName": "Faliani Martinez",
+      "email": "nedase@gmail.com",
+      "password": "123456",
+      "avatar": "1678839166246_avatar.png",
+      "typeOfAccess": "user"
+   }
 ]
