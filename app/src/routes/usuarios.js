@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { login, storeLogin, logout, register, store } = require("../controllers/usuariosControllers");
+const { login, storeLogin, logout, register, store, profile, profileEdit, profileUpdate } = require("../controllers/usuariosControllers");
 const { upload } = require("../middlewares/upload");
 const usersValidator = require("../validator/usersValidator");
 const loginValidator = require("../validator/loginValidator");
+const validatorUsersUpdate = require("../validator/validatorUsersUpdate");
 const userNotSessionCheck = require("../middlewares/userNotSessionCheck");
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
 
@@ -14,8 +15,9 @@ router.get("/logout", logout);
 router.get("/register", userInSessionCheck, register);
 
 /* Perfil de Usuario */
-//router.get("/profile", userNotSessionCheck, profile);
-//router.get("/profile/edit", userNotSessionCheck, profileEdit);
+router.get("/profile", userNotSessionCheck, profile);
+router.get("/profile/edit", userNotSessionCheck, profileEdit);
+router.put("/profile/edit", upload.single("image"), validatorUsersUpdate, profileUpdate);
 
 router.post("/register", upload.single("image"), usersValidator, store);
 

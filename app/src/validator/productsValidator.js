@@ -12,9 +12,7 @@ module.exports = [
       check("img").custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = [".jpg,", ".png", ".gif"];
-            if (!file) {
-                  throw new Error("Tiene que subir una imagen");
-            } else if (!acceptedExtensions.includes(path.extname(file.originalname))) {
+            if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
                   throw new Error("La imagen tiene que tener extension .jpg .png .gif");
             }
             return true;

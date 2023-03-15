@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head')%>
+
+      <body>
+            <%- include('../partials/header')%>
+                  <main class="usersForm-container">
+
+                        <h3 class="userTitle">Edita tu perfil</h3>
+                        <div class="form-container">
+                              <form action="/usuarios/profile/edit/?_method=PUT" method="POST" enctype="multipart/form-data">
+                                    <div class="form">
+                                          <div class="input-container">
+                                                <input class="input-style" type="text" name="firstName" placeholder="Nombre"
+                                                      value="<%= locals.old ? old.name : user.firstName %>">
+                                                <% if (locals.errors && errors.firstName) { %>
+                                                      <small class="text-danger">
+                                                            <%= errors.firstName.msg %>
+                                                      </small>
+                                                      <% } %>
+                                          </div>
+                                          <div class="input-container">
+                                                <input class="input-style" type="text" name="lastName" placeholder="Apellido"
+                                                      value="<%= locals.old ? old.last_name : user.lastName %>">
+                                                <% if (locals.errors && errors.lastName) { %>
+                                                      <small class="text-danger">
+                                                            <%= errors.lastName.msg %>
+                                                      </small>
+                                                      <% } %>
+                                          </div>
+                                          <div class="input-container">
+                                                <input class="input-style" type="email" name="email" placeholder="Ingresá tu email" readonly
+                                                      value="<%= user.email %>">
+                                                <% if (locals.errors && errors.email) { %>
+                                                      <small class="text-danger">
+                                                            <%= errors.email.msg %>
+                                                      </small>
+                                                      <% } %>
+                                          </div>
+                                          <div class="input-container">
+                                                <input class="input-style" type="text" name="tel" placeholder="Ingresá tu teléfono"
+                                                      value="<%= user.tel ? user.tel : "" %>">
+                                          </div>
+                                          <div class="input-container">
+                                                <input type="text" name="address" placeholder="Domicilio"
+                                                      value="<%= user.address ? user.address : "" %>">
+                                          </div>
+                                          <div class="input-container">
+                                                <input class="input-style" type="text" name="postal_code" placeholder="Código postal"
+                                                      value="<%= user.postal_code ? user.postal_code : "" %>">
+                                          </div>
+                                          <div class="input-container">
+                                                <select name="province" id="">
+                                                      <option value="">Provincia</option>
+                                                </select>
+                                          </div>
+                                          <div class="input-container">
+                                                <select name="city" id="">
+                                                      <option value="">Localidad</option>
+                                                </select>
+                                          </div>
+                                          <div class="input-container">
+                                                <p>Cambiar foto de perfil</p>
+                                                <input type="file" name="avatar">
+                                          </div>
+                                          <div class="button-container">
+                                                <button type="submit" class="btn btn-submit">
+                                                      GUARDAR
+                                                </button>
+                                          </div>
+                                    </div>
+                              </form>
+                        </div>
+                  </main>
+                  <%- include("../partials/footer") %>
+                        <%- include('../partials/scripts')%>
+      </body>
+
+</html>

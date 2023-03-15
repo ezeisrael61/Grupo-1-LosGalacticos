@@ -11,8 +11,6 @@ module.exports = {
             return res.render("admin/adminproducts", { products: dbProducts, session: req.session });
       },
       create: (req, res) => {
-            //res.send("pp");
-
             res.render("admin/product-create", {
                   dbcategory: readJSON("categorys.json"),
                   dbSubCategory: readJSON("subCategorys.json"),
@@ -34,7 +32,7 @@ module.exports = {
                         description: req.body.description,
                         category: req.body.category,
                         subcategory: req.body.subcategory,
-                        image: req.file ? req.file.filename : "defauld.png",
+                        image: req.file ? req.file.filename : "default-image.png",
                         sold: req.body.sold,
                         stock: req.body.stock,
                   };
@@ -60,21 +58,34 @@ module.exports = {
       },
       update: (req, res) => {
             let productId = Number(req.params.id);
-            dbProducts.forEach((product) => {
-                  if (product.id === productId) {
-                        product.name = req.body.name;
-                        product.price = req.body.price;
-                        product.discount = req.body.discount;
-                        product.description = req.body.description;
-                        product.category = req.body.category;
-                        product.subcategory = req.body.subcategory;
-                        product.image = req.file ? req.file.filename : product.image;
-                        product.sold = req.body.sold;
-                        product.stock = req.body.stock;
-                  }
-            }),
-                  writeJSON("products.json", dbProducts);
-            res.redirect("/");
+            const errors = validationResult(req);
+            if (errors.isEmpty()) {
+                  dbProducts.forEach((product) => {
+                        if (product.id === productId) {
+                              product.name = req.body.name;
+                              product.price = req.body.price;
+                              product.discount = req.body.discount;
+                              product.description = req.body.description;
+                              product.category = req.body.category;
+                              product.subcategory = req.body.subcategory;
+                              product.image = req.file ? req.file.filename : product.image;
+                              product.sold = req.body.sold;
+                              product.stock = req.body.stock;
+                        }
+                  }),
+                        writeJSON("products.json", dbProducts);
+                  res.redirect("/");
+            } else {
+                  let productToEdit = dbProducts.find((product) => {
+                        return product.id === productId;
+                  });
+                  res.render("admin/product-edit", {
+                        productToEdit,
+                        session: req.session,
+                        errors: errors.mapped(),
+                        old: req.body,
+                  });
+            }
       },
       // Delete - Delete one product from DB
       destroy: (req, res) => {
@@ -90,13 +101,6 @@ module.exports = {
             });
 
             writeJSON("products.json", dbProducts);
-
-            //let newProductsArray = products.filter(product => product.id !== productId)
-
-            // sobreescribo el json con el array de productos modificado
-            //writeJson(newProductsArray)
-
-            // retorno un mensaje de exito
             res.redirect("/");
       },
 };

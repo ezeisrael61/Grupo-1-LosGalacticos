@@ -1076,5 +1076,17 @@
       ],
       "sold": 5,
       "stock": 50
+   },
+   {
+      "id": 78,
+      "name": "tornillo",
+      "price": "50",
+      "discount": "10",
+      "description": "sdf sdf sdf sd  sd fdg dfnvnbvnbvng dfg dfg ",
+      "category": "Eléctricidad",
+      "subcategory": "Ventiladores",
+      "image": "1678898085925_Eléctricidad.png",
+      "sold": "0",
+      "stock": "120"
    }
 ]
