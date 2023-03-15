@@ -35,9 +35,10 @@ module.exports = [
 
       check("image").custom((value, { req }) => {
             let file = req.file;
-            let acceptedExtensions = [".jpg,", ".png", ".gif"];
+            let acceptedExtensions = [".jpg", ".png", ".gif", ".webp"];
+            console.log(path.extname(file.originalname));
             if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
-                  throw new Error("El avatar tiene que tener extension .jpg .png .gif");
+                  throw new Error("El avatar tiene que tener extension .jpg .png .gif .webp");
             }
             return true;
       }),
