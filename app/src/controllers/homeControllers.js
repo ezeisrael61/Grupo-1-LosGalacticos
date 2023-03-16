@@ -1,5 +1,5 @@
 /* const dbProducts = require("../database/index"); */
-const { readJSON, writeJSON } = require("../database");
+const { readJSON } = require("../database");
 
 const dbProducts = readJSON("products.json");
 
@@ -16,6 +16,6 @@ module.exports = {
                   })
                   .slice(0, 5);
             const imageMain = dbProducts;
-            return res.render("home", { featured, inSale, imageMain });
+            return res.render("home", { featured, inSale, imageMain, session: req.session });
       },
 };

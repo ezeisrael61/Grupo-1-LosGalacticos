@@ -15,7 +15,7 @@
 
                                           <div class="input-container">
                                                 <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                                                  <span class="error-message">
+                                                <span class="error-message">
                                                       <%= locals.errors && locals.errors.email ? locals.errors.email.msg : null %>
                                                 </span>
                                           </div>
@@ -30,11 +30,10 @@
                                                 <input type="checkbox" name="recordar" id="recordar">
                                           </div>
                                           <div class="button-container">
-                                                <span class="error-message">Credenciales inválidas</span>
                                                 <button type="submit" class="btn btn-submit">Ingresar</button>
                                           </div>
                                           <span><a href="">¿Olvidaste tu contraseña?</a></span>
-                                          <span><a href="/usuarios/registro">Aún no tengo cuenta</a></span>
+                                          <span><a href="/usuarios/register">Aún no tengo cuenta</a></span>
 
                                     </div>
                               </form>
@@ -43,11 +42,11 @@
 
                   <%- include("../partials/footer") %>
 
-                        <script src="js/index.js"></script>
+
 
 
                         <div>
-
+                              <%- include("../partials/scripts") %>
 
       </body>
 

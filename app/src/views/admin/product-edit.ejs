@@ -9,31 +9,40 @@
                               <div class="form-container">
                                     <h2>Editar Producto</h2>
                                     <p>Ingresá los datos a modificar</p>
-                                    <form action="/productos/edit/<%= productToEdit.id  %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                    <form action="/admin/products/edit/<%= productToEdit.id  %>?_method=PUT" method="POST"
+                                          enctype="multipart/form-data">
                                           <div class="form">
                                                 <div class="input-container">
                                                       <label for="name" class="form-label">Nombre:</label>
                                                       <input class="input-style" type="text" name="name" placeholder="Ej: Pico & Pala"
                                                             value="<%= productToEdit.name  %>">
-                                                      <span class="error-message">Debe ingresar su nombre</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.name ? locals.errors.name.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="price" class="form-label">Precio:</label>
                                                       <input class="input-style" type="number" name="price" placeholder="Ej: 2500"
                                                             value="<%= productToEdit.price  %>">
-                                                      <span class="error-message">Debe ingresar el precio</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.price ? locals.errors.price.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="discount" class="form-label">Descuento:</label>
                                                       <input class="input-style" type="number" name="discount" placeholder="Ej: 10"
                                                             value="<%= productToEdit.discount  %>">
-                                                      <span class="error-message">Debe ingresar el descuento %</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.discount ? locals.errors.discount.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="description" class="form-label">Descripción:</label>
                                                       <textarea name="description" id="description" class="textarea-style"
                                                             placeholder="Ingrese la descripción"><%= productToEdit.description %></textarea>
-                                                      <span class="error-message">Debe ingresar la descripción del producto</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.description ? locals.errors.description.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="category" class="form-label">Categoría:</label>
@@ -60,6 +69,9 @@
                                                                   >Ferretería
                                                             </option>
                                                       </select>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.category ? locals.errors.category.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="subcategory" class="form-label">SubCategoria:</label>
@@ -99,25 +111,36 @@
                                                                   && "selected" %>
                                                                   >Adornos y Decoración</option>
                                                       </select>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="sold" class="form-label">Ventas:</label>
                                                       <input class="input-style" type="number" name="sold" placeholder="Ej: 0"
                                                             value="<%= productToEdit.sold  %>">
-                                                      <span class="error-message">Debe ingresar la cantidad vendida</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.sold ? locals.errors.sold.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="stock" class="form-label">Stock:</label>
                                                       <input class="input-style" type="number" name="stock" placeholder="Ej: 150"
                                                             value="<%= productToEdit.stock  %>">
-                                                      <span class="error-message">Debe ingresar el stock</span>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.stock ? locals.errors.stock.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="img" class="form-label">Imagen:</label>
                                                       <div class="input-file-container">
                                                             <p>Agregar Imagen</p>
-                                                            <input class="input-file" type="file" id="image" name="image" value="<%= productToEdit.image %>">
-                                                      </div>                                                      
+                                                            <input class="input-file" type="file" id="image" name="image"
+                                                                  value="<%= productToEdit.image %>">
+                                                      </div>
+                                                      <span class="error-message">
+                                                            <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="button-container">
                                                       <button type="submit" class="btn btn-submit">Guardar</button>
@@ -130,7 +153,7 @@
 
                         <%- include("../partials/footer") %>
 
-                              <script src="/js/script.js"></script>
+                              <%- include("../partials/scripts") %>
             </div>
       </body>
 

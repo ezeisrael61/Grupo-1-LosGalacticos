@@ -11,9 +11,9 @@
 
             </div>
             <nav class="main-nav-rigth">
-                  <ul>
+                  <ul class="d-flex">
                         <li>
-                              <a href="/productos/create"><i class="fa-solid fa-circle-up"></i></a>
+                              <a href="/admin/products/create"><i class="fa-solid fa-circle-up"></i></a>
                               <p>Vender</p>
                         </li>
                         <li>
@@ -21,24 +21,52 @@
                               <p>$ 0.00</p>
                         </li>
                         <li>
-                              <a href="/usuarios/login">
-                                    <i class="fa-solid fa-user"></i>
-                                    <p>Mi Cuenta</p>
-                              </a>
+                              <% if (typeof session.user !="undefined" ){ %>
+                                    <div class="d-flex align-items-center">
+                                          <!-- Avatar -->
+
+                                          <div class="dropdown">
+                                                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                                                      id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                                      <img src="/img/avatar/<%= session.user.avatar %>" class="rounded-circle" height="30" width="30"
+                                                            alt="Black and White Portrait of a Man" loading="lazy" />
+                                                      </i><span class="session"></span>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                                                      <li>
+                                                            <a class="dropdown-item" href="/usuarios/profile"><i class="fa-solid fa-user"></i> Mi
+                                                                  Perfil</a>
+                                                      </li>
+                                                      <li>
+                                                            <a class="dropdown-item" href="/usuarios/logout"><i
+                                                                        class="fa-solid fa-arrow-right-from-bracket"></i>
+                                                                  Cerrar</a>
+                                                      </li>
+                                                </ul>
+
+                                          </div>
+                                    </div>
+                                    <% } else { %>
+                                          <a href="/usuarios/login"><i class="fa-solid fa-circle-up"></i></a>
+                                          <p>Login</p>
+
+                                          <% } %>
                         </li>
                   </ul>
             </nav>
+
       </div>
+
+
       <div class="main-search">
             <a href="#" class="toggle-nav">
                   <span class="fas fa-bars"></span>
             </a>
-            <div class="div-search">
-            <input type="search" class="search" placeholder=" Buscar en Pico & Pala">
-             <button class="button-search"><i class='fa-solid fa-magnifying-glass'></i></button>
-            </div>
+            <form action="/productos/buscar" method="GET">
+                  <input type="search" class="search" name="valor" placeholder=" Buscar en Pico & Pala">
+                  <button class="button-search" type="submit"><i class='fa-solid fa-magnifying-glass'></i></button>
+            </form>
       </div>
-
 
       <nav class="main-nav">
             <div class="btn-close-container">
@@ -54,5 +82,6 @@
                   <li><a href="/productos/Ferretería">Ferretería</a></li>
             </ul>
       </nav>
+
 
 </header>

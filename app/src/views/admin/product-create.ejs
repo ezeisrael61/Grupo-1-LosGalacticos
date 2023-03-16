@@ -8,7 +8,7 @@
                         <div class="form-container">
                               <h2>Agregar Producto</h2>
                               <p>Ingresá los datos</p>
-                              <form action="/productos/" method="POST" enctype="multipart/form-data">
+                              <form action="/admin/products/create" method="POST" enctype="multipart/form-data">
                                     <div class="form">
                                           <div class="input-container">
                                                 <label for="name" class="form-label">Nombre:</label>
@@ -110,7 +110,7 @@
 
                   <%- include("../partials/footer") %>
 
-                        <script src="/js/script.js"></script>
+                        <%- include("../partials/scripts") %>
       </body>
 
 </html>
