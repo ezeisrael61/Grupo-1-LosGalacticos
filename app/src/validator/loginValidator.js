@@ -20,7 +20,7 @@ module.exports = [
             .custom((value, { req }) => {
                   let user = users.find((user) => user.email === req.body.email);
 
-                  return bcrypt.compareSync(user.password, value);
+                  return bcrypt.compareSync(value, user.password);
             })
             .withMessage("Contraseña inválida"),
 ];
