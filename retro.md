@@ -39,3 +39,26 @@ Hacer menos:👎
 
 Dejar de hacer:✋
 - Dejar de ser pasivos. ✔
+
+
+## ➤ Retrospectiva Estrella Sprint 5
+
+Empezar a hacer: 💪
+- Llegar a cada daily con algo avanzado del sprint✔
+
+
+Hacer más: 💪💪
+- Buscar mejoras esteticas y funcionales para el proyecto✔
+
+Seguir haciendo:💪💪💪
+- Comunicación fluida. ✔
+- Cumplir tiempos de entrega. ✔
+- Tomar mas protagonismo en lo grupal. ✔
+- ser mas independientes en las modulos que nos toca en trello. ✔
+- seguir adelantando cosas. ✔
+
+Hacer menos:👎
+
+
+Dejar de hacer:✋
+- Procrastinar. ✔
