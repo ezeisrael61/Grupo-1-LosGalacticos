@@ -1,15 +1,16 @@
-const { readJSON } = require("../database");
+//const { readJSON } = require("../database");
 
-const dbProducts = readJSON("products.json");
+//const dbProducts = readJSON("products.json");
 
-const inSale = dbProducts
+/*const inSale = dbProducts
       .filter((product) => {
             return product.discount > 0;
       })
-      .slice(0, 5);
+      .slice(0, 5);*/
+const db= require("../database/models");
 
 module.exports = {
-      carrito: (req, res) => {
+      /*carrito: (req, res) => {
             res.render("products/carrito", { inSale, session: req.session });
       },
       description: (req, res) => {
@@ -56,5 +57,5 @@ module.exports = {
 
             category = "all";
             res.render("products/filters", { products, category, session: req.session });
-      },
+      },*/
 };

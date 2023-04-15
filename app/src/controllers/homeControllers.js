@@ -1,11 +1,16 @@
 /* const dbProducts = require("../database/index"); */
-const { readJSON } = require("../database");
+//const { readJSON } = require("../database");
 
-const dbProducts = readJSON("products.json");
-
+//const dbProducts = readJSON("products.json");
+const db =require("../database/models")
 module.exports = {
       index: (req, res) => {
-            const featured = dbProducts
+            db.Products.findAll()
+            .then((products)=> {
+                  return res.render("pruebaproduct", {products:products})
+            })
+            
+            /*const featured = dbProducts
                   .filter((product) => {
                         return product.sold > 50;
                   })
@@ -16,6 +21,7 @@ module.exports = {
                   })
                   .slice(0, 5);
             const imageMain = dbProducts;
-            return res.render("home", { featured, inSale, imageMain, session: req.session });
+            return res.render("home", { featured, inSale, imageMain, session: req.session });*/
+                 
       },
 };
