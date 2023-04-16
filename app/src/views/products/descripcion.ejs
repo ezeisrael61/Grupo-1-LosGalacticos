@@ -17,7 +17,8 @@
                                     </div>
 
                                     <div class="image">
-                                          <img src="/img/<%- product.category %>/<%- product.image ? product.image : 'defauld.png' %>" alt="">
+                                          <img src="/img/<%- product.subcategory.category.name %>/<%- product.images[0].name ? product.images[0].name: 'defauld.png' %>"
+                                                alt="">
                                     </div>
 
                                     <div class="compra-container">
@@ -41,16 +42,17 @@
                                                             </div>
                                                             <div class="button-container">
                                                                   <button class="btn btn-confirm">
-                                                                        <a href="/admin/products/edit/<%- product.id %>" class="editarProduc">EDITAR
+                                                                        <a href="/admin/products/edit/<%- product.idProduct %>"
+                                                                              class="editarProduc">EDITAR
                                                                               PRODUCTO</a>
                                                                   </button>
                                                             </div>
                                                       </div>
                                                 </form>
 
-                                                <!--<a href="/productos/delete/<%- product.id %>" class="action-button delete">BORRAR PRODUCTO</a>
+                                                <!--<a href="/productos/delete/<%- product.idProduct %>" class="action-button delete">BORRAR PRODUCTO</a>
                                                 -->
-                                                <form action="/admin/products/delete/<%- product.id %>?_method=DELETE" method="POST"
+                                                <form action="/admin/products/delete/<%- product.idProduct %>?_method=DELETE" method="POST"
                                                       style="display: inline-flex">
                                                       <button type="submit" class="btn btn-submit">ELIMINAR PRODUCTO</button>
                                                 </form>

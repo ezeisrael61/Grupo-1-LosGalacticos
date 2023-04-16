@@ -7,31 +7,30 @@ el cual itero con un forEach y cargo cada campo donde corresponde  -->
                   <%- title %>
             </h3>
       </div>
-      <% for( let i=0; i < products.length; i++ ) { %>
 
+      <% products.forEach((product)=> { %>
             <article class="product">
                   <div class="product-container">
-                        <a class="photo-container" href="/productos/descripcion/<%- products[i].idProduct  %> ">
-
-                              <img class="photo" src="/img/<%- products[i].subcategory.category.name %>/<%- products[i].images[0].name %>" alt="">
+                        <a class="photo-container" href="/productos/descripcion/<%- product.id  %> ">
+                              <img class="photo" src="/img/<%- product.category  %>/<%- product.image %>" alt="">
                         </a>
 
 
                         <div class="valoracion">
-                              <% if (products[i].sold>5 & products[i].sold<=10) { %>
+                              <% if (product.sold>5 & product.sold<=10) { %>
                                           <i class="fa-sharp fa-solid fa-star"></i>
-                                          <% } else if (products[i].sold>10 & products[i].sold<=20) { %>
+                                          <% } else if (product.sold>10 & product.sold<=20) { %>
                                                       <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i>
-                                                      <% } else if (products[i].sold>20 & products[i].sold<=30) { %>
+                                                      <% } else if (product.sold>20 & product.sold<=30) { %>
                                                                   <i class="fa-sharp fa-solid fa-star"></i><i class="fa-sharp fa-solid fa-star"></i><i
                                                                         class="fa-sharp fa-solid fa-star"></i>
-                                                                  <% } else if (products[i].sold>30 & products[i].sold<=40) { %>
+                                                                  <% } else if (product.sold>30 & product.sold<=40) { %>
                                                                               <i class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i>
-                                                                              <% } else if (products[i].sold>40 &
-                                                                                    products[i].sold
+                                                                              <% } else if (product.sold>40 &
+                                                                                    product.sold
                                                                                     >50){ %>
                                                                                     <i class="fa-sharp fa-solid fa-star"></i><i
                                                                                           class="fa-sharp fa-solid fa-star"></i><i
@@ -41,29 +40,19 @@ el cual itero con un forEach y cargo cada campo donde corresponde  -->
                                                                                     <% } %>
                         </div>
 
-                        <% if (products[i].discount>0) { %>
+                        <% if (product.discount>0) { %>
                               <div class="descuento">
-                                    <p>-<%- products[i].discount %>%</p>
+                                    <p>-<%- product.discount %>%</p>
                               </div>
                               <% } %>
 
                   </div>
-                  <h2 class="name"><%- products[i].name %></h2>
-                  <p class="price">$ <%- products[i].price %></p>
+                  <h2 class="name"><%- product.name %></h2>
+                  <p class="price">$ <%- product.price %></p>
                   <p class="send">Envio Gratis</p>
             </article>
 
-
-
-
-
-
-            <% } %>
-
-
-
-
-
+            <% }) %>
 
 
 
