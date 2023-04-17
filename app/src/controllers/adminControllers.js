@@ -1,19 +1,23 @@
-const { validationResult } = require("express-validator");
-const { readJSON, writeJSON } = require("../database");
-
-const dbProducts = readJSON("products.json");
+const { Product, Category, Sequelize } = require("../database/models");
+const { Op } = Sequelize;
 
 module.exports = {
       index: (req, res) => {
+            Product.findAll({
+                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+            })
             return res.render("admin/adminIndex", { session: req.session });
       },
       products: (req, res) => {
-            return res.render("admin/adminproducts", { products: dbProducts, session: req.session });
+            Product.findAll({
+                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+            })
+            .then((products)=>{
+                              return res.render("admin/adminproducts",  { products,session: req.session });
+            })
       },
       create: (req, res) => {
             res.render("admin/product-create", {
-                  dbcategory: readJSON("categorys.json"),
-                  dbSubCategory: readJSON("subCategorys.json"),
                   session: req.session,
             });
       },
@@ -50,11 +54,33 @@ module.exports = {
             }
       },
       edit: (req, res) => {
-            let productId = Number(req.params.id);
+            Subcategory.findAll({
+                  //include: [{association:"products"}, { association: "category"}],
+            }).then((pp)=>{
+                  return res.send(pp)
+            } )
+            /*const PRODUCT_ALL = Product.findByPk(req.params.id, {
+                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+            });
+            const CATEGORY_ALL = Category.findAll({
+                  include: [{ association: "subcategories"}],
+            });
+            const SUBCATEGORY_ALL = Subcategory.findAll({
+                  include: [{association:"products"}, { association: "category"}],
+            });
+
+
+            Promise.all([PRODUCT_ALL, CATEGORY_ALL,SUBCATEGORY_ALL])
+            .then(([productToEdit, category, subcategory ]) => {
+                  res.render("admin/product-edit", { productToEdit, category, subcategory, session: req.session });
+                  
+            })
+                  .catch((error) => console.log(error));*/
+            /*let productId = Number(req.params.id);
             let productToEdit = dbProducts.find((product) => {
                   return product.id === productId;
             });
-            res.render("admin/product-edit", { productToEdit, session: req.session });
+            res.render("admin/product-edit", { productToEdit, session: req.session });*/
       },
       update: (req, res) => {
             let productId = Number(req.params.id);

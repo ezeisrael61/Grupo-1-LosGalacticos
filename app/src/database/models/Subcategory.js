@@ -12,6 +12,10 @@ module.exports = (sequelize, dataTypes) => {
                   type: dataTypes.STRING(45),
                   allowNull: false,
             },
+            idCategory:{
+                  type:dataTypes.INTEGER(11),
+                  allowNull:false,
+            }
       };
 
       const config = {

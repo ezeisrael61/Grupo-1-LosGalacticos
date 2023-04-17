@@ -9,7 +9,7 @@
                               <div class="form-container">
                                     <h2>Editar Producto</h2>
                                     <p>Ingresá los datos a modificar</p>
-                                    <form action="/admin/products/edit/<%= productToEdit.id  %>?_method=PUT" method="POST"
+                                    <form action="/admin/products/edit/<%= productToEdit.idProduct  %>?_method=PUT" method="POST"
                                           enctype="multipart/form-data">
                                           <div class="form">
                                                 <div class="input-container">
@@ -44,77 +44,31 @@
                                                             <%= locals.errors && locals.errors.description ? locals.errors.description.msg : null %>
                                                       </span>
                                                 </div>
-                                                <div class="input-container">
-                                                      <label for="category" class="form-label">Categoría:</label>
-                                                      <select name="category" id="category" class="select-style">
-                                                            <option value="Climatización" <%=productToEdit.category==="Climatización" && "selected" %>
-                                                                  >Climatización
-                                                            </option>
-                                                            <option value="Eléctricidad" <%=productToEdit.category==="Eléctricidad" && "selected" %>
-                                                                  >Eléctricidad
-                                                            </option>
-                                                            <option value="Herramientas" <%=productToEdit.category==="Herramientas" && "selected" %>
-                                                                  >Herramientas
-                                                            </option>
-                                                            <option value="Jardín y piscinas" <%=productToEdit.category==="Jardín y piscinas"
-                                                                  && "selected" %>
-                                                                  >Jardín y
-                                                                  piscinas</option>
-                                                            <option value="Para el hogar" <%=productToEdit.category==="Para el hogar" && "selected" %>
-                                                                  >Para
-                                                                  el
-                                                                  hogar
-                                                            </option>
-                                                            <option value="Ferretería" <%=productToEdit.category==="Ferretería" && "selected" %>
-                                                                  >Ferretería
-                                                            </option>
+                                                <div class="input-conteiner">
+                                                      <label for="category" class="form-label">category:</label>
+                                                      <select name="category" id="category">
+                                                            <% for(let i = 0; i<category.length;i++) {%>
+                                                                  <% if (category[i].idCategory == productToEdit.subcategory.category.idCategory) { %>
+                                                                   <option value="<%= category[i].idCategory %>" selected> <%= category[i].name %></option>
+                                                                  <%}else {%>
+                                                                        <option value="<%= category[i].idCategory %>"> <%= category[i].name %></option>
+                                                                   <% } %>
+                                                            <% } %>
                                                       </select>
-                                                      <span class="error-message">
-                                                            <%= locals.errors && locals.errors.category ? locals.errors.category.msg : null %>
-                                                      </span>
                                                 </div>
-                                                <div class="input-container">
-                                                      <label for="subcategory" class="form-label">SubCategoria:</label>
-                                                      <select name="subcategory" id="subcategory" class="select-style">
-                                                            <option value="Aire acondicionado" <%=productToEdit.subcategory==="Aire acondicionado"
-                                                                  && "selected" %>>Aire
-                                                                  acondicionado
-                                                            </option>
-                                                            <option value="Ventiladores" <%=productToEdit.subcategory==="Ventiladores" && "selected"
-                                                                  %>
-                                                                  >Ventiladores
-                                                            </option>
-                                                            <option value="Estufas y Calefactores"
-                                                                  <%=productToEdit.subcategory==="Estufas y Calefactores" && "selected" %>>Estufas y
-                                                                  Calefactores</option>
-                                                            <option value="Muebles para exterior"
-                                                                  <%=productToEdit.subcategory==="Muebles para exterior" && "selected" %>>Muebles para
-                                                                  exterior</option>
-                                                            <option value="Piscinas y accesorios"
-                                                                  <%=productToEdit.subcategory==="Piscinas y accesorios" && "selected" %>>Piscinas y
-                                                                  accesorios</option>
-                                                            <option value="Riego" <%=productToEdit.subcategory==="Riego" && "selected" %>>Riego
-                                                            </option>
-                                                            <option value="Insecticidas y repelentes"
-                                                                  <%=productToEdit.subcategory==="Insecticidas y repelentes" && "selected" %>
-                                                                  >Insecticidas y
-                                                                  repelentes</option>
-                                                            <option value="Cuidado y lavandería" <%=productToEdit.subcategory==="Cuidado y lavandería"
-                                                                  && "selected" %>
-                                                                  >Cuidado y lavandería</option>
-                                                            <option value="Bazar y Cocina" <%=productToEdit.subcategory==="Bazar y Cocina"
-                                                                  && "selected" %>
-                                                                  >Bazar
-                                                                  y
-                                                                  Cocina</option>
-                                                            <option value="Adornos y Decoración" <%=productToEdit.subcategory==="Adornos y Decoración"
-                                                                  && "selected" %>
-                                                                  >Adornos y Decoración</option>
+                                                <div class="input-conteiner">
+                                                      <label for="subcategory" class="form-label">Subcategory:</label>
+                                                      <select name="subcategory" id="subcategory">
+                                                            <% for(let i = 0; i<subcategory.length;i++) {%>
+                                                                  <% if (subcategory[i].idSubCategory == productToEdit.subcategory.idSubCategory) { %>
+                                                                   <option value="<%= subcategory[i].idSubCategory %>" selected> <%= subcategory[i].name %></option>
+                                                                  <%}else {%>
+                                                                        <option value="<%= subcategory[i].idSubCategory %>"> <%= subcategory[i].name %></option>
+                                                                   <% } %>
+                                                            <% } %>
                                                       </select>
-                                                      <span class="error-message">
-                                                            <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
-                                                      </span>
                                                 </div>
+                                               
                                                 <div class="input-container">
                                                       <label for="sold" class="form-label">Ventas:</label>
                                                       <input class="input-style" type="number" name="sold" placeholder="Ej: 0"
@@ -136,7 +90,7 @@
                                                       <div class="input-file-container">
                                                             <p>Agregar Imagen</p>
                                                             <input class="input-file" type="file" id="image" name="image"
-                                                                  value="<%= productToEdit.image %>">
+                                                                  value="<%= productToEdit.images[0].name %>">
                                                       </div>
                                                       <span class="error-message">
                                                             <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>
