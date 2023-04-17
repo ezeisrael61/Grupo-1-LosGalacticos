@@ -1,4 +1,4 @@
-const { Product, Category, Sequelize } = require("../database/models");
+const { Product, Category,Subcategory, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
@@ -54,12 +54,8 @@ module.exports = {
             }
       },
       edit: (req, res) => {
-            Subcategory.findAll({
-                  //include: [{association:"products"}, { association: "category"}],
-            }).then((pp)=>{
-                  return res.send(pp)
-            } )
-            /*const PRODUCT_ALL = Product.findByPk(req.params.id, {
+            
+            const PRODUCT_ALL = Product.findByPk(req.params.id, {
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
             });
             const CATEGORY_ALL = Category.findAll({
@@ -75,7 +71,7 @@ module.exports = {
                   res.render("admin/product-edit", { productToEdit, category, subcategory, session: req.session });
                   
             })
-                  .catch((error) => console.log(error));*/
+                  .catch((error) => console.log(error));
             /*let productId = Number(req.params.id);
             let productToEdit = dbProducts.find((product) => {
                   return product.id === productId;
