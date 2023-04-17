@@ -17,9 +17,21 @@ module.exports = {
             })
       },
       create: (req, res) => {
-            res.render("admin/product-create", {
-                  session: req.session,
+
+            const CATEGORY_ALL = Category.findAll({
+                  include: [{ association: "subcategories"}],
             });
+            const SUBCATEGORY_ALL = Subcategory.findAll({
+                  include: [{association:"products"}, { association: "category"}],
+            });
+
+
+            Promise.all([CATEGORY_ALL,SUBCATEGORY_ALL])
+            .then(([productToEdit, category, subcategory ]) => {
+                  res.render("admin/product-create", { productToEdit, category, subcategory, session: req.session });
+                  
+            })
+                  .catch((error) => console.log(error));
       },
       store: (req, res) => {
             /* Otra forma de sacar el id mas grande */

@@ -45,13 +45,13 @@
                                           <div class="input-container">
                                                 <label for="category" class="form-label">Categoría:</label>
                                                 <select name="category" id="category" class="select-style">
-                                                      <option value="" selected hidden>Categoría</option>
-                                                      <% dbcategory.forEach(category=> { %>
-                                                            <option value="<%= category %>" <%=locals.old && (category===old.category) ? "selected" :
-                                                                  null %>>
-                                                                  <%= category %>
-                                                            </option>
-                                                            <% }) %>
+                                                      
+
+
+                                                            <% for(let i = 0; i<category.length;i++) {%>
+                                                                  
+                                                                        <option value="<%= category[i].idCategory %>"> <%= category[i].name %></option>
+                                                                   <% } %>     
                                                 </select>
                                                 <span class="error-message">
                                                       <%= locals.errors && locals.errors.category ? locals.errors.category.msg : null %>
@@ -60,13 +60,10 @@
                                           <div class="input-container">
                                                 <label for="subcategory" class="form-label">SubCategoria:</label>
                                                 <select name="subcategory" id="subcategory" class="select-style">
-                                                      <option value="" selected hidden>SubCategoría</option>
-                                                      <% dbSubCategory.forEach(subcategory=> { %>
-                                                            <option value="<%= subcategory %>" <%=locals.old && (subcategory===old.subcategory)
-                                                                  ? "selected" : null %>>
-                                                                  <%= subcategory %>
-                                                            </option>
-                                                            <% }) %>
+                                                      <% for(let i = 0; i<subcategory.length;i++) {%>
+                                                                  
+                                                            <option value="<%= subcategory[i].idSubCategory %>"> <%= subcategory[i].name %></option>
+                                                       <% } %>
                                                 </select>
                                                 <span class="error-message">
                                                       <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>

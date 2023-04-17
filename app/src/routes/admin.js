@@ -10,7 +10,7 @@ router.get("/", adminNotSessionCheck, index);
 router.get("/products", products);
 
 /* Agrega producto */
-//router.get("/products/create", adminNotSessionCheck, create);
+router.get("/products/create", adminNotSessionCheck, create);
 //router.post("/products/create", upload.single("image"), productValidator, store);
 
 /* Edit producto */
