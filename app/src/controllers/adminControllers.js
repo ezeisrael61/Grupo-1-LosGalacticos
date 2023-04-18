@@ -1,6 +1,6 @@
-const { Product, Category,Subcategory, Sequelize } = require("../database/models");
+const { Product,Images, Category,Subcategory, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
-
+const { validationResult } = require("express-validator");
 module.exports = {
       index: (req, res) => {
             Product.findAll({
@@ -17,7 +17,9 @@ module.exports = {
             })
       },
       create: (req, res) => {
-
+            const PRODUCT_ALL = Product.findByPk(req.params.id, {
+                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+            });
             const CATEGORY_ALL = Category.findAll({
                   include: [{ association: "subcategories"}],
             });
@@ -26,7 +28,7 @@ module.exports = {
             });
 
 
-            Promise.all([CATEGORY_ALL,SUBCATEGORY_ALL])
+            Promise.all([PRODUCT_ALL, CATEGORY_ALL,SUBCATEGORY_ALL])
             .then(([productToEdit, category, subcategory ]) => {
                   res.render("admin/product-create", { productToEdit, category, subcategory, session: req.session });
                   
@@ -36,11 +38,40 @@ module.exports = {
       store: (req, res) => {
             /* Otra forma de sacar el id mas grande */
             /* let lastId = Math.max(...dbProducts.map(product => product.id)); */
-
+            
             const errors = validationResult(req);
             if (errors.isEmpty()) {
-                  let lastId = dbProducts[dbProducts.length - 1].id;
-                  let newProduct = {
+
+                        Product.create({
+                        name:req.body.name,
+                        price:req.body.price,
+                        discount:req.body.discount,
+                        description:req.body.description,
+/*                         category:req.body.category,
+ */                     idSubCategory:req.body.subcategory,
+/*                         image:req.file ? req.file.filename : "default-image.png",
+ */                        sold:req.body.sold,
+                        stock:req.body.stock,
+                        })
+                        Product.findAll({
+                              include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+                        }).then((product)=>{
+                              return res.send(product)
+                              let pp= product.length()
+                              let ppp= product[pp].idProduct
+                              return res.send(ppp)
+                        } )
+                        /* Images.create({
+                              name:req.file ? req.file.filename : "default-image.png",
+                              
+                               idProduct:,
+                             
+                              }) */
+                        res.redirect("/admin/products")
+                             
+                        
+                         
+                  /* let newProduct = {
                         id: lastId + 1,
                         name: req.body.name,
                         price: req.body.price,
@@ -54,11 +85,11 @@ module.exports = {
                   };
                   dbProducts.push(newProduct);
                   writeJSON("products.json", dbProducts);
-                  return res.redirect("/");
+                  return res.redirect("/"); */
             } else {
                   res.render("admin/product-create", {
-                        dbcategory: readJSON("categorys.json"),
-                        dbSubCategory: readJSON("subCategorys.json"),
+                        /* dbcategory: readJSON("categorys.json"),
+                        dbSubCategory: readJSON("subCategorys.json"), */
                         errors: errors.mapped(),
                         old: req.body,
                         session: req.session,
@@ -91,24 +122,22 @@ module.exports = {
             res.render("admin/product-edit", { productToEdit, session: req.session });*/
       },
       update: (req, res) => {
-            let productId = Number(req.params.id);
             const errors = validationResult(req);
+            const ID_PRODUCT= req.params.id;
+            
             if (errors.isEmpty()) {
-                  dbProducts.forEach((product) => {
-                        if (product.id === productId) {
-                              product.name = req.body.name;
-                              product.price = req.body.price;
-                              product.discount = req.body.discount;
-                              product.description = req.body.description;
-                              product.category = req.body.category;
-                              product.subcategory = req.body.subcategory;
-                              product.image = req.file ? req.file.filename : product.image;
-                              product.sold = req.body.sold;
-                              product.stock = req.body.stock;
-                        }
-                  }),
-                        writeJSON("products.json", dbProducts);
-                  res.redirect("/");
+                  Product.update({
+                              name : req.body.name,
+                              price : req.body.price,
+                              discount : req.body.discount,
+                              description : req.body.description,
+                              category : req.body.category,
+                              subcategory : req.body.subcategory,
+                              image : req.file ? req.file.filename : product.image,
+                              sold : req.body.sold,
+                              stock : req.body.stock,
+                        })
+                  res.redirect("/")
             } else {
                   let productToEdit = dbProducts.find((product) => {
                         return product.id === productId;
@@ -124,10 +153,27 @@ module.exports = {
       // Delete - Delete one product from DB
       destroy: (req, res) => {
             // obtengo el id del req.params
-            let productId = Number(req.params.id);
-
+            const PRODUCT_ID = req.params.id;
+            
+            Images.destroy({
+                  where: {
+                  idProduct:PRODUCT_ID
+            }
+      })
+            Product.destroy({
+                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+ 
+                  where: {
+                        idProduct:PRODUCT_ID
+                  }
+            })
+            .then(()=>{
+                  return res.redirect("/admin/products");
+            })
+            .catch((error=>console.log(error)))            
+            
             // busco el producto a eliminar y lo borro del array
-            dbProducts.forEach((product) => {
+           /*  dbProducts.forEach((product) => {
                   if (product.id === productId) {
                         let productToDestroy = dbProducts.indexOf(product);
                         dbProducts.splice(productToDestroy, 1);
@@ -135,6 +181,6 @@ module.exports = {
             });
 
             writeJSON("products.json", dbProducts);
-            res.redirect("/");
+            res.redirect("/"); */
       },
 };
