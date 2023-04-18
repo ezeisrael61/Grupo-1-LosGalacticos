@@ -2,7 +2,8 @@ const { validationResult } = require("express-validator");
 const { readJSON, writeJSON } = require("../database");
 const dbUsers = readJSON("users.json");
 const bcrypt = require("bcryptjs");
-
+const { User, UserDetail, Sequelize } = require("../database/models");
+const { Op } = Sequelize;
 module.exports = {
       login: (req, res) => {
             return res.render("users/login", { session: req.session });
@@ -10,23 +11,29 @@ module.exports = {
       storeLogin: (req, res) => {
             let errors = validationResult(req);
             if (errors.isEmpty()) {
-                  let user = dbUsers.find((user) => user.email === req.body.email);
-                  req.session.user = {
-                        id: user.id,
-                        name: user.firstName,
-                        avatar: user.avatar,
-                        typeOfAccess: user.typeOfAccess,
-                  };
-                  /* Se le asigna la session a local para que lo pueda ver des las vistas ejs */
-                  res.locals.user = req.session.user;
+                  User.findOne({
+                        where: {
+                              email: req.body.email,
+                        },
+                        include: [{ association: "userdetail" }],
+                  }).then((user) => {
+                        req.session.user = {
+                              id: user.idUser,
+                              name: user.userdetail.firstName,
+                              avatar: user.userdetail.avatar,
+                              typeOfAccess: user.typeOfAccess,
+                        };
+                        /* Se le asigna la session a local para que lo pueda ver des las vistas ejs */
+                        res.locals.user = req.session.user;
 
-                  if (req.body.recordar) {
-                        //*********Guarar Cookie con tiempo de expiracion 1 hora************
-                        let duracionSesion = new Date(Date.now() + 90000);
-                        res.cookie("user", req.session.user, { expires: duracionSesion, httpOnly: true });
-                  }
+                        if (req.body.recordar) {
+                              //*********Guarar Cookie con tiempo de expiracion 1 hora************
+                              let duracionSesion = new Date(Date.now() + 90000);
+                              res.cookie("user", req.session.user, { expires: duracionSesion, httpOnly: true });
+                        }
 
-                  res.redirect("/");
+                        res.redirect("/");
+                  });
             } else {
                   return res.render("users/login", {
                         errors: errors.mapped(),
