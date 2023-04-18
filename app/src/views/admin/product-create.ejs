@@ -45,9 +45,6 @@
                                           <div class="input-container">
                                                 <label for="category" class="form-label">Categoría:</label>
                                                 <select name="category" id="category" class="select-style">
-                                                      
-
-
                                                             <% for(let i = 0; i<category.length;i++) {%>
                                                                   
                                                                         <option value="<%= category[i].idCategory %>"> <%= category[i].name %></option>
@@ -61,9 +58,8 @@
                                                 <label for="subcategory" class="form-label">SubCategoria:</label>
                                                 <select name="subcategory" id="subcategory" class="select-style">
                                                       <% for(let i = 0; i<subcategory.length;i++) {%>
-                                                                  
                                                             <option value="<%= subcategory[i].idSubCategory %>"> <%= subcategory[i].name %></option>
-                                                       <% } %>
+                                                       <% } %>  
                                                 </select>
                                                 <span class="error-message">
                                                       <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
