@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { login, storeLogin, logout, register, store, profile, profileEdit, profileUpdate } = require("../controllers/usuariosControllers");
-const { upload } = require("../middlewares/upload");
+const { uploadAvatar } = require("../middlewares/uploadAvatar");
 const usersValidator = require("../validator/usersValidator");
 const loginValidator = require("../validator/loginValidator");
 const validatorUsersUpdate = require("../validator/validatorUsersUpdate");
@@ -17,8 +17,8 @@ router.get("/register", userInSessionCheck, register);
 /* Perfil de Usuario */
 router.get("/profile", userNotSessionCheck, profile);
 router.get("/profile/edit", userNotSessionCheck, profileEdit);
-router.put("/profile/edit", upload.single("image"), validatorUsersUpdate, profileUpdate);
+router.put("/profile/edit", uploadAvatar.single("image"), validatorUsersUpdate, profileUpdate);
 
-router.post("/register", upload.single("image"), usersValidator, store);
+router.post("/register", uploadAvatar.single("image"), usersValidator, store);
 
 module.exports = router;
