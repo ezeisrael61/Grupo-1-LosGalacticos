@@ -124,28 +124,63 @@ module.exports = {
             const ID_PRODUCT = req.params.id;
 
             if (errors.isEmpty()) {
-                  Product.update({
+                  Product.update(
+                  {
                         name: req.body.name,
                         price: req.body.price,
                         discount: req.body.discount,
                         description: req.body.description,
-                        category: req.body.category,
-                        subcategory: req.body.subcategory,
-                        image: req.file ? req.file.filename : product.image,
-                        sold: req.body.sold,
+/*                         category: req.body.category,
+ */                     idSubCategory: req.body.subcategory,
+/*                         image: req.file ? req.file.filename : product.image,
+ */                     sold: req.body.sold,
                         stock: req.body.stock,
+                  },
+                  {
+                        where:{idProduct:ID_PRODUCT}
+                  },
+                  Image.update(
+                  {
+                        name: req.file ? req.file.filename : "default-image.png",
+                        idProduct: ID_PRODUCT,
+                  },
+                  {
+                        where:{idProduct:ID_PRODUCT}
+                  },
+                  )
+                        
+                        /* .then((products) => {
+                        .then(() => {
+                              return res.redirect("/admin/products");
+                        })
+                  })
+                  */
+                  ) .then(() => {
+                        return res.redirect("/admin/products");
                   });
-                  res.redirect("/");
             } else {
-                  let productToEdit = dbProducts.find((product) => {
-                        return product.id === productId;
+                  const PRODUCT_ALL = Product.findByPk(req.params.id, {
+                        include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
                   });
-                  res.render("admin/product-edit", {
-                        productToEdit,
-                        session: req.session,
-                        errors: errors.mapped(),
-                        old: req.body,
+                  const CATEGORY_ALL = Category.findAll({
+                        include: [{ association: "subcategories" }],
                   });
+                  const SUBCATEGORY_ALL = Subcategory.findAll({
+                        include: [{ association: "products" }, { association: "category" }],
+                  });
+
+                  Promise.all([PRODUCT_ALL, CATEGORY_ALL, SUBCATEGORY_ALL])
+                        .then(([productToEdit, category, subcategory]) => {
+                              res.render("admin/product-edit", {
+                                    productToEdit,
+                                    category,
+                                    subcategory,
+                                    errors: errors.mapped(),
+                                    old: req.body,
+                                    session: req.session,
+                              });
+                        })
+                        .catch((error) => console.log(error));
             }
       },
       // Delete - Delete one product from DB
@@ -153,7 +188,7 @@ module.exports = {
             // obtengo el id del req.params
             const PRODUCT_ID = req.params.id;
 
-            Images.destroy({
+            Image.destroy({
                   where: {
                         idProduct: PRODUCT_ID,
                   },
