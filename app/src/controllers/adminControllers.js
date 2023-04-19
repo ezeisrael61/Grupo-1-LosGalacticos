@@ -122,7 +122,7 @@ module.exports = {
       update: (req, res) => {
             const errors = validationResult(req);
             const ID_PRODUCT = req.params.id;
-
+            
             if (errors.isEmpty()) {
                   Product.update(
                   {
@@ -138,24 +138,17 @@ module.exports = {
                   },
                   {
                         where:{idProduct:ID_PRODUCT}
-                  },
-                  Image.update(
+                  })
+                  .then((image) => {Image.update(
                   {
-                        name: req.file ? req.file.filename : "default-image.png",
+                        name: req.file ? req.file.filename : image.name,
                         idProduct: ID_PRODUCT,
                   },
                   {
                         where:{idProduct:ID_PRODUCT}
                   },
-                  )
-                        
-                        /* .then((products) => {
-                        .then(() => {
-                              return res.redirect("/admin/products");
-                        })
-                  })
-                  */
-                  ) .then(() => {
+                  )})
+                   .then(() => {
                         return res.redirect("/admin/products");
                   });
             } else {
