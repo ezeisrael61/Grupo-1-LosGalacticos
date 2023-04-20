@@ -17,7 +17,7 @@ router.get("/register", userInSessionCheck, register);
 /* Perfil de Usuario */
 router.get("/profile", userNotSessionCheck, profile);
 router.get("/profile/edit", userNotSessionCheck, profileEdit);
-router.put("/profile/edit", uploadAvatar.single("image"), validatorUsersUpdate, profileUpdate);
+router.put("/profile/edit", uploadAvatar.single("image"), profileUpdate);
 
 router.post("/register", uploadAvatar.single("image"), usersValidator, store);
 

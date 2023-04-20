@@ -139,9 +139,12 @@ CREATE TABLE `users` (
   `email` varchar(80) NOT NULL,
   `password` varchar(80) NOT NULL,
   `typeOfAccess` varchar(15) NOT NULL,
+  `idUserDetail` int(11) NOT NULL,
   PRIMARY KEY (`idUser`),
-  UNIQUE KEY `users_un` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  UNIQUE KEY `users_un` (`email`),
+  KEY `users_FK` (`idUserDetail`),
+  CONSTRAINT `users_FK` FOREIGN KEY (`idUserDetail`) REFERENCES `usersdetail` (`idUserDetail`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,7 +153,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@mail.com','$2a$12$AcLtF439dsDoYNatXaFFveO8Pc4PsOXQdNBnuMBvIeXbMy9mHjdvy','admin'),(2,'user@mail.com','$2a$12$/1Qz7FeKpWrPiseSFpKQuemoCQAfisWWDR1/i9x3ix.HwTL5rO5F.','user'),(3,'sebas@mail.com','$2a$12$V8Gtr2xYkKy9qiLjJbv8p.e.dH0UX4wZnWHcJF/Kp9mKblPUGyVDe','user');
+INSERT INTO `users` VALUES (1,'admin@mail.com','$2a$12$AcLtF439dsDoYNatXaFFveO8Pc4PsOXQdNBnuMBvIeXbMy9mHjdvy','admin',1),(2,'user@mail.com','$2a$12$/1Qz7FeKpWrPiseSFpKQuemoCQAfisWWDR1/i9x3ix.HwTL5rO5F.','user',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,11 +174,8 @@ CREATE TABLE `usersdetail` (
   `postalCode` varchar(15) DEFAULT NULL,
   `province` varchar(50) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
-  `idUser` int(11) NOT NULL,
-  PRIMARY KEY (`idUserDetail`),
-  KEY `usersdetail_FK` (`idUser`),
-  CONSTRAINT `usersdetail_FK` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`idUserDetail`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +184,7 @@ CREATE TABLE `usersdetail` (
 
 LOCK TABLES `usersdetail` WRITE;
 /*!40000 ALTER TABLE `usersdetail` DISABLE KEYS */;
-INSERT INTO `usersdetail` VALUES (1,'admin','admin','1678903650260_avatar.jpg',NULL,NULL,NULL,NULL,NULL,1),(2,'user','user','1678903680575_avatar.webp',NULL,NULL,NULL,NULL,NULL,2),(3,'Nestor Daniel Sebastian','Faliani Martinez','1682006977224_.png','2215080806','Remedios de Escalada Esq N Gonzalez (Bº ATEPAM) nro 15','1925','','',3);
+INSERT INTO `usersdetail` VALUES (1,'admin','admin','1678903650260_avatar.jpg',NULL,NULL,NULL,NULL,NULL),(2,'user','user','1678903680575_avatar.webp',NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `usersdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,4 +201,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-20 13:26:16
+-- Dump completed on 2023-04-16 18:26:54

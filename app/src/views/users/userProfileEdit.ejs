@@ -12,7 +12,7 @@
                                     <div class="form">
                                           <div class="input-container">
                                                 <input class="input-style" type="text" name="firstName" placeholder="Nombre"
-                                                      value="<%= locals.old ? old.name : user.firstName %>">
+                                                      value="<%= locals.old ? old.name : user.userdetail.firstName %>">
                                                 <% if (locals.errors && errors.firstName) { %>
                                                       <small class="text-danger">
                                                             <%= errors.firstName.msg %>
@@ -21,7 +21,7 @@
                                           </div>
                                           <div class="input-container">
                                                 <input class="input-style" type="text" name="lastName" placeholder="Apellido"
-                                                      value="<%= locals.old ? old.last_name : user.lastName %>">
+                                                      value="<%= locals.old ? old.last_name : user.userdetail.lastName %>">
                                                 <% if (locals.errors && errors.lastName) { %>
                                                       <small class="text-danger">
                                                             <%= errors.lastName.msg %>
@@ -39,15 +39,15 @@
                                           </div>
                                           <div class="input-container">
                                                 <input class="input-style" type="text" name="tel" placeholder="Ingresá tu teléfono"
-                                                      value="<%= user.tel ? user.tel : "" %>">
+                                                      value="<%= user.userdetail.phone ? user.userdetail.phone : "" %>">
                                           </div>
                                           <div class="input-container">
                                                 <input type="text" name="address" placeholder="Domicilio"
-                                                      value="<%= user.address ? user.address : "" %>">
+                                                      value="<%= user.userdetail.address ? user.userdetail.address : "" %>">
                                           </div>
                                           <div class="input-container">
                                                 <input class="input-style" type="text" name="postal_code" placeholder="Código postal"
-                                                      value="<%= user.postal_code ? user.postal_code : "" %>">
+                                                      value="<%= user.userdetail.postalCode ? user.userdetail.postalCode : "" %>">
                                           </div>
                                           <div class="input-container">
                                                 <select name="province" id="">
@@ -59,10 +59,19 @@
                                                       <option value="">Localidad</option>
                                                 </select>
                                           </div>
-                                          <div class="input-container">
+                                          <!-- <div class="input-container">
                                                 <p>Cambiar foto de perfil</p>
                                                 <input type="file" name="avatar">
+                                          </div> -->
+                                          <div class="input-container">
+                                                <div class="input-file-container">
+                                                      <p>Agregar Avatar</p>
+                                                      <input class="input-file" type="file" id="image" name="image">
+                                                </div>
+
                                           </div>
+
+
                                           <div class="button-container">
                                                 <button type="submit" class="btn btn-submit">
                                                       GUARDAR
