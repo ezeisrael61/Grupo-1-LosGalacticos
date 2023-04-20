@@ -19,10 +19,6 @@ module.exports = (sequelize, dataTypes) => {
                   type: dataTypes.STRING(15),
                   allowNull: false,
             },
-            idUserDetail: {
-                  type: dataTypes.INTEGER(11),
-                  allowNull: false,
-            },
       };
       let config = {
             tableName: "users",
@@ -32,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
       USER.associate = (models) => {
             USER.belongsTo(models.UserDetail, {
                   as: "userdetail",
-                  foreignKey: "idUserDetail",
+                  foreignKey: "idUser",
             });
       };
       return USER;

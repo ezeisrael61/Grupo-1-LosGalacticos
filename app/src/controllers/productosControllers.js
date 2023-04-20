@@ -106,7 +106,7 @@ module.exports = {
             category = "all";
             res.render("products/filters", { products, category, session: req.session }); */
             let valor = req.query.valor;
-            category = "all";
+            let category = "all";
             Product.findAll({
                   where: {
                         name: { [Op.substring]: valor },
