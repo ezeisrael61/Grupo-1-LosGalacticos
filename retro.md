@@ -62,3 +62,29 @@ Hacer menos:👎
 
 Dejar de hacer:✋
 - Procrastinar. ✔
+
+
+## ➤ Retrospectiva Estrella Sprint 6
+
+Empezar a hacer: 💪
+- Juntarnos para adelantar trabajo del proyecto(Aparte de la deily)✔
+- Tener una noción clara de lo que tenemos que hacer con cada una de las tareas que se nos asigna✔
+- Volver a comprometernos a llegar a cada daily con algo avanzado del sprint(si o si)✔
+
+
+Hacer más: 💪💪
+- Buscar mejoras esteticas y funcionales para el proyecto✔
+- Comunicación fluida. ✔
+- Cumplir tiempos de entrega. ✔
+- Seguir adelantando cosas. ✔
+
+Seguir haciendo:💪💪💪
+- Tomar mas protagonismo en lo grupal. ✔
+- Ser mas independientes en las modulos que nos toca en trello. ✔
+- Seguir comprometidos con el grupo. ✔
+
+Hacer menos:👎
+
+
+Dejar de hacer:✋
+- Procrastinar. ✔
