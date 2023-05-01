@@ -3,7 +3,7 @@
 <%- include("../partials/head") %>
 
       <body>
-            <div>
+            <div class="container">
                   <%- include("../partials/header") %>
                         <main>
                               <div class="form-container">
@@ -47,28 +47,36 @@
                                                 <div class="input-conteiner">
                                                       <label for="category" class="form-label">category:</label>
                                                       <select name="category" id="category">
-                                                            <% for(let i = 0; i<category.length;i++) {%>
-                                                                  <% if (category[i].idCategory == productToEdit.subcategory.category.idCategory) { %>
-                                                                   <option value="<%= category[i].idCategory %>" selected> <%= category[i].name %></option>
-                                                                  <%}else {%>
-                                                                        <option value="<%= category[i].idCategory %>"> <%= category[i].name %></option>
-                                                                   <% } %>
-                                                            <% } %>
+                                                            <% for(let i=0; i<category.length;i++) {%>
+                                                                  <% if (category[i].idCategory==productToEdit.subcategory.category.idCategory) { %>
+                                                                        <option value="<%= category[i].idCategory %>" selected>
+                                                                              <%= category[i].name %>
+                                                                        </option>
+                                                                        <%}else {%>
+                                                                              <option value="<%= category[i].idCategory %>">
+                                                                                    <%= category[i].name %>
+                                                                              </option>
+                                                                              <% } %>
+                                                                                    <% } %>
                                                       </select>
                                                 </div>
                                                 <div class="input-conteiner">
                                                       <label for="subcategory" class="form-label">Subcategory:</label>
                                                       <select name="subcategory" id="subcategory">
-                                                            <% for(let i = 0; i<subcategory.length;i++) {%>
-                                                                  <% if (subcategory[i].idSubCategory == productToEdit.subcategory.idSubCategory) { %>
-                                                                   <option value="<%= subcategory[i].idSubCategory %>" selected> <%= subcategory[i].name %></option>
-                                                                  <%}else {%>
-                                                                        <option value="<%= subcategory[i].idSubCategory %>"> <%= subcategory[i].name %></option>
-                                                                   <% } %>
-                                                            <% } %>
+                                                            <% for(let i=0; i<subcategory.length;i++) {%>
+                                                                  <% if (subcategory[i].idSubCategory==productToEdit.subcategory.idSubCategory) { %>
+                                                                        <option value="<%= subcategory[i].idSubCategory %>" selected>
+                                                                              <%= subcategory[i].name %>
+                                                                        </option>
+                                                                        <%}else {%>
+                                                                              <option value="<%= subcategory[i].idSubCategory %>">
+                                                                                    <%= subcategory[i].name %>
+                                                                              </option>
+                                                                              <% } %>
+                                                                                    <% } %>
                                                       </select>
                                                 </div>
-                                               
+
                                                 <div class="input-container">
                                                       <label for="sold" class="form-label">Ventas:</label>
                                                       <input class="input-style" type="number" name="sold" placeholder="Ej: 0"

@@ -29,7 +29,8 @@ module.exports = {
             Product.findAll({
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
             });
-            return res.render("admin/adminIndex", { session: req.session });
+            return res.render("admin/admin", { session: req.session });
+            //return res.render("admin/adminIndex", { session: req.session });
       },
       products: (req, res) => {
             Product.findAll({

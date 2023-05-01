@@ -54,9 +54,10 @@ main.main-section section.vip-products article.product .product-container div.de
       right: 0px;
       background-color: var(--rojo);
       color: white;
-      border-radius: 20px;
-      font-size: 11px;
+      border-radius: 10px;
+      font-size: 12px;
       padding: 4px;
+      width: 30px;
 }
 main.main-section section.vip-products article.product div.product-container a.photo-container {
       height: 120px;
@@ -75,7 +76,9 @@ main.main-section section.vip-products article.product h2.name {
       border-top: 1px solid var(--gris-medio);
       /* height: 50px; */
 }
-
+.descuento p {
+      margin-bottom: 0;
+}
 /* END PRODUCTS */
 
 /* Media queries */

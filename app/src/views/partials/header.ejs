@@ -4,7 +4,7 @@
             <div class="logo-nombre">
                   <a href="/">
                         <img src="/img/logo.png" alt="Logo" class="logo"></a>
-                  <div>
+                  <div class="title-banner">
                         <h4>FERRETERÍA</h4>
                         <p>PICO & PALA</p>
                   </div>
@@ -13,11 +13,11 @@
             <nav class="main-nav-rigth">
                   <ul class="d-flex">
                         <li>
-                              <a href="/admin/products/create"><i class="fa-solid fa-circle-up"></i></a>
+                              <a href="/admin/products/create"><i class="fa-solid fa-circle-up iconos-white"></i></a>
                               <p>Vender</p>
                         </li>
                         <li>
-                              <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+                              <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping iconos-white"></i></a>
                               <p>$ 0.00</p>
                         </li>
                         <li>
@@ -54,7 +54,7 @@
                                           </div>
                                     </div>
                                     <% } else { %>
-                                          <a href="/usuarios/login"><i class="fa-solid fa-circle-up"></i></a>
+                                          <a href="/usuarios/login"><i class="fa-solid fa-circle-up iconos-white"></i></a>
                                           <p>Login</p>
 
                                           <% } %>
@@ -66,13 +66,21 @@
 
 
       <div class="main-search">
-            <a href="#" class="toggle-nav">
-                  <span class="fas fa-bars"></span>
-            </a>
-            <form action="/productos/buscar" method="GET">
-                  <input type="search" class="search" name="valor" placeholder=" Buscar en Pico & Pala">
-                  <button class="button-search" type="submit"><i class='fa-solid fa-magnifying-glass'></i></button>
-            </form>
+            <div>
+
+                  <a href="#" class="toggle-nav">
+                        <span class="fas fa-bars"></span>
+                  </a>
+            </div>
+            <div class="search-container">
+                  <form action="/productos/buscar" method="GET">
+
+                        <input type="search" class="search" name="valor" placeholder=" Buscar en Pico & Pala">
+
+                        <button class="button-search" type="submit"><i class='fa-solid fa-magnifying-glass'></i></button>
+
+                  </form>
+            </div>
       </div>
 
       <nav class="main-nav">

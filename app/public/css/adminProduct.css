@@ -1,0 +1,13 @@
+.main-container-products {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+}
+.container-main-nav {
+      margin-left: -15px;
+      padding-right: 15px;
+}
+.navMain ul li a {
+      text-align: left;
+      color: var(--bordo);
+}

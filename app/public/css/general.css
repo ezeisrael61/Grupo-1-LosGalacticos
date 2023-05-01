@@ -68,8 +68,11 @@ header.main-header div.main-top {
       width: 100%;
       margin-bottom: 10px;
 }
-header.main-header div.main-top h4 {
+header.main-header div.main-top .title-banner h4,
+header.main-header div.main-top .title-banner p {
       color: var(--bordo);
+      font-family: var(--bs-body-font-family);
+      margin-bottom: 0;
 }
 header.main-header div.main-top div.logo-nombre {
       display: flex;
@@ -100,7 +103,11 @@ header.main-header div.main-top nav.main-nav-rigth ul li:hover {
 header.main-header div.main-top nav.main-nav-rigth ul li i {
       color: var(--bordo);
 }
-*/ header.main-header div.main-search {
+header.main-header div.main-top nav.main-nav-rigth ul li i.iconos-white,
+header.main-header div.main-top nav.main-nav-rigth ul li p {
+      color: white;
+}
+header.main-header div.main-search {
       position: relative;
       display: flex;
       justify-content: flex-end;
@@ -118,17 +125,6 @@ header.main-header div.main-search .toggle-nav {
       width: 30px;
       height: 30px;
       margin-right: 5px;
-}
-header.main-header div.main-search div.div-search input.search {
-      /* border: var(--gris-oscuro) 1px solid;
-      border-radius: 25px;
-      height: 2em; */
-      width: 100%;
-      margin-right: 0.2em;
-      border: none;
-
-      /*  padding: 0 0.5rem;
-      outline: none; */
 }
 
 header.main-header div.main-search div.div-search i {
@@ -148,11 +144,22 @@ header.main-header div.main-search div.div-search {
       justify-content: space-between;
       padding: 5px 10px;
 }
-header.main-header div.main-search div.div-search button.button-search {
+
+header.main-header div.main-search div.search-container input.search {
+      width: 93%;
+      border: 1px solid rgb(175, 175, 175);
+      border-radius: 10px;
+      height: 32px;
+
+      padding: 0 0.5rem;
+      outline: none;
+}
+header.main-header div.main-search div.search-container button.button-search {
+      margin-left: -35px;
       border: none;
+      padding: 0 5px;
       background-color: white;
 }
-
 header.main-header nav.main-nav {
       display: none;
       width: 100%;
@@ -297,12 +304,12 @@ footer.main-footer div.container-footer p {
             font-size: 20px;
       }*/
       header.main-header div.main-top nav.main-nav-rigth ul li {
-            font-size: 12px;
+            font-size: 11px;
             margin: 5px 15px;
-      } /*
-      header.main-header div.main-top nav.main-nav-rigth ul li i {
-            font-size: 18px;
-      } */
+      }
+      * header.main-header div.main-top nav.main-nav-rigth ul li i.iconos-white {
+            font-size: 15px;
+      }
       header.main-header div.main-search .toggle-nav {
             display: none;
       }
@@ -311,7 +318,12 @@ footer.main-footer div.container-footer p {
             top: 30px;
             margin-left: 10px;
             width: 50%;
+            justify-content: space-between;
       }
+      header.main-header div.main-search div.search-container {
+            width: 100%;
+      }
+
       header.main-header nav.main-nav .btn-close-container {
             display: none;
       }
