@@ -13,11 +13,22 @@ main.main-section section.vip-products div.container-title {
       width: 100%;
       padding-left: 5px;
 }
-main.main-section section.vip-products div.container-title h3.title {
+/* main.main-section section.vip-products div.container-title h3.title {
       color: var(--bordo);
       font-size: 14px;
       margin-right: 5px;
+} */
+main.main-section section.vip-products div.container-title h1.title {
+      margin-top: 15px;
+      color: #184b44;
+      font-weight: bold;
+      font-size: 20px;
 }
+main.main-section section.vip-products div.container-title h3.title {
+      margin-top: 15px;
+      font-size: 20px;
+}
+
 main.main-section section.vip-products div.container-title a {
       color: var(--celeste);
       font-size: 12px;
@@ -84,8 +95,11 @@ main.main-section section.vip-products article.product h2.name {
 /* Media queries */
 @media (min-width: 768px) {
       /* PRODUCTS */
+      main.main-section section.vip-products div.container-title h1.title {
+            font-size: 36px;
+      }
       main.main-section section.vip-products div.container-title h3.title {
-            font-size: 20px;
+            font-size: 30px;
       }
       main.main-section section.vip-products article.product {
             max-width: 170px;
@@ -94,7 +108,7 @@ main.main-section section.vip-products article.product h2.name {
             height: 140px;
       }*/
       main.main-section section.vip-products article.product .product-container img.photo {
-            max-height: 170px;
+            max-height: 130px;
       }
       main.main-section section.vip-products article.product h2.name {
             font-size: 12px;
@@ -111,6 +125,9 @@ main.main-section section.vip-products article.product h2.name {
       } */
       main.main-section section.vip-products article.product div.product-container a.photo-container {
             height: 180px;
+      }
+      main.main-section section.vip-products article.product .product-container img.photo {
+            max-height: 170px;
       }
       /* END PRODUCTS */
 }

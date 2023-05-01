@@ -42,7 +42,7 @@ module.exports = {
       },
       filters: (req, res) => {
             let category = req.params.category;
-            if (category != "all") {
+            if (category != "Todos los Productos") {
                   Product.findAll({
                         where: {
                               "$subcategory.category.name$": category,

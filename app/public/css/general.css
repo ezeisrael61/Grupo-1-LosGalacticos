@@ -45,6 +45,8 @@ p.send {
 body {
       padding: 15px 10px 0px;
       background-color: var(--gris-oscuro);
+      width: 100%;
+      margin: auto;
 }
 
 /* END  GENERALES */
@@ -59,6 +61,7 @@ header.main-header {
       padding: 5px;
       margin-bottom: 10px;
       background-image: url("/img/fondo banner.png");
+      background-size: 100% 100%;
       border-radius: 5px;
 }
 header.main-header div.main-top {
@@ -68,11 +71,17 @@ header.main-header div.main-top {
       width: 100%;
       margin-bottom: 10px;
 }
-header.main-header div.main-top .title-banner h4,
+header.main-header div.main-top .title-banner h4 {
+      color: var(--bordo);
+      font-family: var(--bs-body-font-family);
+      margin-bottom: 0;
+      font-size: 15px;
+}
 header.main-header div.main-top .title-banner p {
       color: var(--bordo);
       font-family: var(--bs-body-font-family);
       margin-bottom: 0;
+      font-size: 11px;
 }
 header.main-header div.main-top div.logo-nombre {
       display: flex;
@@ -92,17 +101,16 @@ header.main-header div.main-top div.logo-nombre img.logo {
       display: flex;
 } */
 header.main-header div.main-top nav.main-nav-rigth ul li {
-      font-size: 10px;
-      margin: 2px;
       text-align: center;
+      font-size: 11px;
+      margin: 5px 5px;
+      color: var(--bordo);
 }
 
 header.main-header div.main-top nav.main-nav-rigth ul li:hover {
       transform: scale(1.2);
 }
-header.main-header div.main-top nav.main-nav-rigth ul li i {
-      color: var(--bordo);
-}
+
 header.main-header div.main-top nav.main-nav-rigth ul li i.iconos-white,
 header.main-header div.main-top nav.main-nav-rigth ul li p {
       color: white;
@@ -110,9 +118,8 @@ header.main-header div.main-top nav.main-nav-rigth ul li p {
 header.main-header div.main-search {
       position: relative;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       align-items: center;
-
       width: 100%;
 }
 header.main-header div.main-search .toggle-nav {
@@ -126,7 +133,6 @@ header.main-header div.main-search .toggle-nav {
       height: 30px;
       margin-right: 5px;
 }
-
 header.main-header div.main-search div.div-search i {
       color: var(--bordo);
       background-color: white;
@@ -144,15 +150,17 @@ header.main-header div.main-search div.div-search {
       justify-content: space-between;
       padding: 5px 10px;
 }
-
+header.main-header div.main-search div.search-container {
+      width: 100%;
+}
 header.main-header div.main-search div.search-container input.search {
       width: 93%;
       border: 1px solid rgb(175, 175, 175);
       border-radius: 10px;
       height: 32px;
-
       padding: 0 0.5rem;
       outline: none;
+      font-size: 13px;
 }
 header.main-header div.main-search div.search-container button.button-search {
       margin-left: -35px;
@@ -163,6 +171,9 @@ header.main-header div.main-search div.search-container button.button-search {
 header.main-header nav.main-nav {
       display: none;
       width: 100%;
+}
+header.main-header nav.main-nav ul.menu li a {
+      font-size: 11px;
 }
 header.main-header nav.active {
       position: fixed;
@@ -303,11 +314,8 @@ footer.main-footer div.container-footer p {
       /* header.main-header div.main-top div.logo-nombre {
             font-size: 20px;
       }*/
-      header.main-header div.main-top nav.main-nav-rigth ul li {
-            font-size: 11px;
-            margin: 5px 15px;
-      }
-      * header.main-header div.main-top nav.main-nav-rigth ul li i.iconos-white {
+
+      header.main-header div.main-top nav.main-nav-rigth ul li i.iconos-white {
             font-size: 15px;
       }
       header.main-header div.main-search .toggle-nav {
@@ -321,9 +329,14 @@ footer.main-footer div.container-footer p {
             justify-content: space-between;
       }
       header.main-header div.main-search div.search-container {
-            width: 100%;
+            width: 90%;
       }
-
+      header.main-header div.main-top .title-banner h4 {
+            font-size: 20px;
+      }
+      header.main-header div.main-top .title-banner p {
+            font-size: 16px;
+      }
       header.main-header nav.main-nav .btn-close-container {
             display: none;
       }
@@ -332,6 +345,7 @@ footer.main-footer div.container-footer p {
       }
       header.main-header nav.main-nav ul.menu {
             flex-direction: row;
+            padding: 0;
       }
       /*  header.main-header nav.main-nav ul {
             display: flex;
@@ -373,7 +387,19 @@ footer.main-footer div.container-footer p {
 /* Media queries */
 @media (min-width: 1024px) {
       body {
-            width: 85%;
+            width: 90%;
             margin: auto;
+      }
+      header.main-header div.main-top .title-banner h4 {
+            font-size: 24px;
+      }
+      header.main-header div.main-top .title-banner p {
+            font-size: 20px;
+      }
+      header.main-header div.main-top nav.main-nav-rigth ul li {
+            margin: 5px 15px;
+      }
+      header.main-header nav.main-nav ul.menu li a {
+            font-size: 14px;
       }
 }

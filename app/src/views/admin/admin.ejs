@@ -6,10 +6,17 @@
       <body>
             <div class="container">
                   <%- include('../partials/header') %>
-                        <h1>productos</h1>
-                        <%- include("partials/adminMain") %>
-                              <%- include("../partials/footer") %>
-                                    <%- include("../partials/scripts") %>
+                        <main class="main-section">
+
+                              <!-- banner -->
+                              <section class="banner">
+                                    <img src="/img/banner.png" alt="banner">
+                              </section>
+                              <h1>Bienvenido al Menu de Administración</h1>
+                              <%- include("partials/adminMain") %>
+                                    <%- include("../partials/footer") %>
+                                          <%- include("../partials/scripts") %>
+                        </main>
             </div>
       </body>
 

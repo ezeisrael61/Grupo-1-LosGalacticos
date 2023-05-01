@@ -5,9 +5,15 @@
 }
 .container-main-nav {
       margin-left: -15px;
-      padding-right: 15px;
+      padding-right: 15px 0;
+      width: 25%;
 }
+.navMain ul li {
+      margin-top: 5px;
+}
+
 .navMain ul li a {
       text-align: left;
-      color: var(--bordo);
+
+      color: #184b44;
 }
