@@ -9,3 +9,6 @@ main {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
+main div.form-container img.image-register {
+      width: 25%;
+}
