@@ -1,5 +1,21 @@
 const { Subcategory } = require("../../database/models");
 module.exports = {
+      list: {},
+      category: async (req, res) => {
+            try {
+                  const RESULT = await Subcategory.findAll({ where: { idCategory: req.params.id } });
+                  return res.status(201).json({
+                        meta: {
+                              status: 201,
+                              url: "api/v1/subCategories/category/:id",
+                              msg: "Subcategoria Agregada",
+                        },
+                        data: RESULT,
+                  });
+            } catch (error) {
+                  console.log(error);
+            }
+      },
       store: async (req, res) => {
             try {
                   const RESULT = await Subcategory.create({

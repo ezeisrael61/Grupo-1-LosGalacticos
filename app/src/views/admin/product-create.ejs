@@ -46,6 +46,7 @@
                                                 <div class="input-container">
                                                       <label for="category" class="form-label">Categoría:</label>
                                                       <select name="category" id="category" class="select-style">
+                                                            <option value="" selected hidden>Categorias</option>
                                                             <% for(let i=0; i<category.length;i++) {%>
 
                                                                   <option value="<%= category[i].idCategory %>">
@@ -60,11 +61,7 @@
                                                 <div class="input-container">
                                                       <label for="subcategory" class="form-label">SubCategoria:</label>
                                                       <select name="subcategory" id="subcategory" class="select-style">
-                                                            <% for(let i=0; i<subcategory.length;i++) {%>
-                                                                  <option value="<%= subcategory[i].idSubCategory %>">
-                                                                        <%= subcategory[i].name %>
-                                                                  </option>
-                                                                  <% } %>
+                                                            <option value=""> SubCategorias</option>
                                                       </select>
                                                       <span class="error-message">
                                                             <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
@@ -110,6 +107,7 @@
 
                               <%- include("../partials/scripts") %>
             </div>
+            <script src="/js/products.js"></script>
       </body>
 
 </html>
