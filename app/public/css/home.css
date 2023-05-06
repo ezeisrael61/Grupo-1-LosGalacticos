@@ -1,5 +1,5 @@
-@import url("forms.css");
-@import url("products.css");
+/* @import url("forms.css");
+@import url("products.css"); */
 
 /* BANNER */
 main.main-section {
@@ -11,7 +11,7 @@ main.main-section {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
-main.main-section a.editarProduc{
+main.main-section a.editarProduc {
       display: block;
       width: 100%;
       height: 60%;
