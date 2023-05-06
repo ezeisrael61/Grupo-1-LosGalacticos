@@ -33,12 +33,21 @@ module.exports = [
 
       check("terms").isString("on").withMessage("Debes aceptar los términos y condiciones"),
 
-      check("image").custom((value, { req }) => {
+      /*check("image").custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = [".jpg", ".png", ".gif", ".webp"];
             console.log(path.extname(file.originalname));
             if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
                   throw new Error("El avatar tiene que tener extension .jpg .png .gif .webp");
+            }
+            return true;
+            
+      }),*/
+      check("image").custom((value, { req }) => {
+            let file = req.file;
+            let acceptedExtensions = [".jpg", ".png", ".gif"];
+            if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
+                  throw new Error("El avatar tiene que tener extension .jpg .png .gif");
             }
             return true;
       }),
