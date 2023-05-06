@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { index, products, create, store, edit, update, destroy } = require("../controllers/adminControllers");
+const { list } = require("../controllers/categoriesControllers");
 const { uploadImagesProduct } = require("../middlewares/uploadImagesProduct");
 const productValidator = require("../validator/productsValidator");
 const adminNotSessionCheck = require("../middlewares/adminNotSessionCheck");
@@ -19,5 +20,7 @@ router.put("/products/edit/:id", uploadImagesProduct.single("image"), productVal
 
 /*** DELETE ONE PRODUCT***/
 router.delete("/products/delete/:id", destroy);
+
+router.get("/categories", list);
 
 module.exports = router;
