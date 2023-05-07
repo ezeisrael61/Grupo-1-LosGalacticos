@@ -2,17 +2,17 @@ const multer = require("multer");
 const path = require("path");
 const { Subcategory, Sequelize } = require("../database/models");
 
-let ruta = "";
+
 const storageImage = multer.diskStorage({
       destination: function (req, file, callback) {
-            console.log(req.body.subcategory);
+            
             Subcategory.findByPk(req.body.subcategory, { include: [{ association: "category" }] }).then((subcategory) => {
-                  ruta = subcategory.category.name;
-                  callback(null, "./public/img/" + ruta);
+                  
+                  callback(null, "./public/img/");
             });
       },
       filename: function (req, file, callback) {
-            callback(null, `${Date.now()}_${ruta}${path.extname(file.originalname)}`);
+            callback(null, `${Date.now()}_${path.extname(file.originalname)}`);
       },
 });
 const uploadImagesProduct = multer({ storage: storageImage });

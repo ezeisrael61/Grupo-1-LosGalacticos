@@ -11,9 +11,9 @@ module.exports = [
       check("stock").notEmpty().withMessage("Ingrese un stock valido").isInt({ min: 1 }).withMessage("El stock debe ser mayor a cero"),
       check("img").custom((value, { req }) => {
             let file = req.file;
-            let acceptedExtensions = [".jpg", ".png", ".gif", ".webp"];
+            let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif", ".web"];
             if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
-                  throw new Error("La imagen tiene que tener extension .jpg .png .gif .webp");
+                  throw new Error("archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif -.web)");
             }
             return true;
       }),
