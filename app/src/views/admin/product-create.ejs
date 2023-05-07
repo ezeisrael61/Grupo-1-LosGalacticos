@@ -13,15 +13,16 @@
                                           <div class="form">
                                                 <div class="input-container">
                                                       <label for="name" class="form-label">Nombre:</label>
-                                                      <input class="input-style form-control" type="text" name="name" placeholder="Ej: Pico & Pala" id="name"
-                                                            value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
+                                                      <input class="input-style form-control" type="text" name="name" placeholder="Ej: Pico & Pala"
+                                                            id="name" value="<%= locals.old && locals.old.name ? locals.old.name : null %>">
                                                       <span class="error-message" id="nameErrors">
                                                             <%= locals.errors && locals.errors.name ? locals.errors.name.msg : null %>
                                                       </span>
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="price" class="form-label">Precio:</label>
-                                                      <input class="input-style form-control" type="number" name="price" placeholder="Ej: 2500" id="price" step="0.1"
+                                                      <input class="input-style form-control" type="number" name="price" placeholder="Ej: 2500"
+                                                            id="price" step="0.1"
                                                             value="<%= locals.old && locals.old.price ? locals.old.price : null %>">
                                                       <span class="error-message" id="priceErrors">
                                                             <%= locals.errors && locals.errors.price ? locals.errors.price.msg : null %>
@@ -29,7 +30,8 @@
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="discount" class="form-label">Descuento:</label>
-                                                      <input class="input-style form-control" type="number" name="discount" placeholder="Ej: 10" id="discount"
+                                                      <input class="input-style form-control" type="number" name="discount" placeholder="Ej: 10"
+                                                            id="discount"
                                                             value="<%= locals.old && locals.old.discount ? locals.old.discount : null %>">
                                                       <span class="error-message" id="discountErrors">
                                                             <%= locals.errors && locals.errors.discount ? locals.errors.discount.msg : null %>
@@ -38,7 +40,7 @@
                                                 <div class="input-container">
                                                       <label for="description" class="form-label">Descipción:</label>
                                                       <textarea name="description" id="description" class="textarea-style form-control"
-                                                            placeholder="Ingrese la descripción" ><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
+                                                            placeholder="Ingrese la descripción"><%= locals.old && locals.old.description ? locals.old.description : null %></textarea>
                                                       <span class="error-message" id="descriptionErrors">
                                                             <%= locals.errors && locals.errors.description ? locals.errors.description.msg : null %>
                                                       </span>
@@ -78,8 +80,8 @@
                                                 </div>
                                                 <div class="input-container">
                                                       <label for="stock" class="form-label">Stock:</label>
-                                                      <input class="input-style form-control" type="number" name="stock" placeholder="Ej: 150" id="stock"
-                                                            value="<%= locals.old && locals.old.stock ? locals.old.stock : null %>">
+                                                      <input class="input-style form-control" type="number" name="stock" placeholder="Ej: 150"
+                                                            id="stock" value="<%= locals.old && locals.old.stock ? locals.old.stock : null %>">
                                                       <span class="error-message" id="stockErrors">
                                                             <%= locals.errors && locals.errors.stock ? locals.errors.stock.msg : null %>
                                                       </span>
@@ -108,7 +110,7 @@
                               <%- include("../partials/scripts") %>
             </div>
             <script src="/js/products.js"></script>
-            <script src="/js/user/productScript.js"></script>
+            <script src="/js/products/productScript.js"></script>
       </body>
 
 </html>

@@ -120,6 +120,7 @@ module.exports = {
                               postalCode: postal_code,
                               province: province,
                               city: city,
+                              //avatar: req.file ? req.file.filename : avatar,
                         },
                         {
                               where: { idUser: req.session.user.id },

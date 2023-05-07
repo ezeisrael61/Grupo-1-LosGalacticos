@@ -9,71 +9,63 @@
 
                               <h3 class="userTitle">Edita tu perfil</h3>
                               <div class="form-container">
-                                    <form action="/usuarios/profile/edit/" method="POST" enctype="multipart/form-data">
+                                    <form action="/usuarios/profile/edit/" method="POST" enctype="multipart/form-data" id="form">
                                           <div class="form">
                                                 <div class="input-container">
-                                                      <input class="input-style" type="text" name="firstName" placeholder="Nombre"
-                                                            value="<%= locals.old ? old.name : user.userdetail.firstName %>">
-                                                      <% if (locals.errors && errors.firstName) { %>
-                                                            <span class="text-danger">
-                                                                  <%= errors.firstName.msg %>
-                                                            </span>
-                                                            <% } %>
+                                                      <input class="input-style form-control " type="text" name="firstName" placeholder="Nombre"
+                                                            id="name" value="<%= locals.old ? old.name : user.userdetail.firstName %>">
+                                                      <span class="error-message" id="nameErrors">
+                                                            <%= locals.errors && locals.errors.firstName ? locals.errors.firstName.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
-                                                      <input class="input-style" type="text" name="lastName" placeholder="Apellido"
-                                                            value="<%= locals.old ? old.last_name : user.userdetail.lastName %>">
-                                                      <% if (locals.errors && errors.lastName) { %>
-                                                            <span class="text-danger">
-                                                                  <%= errors.lastName.msg %>
-                                                            </span>
-                                                            <% } %>
+                                                      <input class="input-style form-control " type="text" name="lastName" placeholder="Apellido"
+                                                            id="lastname" value="<%= locals.old ? old.last_name : user.userdetail.lastName %>">
+                                                      <span class="error-message" id="lastnameErrors">
+                                                            <%= locals.errors && locals.errors.lastName ? locals.errors.lastName.msg : null %>
+                                                      </span>
                                                 </div>
                                                 <div class="input-container">
-                                                      <input class="input-style" type="email" name="email" placeholder="Ingresá tu email" readonly
-                                                            value="<%= user.email %>">
-                                                      <% if (locals.errors && errors.email) { %>
-                                                            <span class="text-danger">
-                                                                  <%= errors.email.msg %>
-                                                            </span>
-                                                            <% } %>
+                                                      <input class="input-style form-control " type="email" name="email"
+                                                            placeholder="Ingresá tu email" readonly value="<%= user.email %>">
                                                 </div>
                                                 <div class="input-container">
-                                                      <input class="input-style" type="text" name="tel" placeholder="Ingresá tu teléfono"
+                                                      <input class="input-style form-control " type="text" name="tel"
+                                                            placeholder="Ingresá tu teléfono"
                                                             value="<%= user.userdetail.phone ? user.userdetail.phone : "" %>">
                                                 </div>
                                                 <div class="input-container">
-                                                      <input type="text" name="address" placeholder="Domicilio"
+                                                      <input class="input-style form-control " type="text" name="address" placeholder="Domicilio"
                                                             value="<%= user.userdetail.address ? user.userdetail.address : "" %>">
                                                 </div>
                                                 <div class="input-container">
-                                                      <input class="input-style" type="text" name="postal_code" placeholder="Código postal"
+                                                      <input class="input-style form-control" type="text" name="postal_code"
+                                                            placeholder="Código postal"
                                                             value="<%= user.userdetail.postalCode ? user.userdetail.postalCode : "" %>">
                                                 </div>
                                                 <div class="input-container">
-                                                      <select name="province" id="">
+                                                      <select class="form-control" name="province" id="province">
                                                             <option value="">Provincia</option>
+
                                                       </select>
                                                 </div>
                                                 <div class="input-container">
-                                                      <select name="city" id="">
+                                                      <select class="form-control" name="city" id="city">
                                                             <option value="">Localidad</option>
                                                       </select>
                                                 </div>
-                                                <!-- <div class="input-container">
-                                                <p>Cambiar foto de perfil</p>
-                                                <input type="file" name="avatar">
-                                          </div> -->
+                                                <div class="img-container" id="img-preview">
+
+                                                </div>
                                                 <div class="input-container">
                                                       <div class="input-file-container">
                                                             <p>Agregar Avatar</p>
-                                                            <input class="input-file" type="file" id="image" name="image">
+                                                            <input class="input-file form-control" type="file" id="image" name="image">
                                                       </div>
                                                       <span class="error-message" id="fileErrors">
                                                             <%= locals.errors && locals.errors.image ? locals.errors.image.msg : null %>
                                                       </span>
                                                 </div>
-
 
                                                 <div class="button-container">
                                                       <button type="submit" class="btn btn-submit">
@@ -87,6 +79,7 @@
                         <%- include("../partials/footer") %>
                               <%- include('../partials/scripts')%>
             </div>
+            <script src="/js/users/profileScript.js"></script>
       </body>
 
 </html>

@@ -1,8 +1,8 @@
 let qs = (elemento) => {
-    return document.querySelector(elemento);
+      return document.querySelector(elemento);
 };
-window.addEventListener("load", ()=>{
-    let $inputName = qs("#name"),
+window.addEventListener("load", () => {
+      let $inputName = qs("#name"),
             $nameErrors = qs("#nameErrors"),
             $price = qs("#price"),
             $priceErrors = qs("#priceErrors"),
@@ -21,30 +21,30 @@ window.addEventListener("load", ()=>{
             $form = qs("#form"),
             $file = qs("#image"),
             $fileErrors = qs("#fileErrors");
-            (regExName = /^[a-zA-Z\sñáéíóúü ]{2,30}$/),
+      (regExName = /^[a-zA-Z\sñáéíóúü ]{2,30}$/),
             (regExLastName = /^[a-zA-Z\sñáéíóúü ]{2,20}$/),
             (regExDNI = /^[0-9]{7,8}$/),
             (regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i),
             (regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,12}$/);
 
-            $inputName.addEventListener("blur", () => {
-                switch (true) {
-                      case !$inputName.value.trim():
-                            $nameErrors.innerText = "El campo nombre es obligatorio";
-                            $inputName.classList.add("is-invalid");
-                            break;
-                      case !regExName.test($inputName.value):
-                            $nameErrors.innerText = "Nombre invalido";
-                            $inputName.classList.add("is-invalid");
-                            break;
-                      default:
-                            $inputName.classList.remove("is-invalid");
-                            $inputName.classList.add("is-valid");
-                            $nameErrors.innerText = "";
-                            break;
-                }
-          });
-          $form.addEventListener("submit", (event) => {
+      $inputName.addEventListener("blur", () => {
+            switch (true) {
+                  case !$inputName.value.trim():
+                        $nameErrors.innerText = "El campo nombre es obligatorio";
+                        $inputName.classList.add("is-invalid");
+                        break;
+                  case !regExName.test($inputName.value):
+                        $nameErrors.innerText = "Nombre invalido";
+                        $inputName.classList.add("is-invalid");
+                        break;
+                  default:
+                        $inputName.classList.remove("is-invalid");
+                        $inputName.classList.add("is-valid");
+                        $nameErrors.innerText = "";
+                        break;
+            }
+      });
+      $form.addEventListener("submit", (event) => {
             event.preventDefault();
             const FORM_ELEMENTS = event.target.elements;
 
@@ -70,4 +70,4 @@ window.addEventListener("load", ()=>{
                   $form.submit();
             }
       });
-        })
+});

@@ -15,4 +15,6 @@ module.exports = [
             }
             return true;
       }),
+      check("province").notEmpty().withMessage("Seleccione una Provincia"),
+      check("city").notEmpty().withMessage("Seleccione una Localidad"),
 ];

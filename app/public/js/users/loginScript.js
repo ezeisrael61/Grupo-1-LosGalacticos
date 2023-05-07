@@ -1,13 +1,13 @@
-let qs = (elemento) => {
+let qy = (elemento) => {
       return document.querySelector(elemento);
 };
 
 window.addEventListener("load", () => {
-      let $email = qs("#email"),
-            $emailErrors = qs("#emailErrors"),
-            $pass = qs("#pass"),
-            $passErrors = qs("#passErrors"),
-            $form = qs("#form");
+      let $email = qy("#email"),
+            $emailErrors = qy("#emailErrors"),
+            $pass = qy("#pass"),
+            $passErrors = qy("#passErrors"),
+            $form = qy("#form");
 
       (regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i), (regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,12}$/);
 
