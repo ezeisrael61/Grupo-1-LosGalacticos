@@ -45,7 +45,10 @@
                                                 </div>
                                                 <div class="input-container">
                                                       <select class="form-control" name="province" id="province">
-                                                            <option value="">Provincia</option>
+                                                            <option value="" selected hidden>Provincia</option>
+                                                            <% provinces.forEach(province=> { %>
+                                                                  <option value="<%- province.nombre %>"><%- province.nombre %></option>
+                                                                  <% }) %>
 
                                                       </select>
                                                 </div>

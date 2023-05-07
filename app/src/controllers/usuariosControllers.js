@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const { User, UserDetail, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 const fs = require("fs");
+const fetch = require("node-fetch");
 module.exports = {
       login: (req, res) => {
             return res.render("users/login", { session: req.session });
@@ -91,14 +92,16 @@ module.exports = {
             });
             //let user = dbUsers.find((user) => user.id === req.session.user.id);
       },
-      profileEdit: (req, res) => {
-            User.findByPk(req.session.user.id, {
+      profileEdit: async (req, res) => {
+            const user = await User.findByPk(req.session.user.id, {
                   include: [{ association: "userdetail" }],
-            }).then((user) => {
-                  return res.render("users/userProfileEdit", {
-                        session: req.session,
-                        user,
-                  });
+            });
+            const data = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id").then((response) => response.json());
+
+            return res.render("users/userProfileEdit", {
+                  session: req.session,
+                  provinces: data.provincias,
+                  user,
             });
 
             //let user = dbUsers.find((user) => user.id === req.session.user.id);

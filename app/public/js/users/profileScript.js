@@ -3,6 +3,9 @@ let qy = (elemento) => {
 };
 
 window.addEventListener("load", () => {
+      let selectProvincias = document.querySelector("#province");
+      let selectLocalidades = document.querySelector("#city");
+      const API_BASE_URL = "https://apis.datos.gob.ar/georef/api/";
       let $inputName = qy("#name"),
             $nameErrors = qy("#nameErrors"),
             $inputLastname = qy("#lastname"),
@@ -48,6 +51,27 @@ window.addEventListener("load", () => {
             }
       });
 
+      selectProvincias.addEventListener("change", async (event) => {
+            let provinceId = event.target.value;
+            try {
+                  const response = await fetch(`${API_BASE_URL}localidades?provincia=${provinceId}&campos=id,nombre&max=5000`);
+                  const { localidades } = await response.json();
+                  //alert(localidades[0].nombre);
+                  selectLocalidades.innerHTML = "";
+
+                  const obtenerOption = (nombre) => {
+                        return `<option value='${nombre}'>${nombre}</option>`;
+                  };
+
+                  localidades.forEach((localidad) => {
+                        selectLocalidades.innerHTML += obtenerOption(localidad.nombre);
+                  });
+            } catch (error) {
+                  alert("Hubo un error");
+                  console.error(error);
+            }
+      });
+
       $form.addEventListener("submit", (event) => {
             event.preventDefault();
             const FORM_ELEMENTS = event.target.elements;
@@ -69,6 +93,7 @@ window.addEventListener("load", () => {
                   $form.submit();
             }
       });
+
       $file.addEventListener("change", () => {
             let filePath = $file.value, //Capturo el valor del input
                   allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i; //Extensiones permitidas
