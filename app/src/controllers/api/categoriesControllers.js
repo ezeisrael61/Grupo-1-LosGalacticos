@@ -1,5 +1,20 @@
 const { Category } = require("../../database/models");
 module.exports = {
+      list: async (req, res) => {
+            try {
+                  const RESULT = await Category.findAll({});
+                  return res.status(201).json({
+                        meta: {
+                              status: 201,
+                              url: "api/v1/categories/list",
+                              msg: "Listado de Categorias",
+                        },
+                        data: RESULT,
+                  });
+            } catch (error) {
+                  console.error(error);
+            }
+      },
       store: async (req, res) => {
             try {
                   const RESULT = await Category.create({

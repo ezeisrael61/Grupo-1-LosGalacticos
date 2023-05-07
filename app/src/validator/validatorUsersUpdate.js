@@ -8,7 +8,7 @@ module.exports = [
 
       check("avatar").custom((value, { req }) => {
             let file = req.file;
-            let acceptedExtensions = [".jpg,", ".png", ".gif"];
+            let acceptedExtensions = [".jpg", ".png", ".gif"];
             if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
                   throw new Error("El avatar tiene que tener extension .jpg .png .gif");
             }
