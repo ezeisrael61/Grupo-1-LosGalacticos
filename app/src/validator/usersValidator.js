@@ -1,19 +1,26 @@
 const { check, body } = require("express-validator");
 const path = require("path");
-const { readJSON } = require("../database");
+//const { readJSON } = require("../database");
+const { User } = require("../database/models");
 
-const users = readJSON("users.json");
+//const users = readJSON("users.json");
 module.exports = [
       check("nombre").notEmpty().withMessage("El nombre es obligatorio").bail().isLength({ min: 3, max: 30 }).withMessage("En nombre debe tener entre 3 y 20 caracteres"),
       check("apellido").notEmpty().withMessage("El apellido es obligatorio").bail().isLength({ min: 3, max: 20 }).withMessage("En apellido debe tener entre 3 y 20 caracteres"),
 
       check("email").notEmpty().withMessage("El email es obligatorio").bail().isEmail().withMessage("Email invalido"),
-      body("email")
-            .custom((value) => {
-                  let user = users.find((user) => user.email === value);
-                  return user === undefined;
+      body("email").custom((value) => {
+            //let user = users.find(user => user.email === value);
+            return User.findOne({
+                  where: {
+                        email: value,
+                  },
             })
-            .withMessage("Email ya registrado"),
+                  .then((user) => {
+                        if (user) return Promise.reject("Email ya registrado");
+                  })
+                  .catch(() => Promise.reject("Email ya registrado"));
+      }),
       check("pass")
             .notEmpty()
             .withMessage("Debes escribir tu contraseña")
@@ -34,7 +41,7 @@ module.exports = [
             let file = req.file;
             let acceptedExtensions = [".jpg", ".jpeg", ".png", ".gif", ".web"];
             if (file && !acceptedExtensions.includes(path.extname(file.originalname))) {
-                  throw new Error("archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif -.web");
+                  throw new Error("archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif -.web)");
             }
             return true;
       }),
