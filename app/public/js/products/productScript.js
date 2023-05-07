@@ -44,6 +44,43 @@ window.addEventListener("load", () => {
                         break;
             }
       });
+      $price.addEventListener("blur", () => {
+            switch (true) {
+                  case !$price.value :
+                        $priceErrors.innerText = "El campo precio es obligatorio";
+                        $price.classList.add("is-invalid");
+                        break;
+                  default:
+                        $price.classList.remove("is-invalid");
+                        $price.classList.add("is-valid");
+                        $priceErrors.innerText = "";
+                        break;
+            }
+      });
+      $discount.addEventListener("blur", () => {          
+            const isValidNumberInRange = (value) => {
+                  let valuediscount=$discount.value
+                  const parsedValue = parseFloat(valuediscount);
+                  return !isNaN(parsedValue) && parsedValue >= 0 && parsedValue <= 75;
+                };
+            switch (true) {
+                  
+                  case !$discount.value :
+                        $discountErrors.innerText = "El campo descuento es obligatorio";
+                        $discount.classList.add("is-invalid");
+                        break;
+                  case isValidNumberInRange :
+                        $discountErrors.innerText = "El campo Descuento no valido, debe ser entre 0-75";
+                        $discount.classList.add("is-invalid");
+                        break;
+
+                  default:
+                        $discount.classList.remove("is-invalid");
+                        $discount.classList.add("is-valid");
+                        $discountErrors.innerText = "";
+                        break;
+            }
+      });
       $form.addEventListener("submit", (event) => {
             event.preventDefault();
             const FORM_ELEMENTS = event.target.elements;
@@ -56,10 +93,6 @@ window.addEventListener("load", () => {
                   }
             }
 
-            if (!$terms.checked) {
-                  $terms.classList.add("is-invalid");
-                  $termsErrors.innerHTML = "Debes aceptar las bases y condiciones";
-            }
 
             let elementosConErrores = document.querySelectorAll(".is-invalid");
             let errores = elementosConErrores.length > 0;
