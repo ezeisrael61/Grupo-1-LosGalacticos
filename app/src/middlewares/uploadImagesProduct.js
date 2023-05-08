@@ -5,8 +5,8 @@ const { Subcategory, Sequelize } = require("../database/models");
 const storageImage = multer.diskStorage({
       destination: function (req, file, callback) {
             Subcategory.findByPk(req.body.subcategory, { include: [{ association: "category" }] }).then((subcategory) => {
-                  let ruta = subcategory.category.name;
-                  callback(null, "./public/img/" + ruta);
+                  let ruta = "./public/img/" + subcategory.category.name;
+                  callback(null, ruta);
             });
       },
       filename: function (req, file, callback) {

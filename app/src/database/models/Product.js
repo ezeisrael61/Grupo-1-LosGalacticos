@@ -51,10 +51,10 @@ module.exports = (sequelize, dataTypes) => {
                   foreignKey: "idSubCategory",
             });
 
-            PRODUCT.hasMany(models.Image, {
+            PRODUCT.belongsTo(models.Image, {
                   as: "images",
                   foreignKey: "idProduct",
-            }); 
+            });
 
             /*  PRODUCT.belongsTo(models.OrderItem, {
             as: "orderItem",

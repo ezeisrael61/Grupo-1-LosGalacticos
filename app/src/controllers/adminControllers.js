@@ -2,27 +2,6 @@ const { Product, Image, Category, Subcategory, Sequelize } = require("../databas
 const { Op } = Sequelize;
 const { validationResult } = require("express-validator");
 const fs = require("fs");
-let procedures = {
-      deleteImage: (id) => {
-            Product.findByPk(id, {
-                  include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
-            }).then((product) => {
-                  if (product.images[0].name != "default-image.png") {
-                        //return console.log(product.images[0].name);
-                        const MATCH = fs.existsSync(`./public/img/${product.subcategory.category.name}/`, product.images[0].name);
-                        if (MATCH) {
-                              try {
-                                    fs.unlinkSync(`./public/img/${product.subcategory.category.name}/${product.images[0].name}`);
-                              } catch (error) {
-                                    throw new Error(error);
-                              }
-                        } else {
-                              console.log("No se encontró el archivo");
-                        }
-                  }
-            });
-      },
-};
 
 module.exports = {
       index: (req, res) => {
@@ -30,7 +9,6 @@ module.exports = {
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
             });
             return res.render("admin/admin", { session: req.session });
-            //return res.render("admin/adminIndex", { session: req.session });
       },
       products: (req, res) => {
             Product.findAll({
@@ -51,8 +29,8 @@ module.exports = {
             });
 
             Promise.all([PRODUCT_ALL, CATEGORY_ALL, SUBCATEGORY_ALL])
-                  .then(([productToEdit, category, subcategory]) => {
-                        res.render("admin/product-create", { productToEdit, category, subcategory, session: req.session });
+                  .then(([productToEdit, category, subcategorys]) => {
+                        res.render("admin/product-create", { productToEdit, category, subcategorys, session: req.session });
                   })
                   .catch((error) => console.log(error));
       },
@@ -76,6 +54,9 @@ module.exports = {
                         });
                   });
             } else {
+                  if (req.file) {
+                        fs.existsSync(`${req.file.destination}/${req.file.filename}`) && fs.unlinkSync(`${req.file.destination}/${req.file.filename}`);
+                  }
                   const PRODUCT_ALL = Product.findByPk(req.params.id, {
                         include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
                   });
@@ -87,10 +68,10 @@ module.exports = {
                   });
 
                   Promise.all([PRODUCT_ALL, CATEGORY_ALL, SUBCATEGORY_ALL])
-                        .then(([productToEdit, category, subcategory]) => {
+                        .then(([productToEdit, category, subcategorys]) => {
                               res.render("admin/product-create", {
                                     category,
-                                    subcategory,
+                                    subcategorys,
                                     errors: errors.mapped(),
                                     old: req.body,
                                     session: req.session,
@@ -136,9 +117,26 @@ module.exports = {
                               if (!req.file) {
                                     return res.redirect("/admin/products");
                               } else {
-                                    procedures.deleteImage(ID_PRODUCT);
-                                    Image.update({ name: req.file.filename }, { where: { idProduct: ID_PRODUCT } });
-                                    return res.redirect("/admin/products");
+                                    Product.findByPk(ID_PRODUCT, {
+                                          include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
+                                    }).then((product) => {
+                                          if (product) {
+                                                if (product.images.name != "default-image.png") {
+                                                      const MATCH = fs.existsSync(`./public/img/${product.subcategory.category.name}/`, product.images.name);
+                                                      if (MATCH) {
+                                                            try {
+                                                                  fs.unlinkSync(`./public/img/${product.subcategory.category.name}/${product.images.name}`);
+                                                            } catch (error) {
+                                                                  throw new Error(error);
+                                                            }
+                                                      }
+                                                }
+                                          } else {
+                                                console.log("No se encontró el archivo");
+                                          }
+                                          Image.update({ name: req.file.filename }, { where: { idProduct: ID_PRODUCT } });
+                                          return res.redirect("/admin/products");
+                                    });
                               }
                         }
                   });
@@ -168,24 +166,38 @@ module.exports = {
       },
       destroy: (req, res) => {
             // obtengo el id del req.params
-            const PRODUCT_ID = req.params.id;
-            procedures.deleteImage(PRODUCT_ID);
-
-            Image.destroy({
-                  where: {
-                        idProduct: PRODUCT_ID,
-                  },
-            });
-            Product.destroy({
+            const ID_PRODUCT = parseInt(req.params.id);
+            Product.findByPk(ID_PRODUCT, {
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
-
-                  where: {
-                        idProduct: PRODUCT_ID,
-                  },
-            })
-                  .then(() => {
-                        return res.redirect("/admin/products");
+            }).then((product) => {
+                  if (product) {
+                        if (product.images.name != "default-image.png") {
+                              const MATCH = fs.existsSync(`./public/img/${product.subcategory.category.name}/`, product.images.name);
+                              if (MATCH) {
+                                    try {
+                                          fs.unlinkSync(`./public/img/${product.subcategory.category.name}/${product.images.name}`);
+                                    } catch (error) {
+                                          throw new Error(error);
+                                    }
+                              }
+                        }
+                  } else {
+                        console.log("No se encontró el archivo");
+                  }
+                  Image.destroy({
+                        where: {
+                              idProduct: ID_PRODUCT,
+                        },
+                  });
+                  Product.destroy({
+                        where: {
+                              idProduct: ID_PRODUCT,
+                        },
                   })
-                  .catch((error) => console.log(error));
+                        .then(() => {
+                              return res.redirect("/admin/products");
+                        })
+                        .catch((error) => console.log(error));
+            });
       },
 };

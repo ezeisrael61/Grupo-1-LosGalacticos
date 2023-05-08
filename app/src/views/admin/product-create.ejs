@@ -49,21 +49,29 @@
                                                       <label for="category" class="form-label">Categoría:</label>
                                                       <select name="category" id="category" class="select-style form-control">
                                                             <option value="" selected hidden>Categorias</option>
-                                                            <% for(let i=0; i<category.length;i++) {%>
 
-                                                                  <option value="<%= category[i].idCategory %>">
-                                                                        <%= category[i].name %>
+
+                                                            <% category.forEach(category=> { %>
+                                                                  <option value="<%- category.idCategory %>" <%=locals.old &&
+                                                                        old.category==category.idCategory ? "selected" : null %> ><%- category.name %>
                                                                   </option>
-                                                                  <% } %>
+                                                                  <% }) %>
+
                                                       </select>
                                                       <span class="error-message" id="categoryErrors">
                                                             <%= locals.errors && locals.errors.category ? locals.errors.category.msg : null %>
                                                       </span>
                                                 </div>
                                                 <div class="input-container">
-                                                      <label for="subcategory" class="form-label">SubCategoria:</label>
+                                                      <label for="subcategory" class="form-label">SubCategoria: </label>
                                                       <select name="subcategory" id="subcategory" class="select-style form-control">
-                                                            <option value=""> SubCategorias</option>
+                                                            <option selected hidden value="">Subcategorias</option>
+                                                            <% subcategorys.forEach(subcategory=> { %>
+                                                                  <option value="<%- subcategory.idSubCategory %>" <%=locals.old &&
+                                                                        old.subcategory==subcategory.idSubCategory ? "selected" : null %>>
+                                                                        <%- subcategory.name %>
+                                                                  </option>
+                                                                  <% }) %>
                                                       </select>
                                                       <span class="error-message" id="subcategoryErrors">
                                                             <%= locals.errors && locals.errors.subcategory ? locals.errors.subcategory.msg : null %>
@@ -71,8 +79,8 @@
                                                 </div>
 
                                                 <div class="input-container">
-                                                      <label for="sold" class="form-label form-control">Ventas:</label>
-                                                      <input class="input-style" type="number" name="sold" placeholder="Ej: 0" id="sold"
+                                                      <label for="sold" class="form-label">Ventas:</label>
+                                                      <input class="input-style form-control" type="number" name="sold" placeholder="Ej: 0" id="sold"
                                                             value="<%= locals.old && locals.old.sold ? locals.old.sold : 0 %>">
                                                       <span class="error-message" id="soldErrors">
                                                             <%= locals.errors && locals.errors.sold ? locals.errors.sold.msg : null %>
@@ -87,7 +95,6 @@
                                                       </span>
                                                 </div>
                                                 <div class="input-container">
-                                                      <label for="img" class="form-label form-control">Imagen:</label>
                                                       <div class="input-file-container">
                                                             <p>Agregar Imagen</p>
                                                             <input class="input-file form-control" type="file" id="image" name="image">
@@ -110,7 +117,7 @@
                               <%- include("../partials/scripts") %>
             </div>
             <script src="/js/products.js"></script>
-            <script src="/js/products/productScript.js"></script>
+            <!-- <script src="/js/products/productScript.js"></script> -->
       </body>
 
 </html>
