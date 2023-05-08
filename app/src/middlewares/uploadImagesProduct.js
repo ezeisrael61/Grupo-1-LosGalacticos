@@ -7,12 +7,12 @@ const storageImage = multer.diskStorage({
       destination: function (req, file, callback) {
             
             Subcategory.findByPk(req.body.subcategory, { include: [{ association: "category" }] }).then((subcategory) => {
-                  
-                  callback(null, "./public/img/");
+                  let ruta = subcategory.category.name;
+                  callback(null, "./public/img/" + ruta);
             });
       },
       filename: function (req, file, callback) {
-            callback(null, `${Date.now()}_${path.extname(file.originalname)}`);
+            callback(null, `${Date.now()}_${ruta}${path.extname(file.originalname)}`);
       },
 });
 const uploadImagesProduct = multer({ storage: storageImage });
