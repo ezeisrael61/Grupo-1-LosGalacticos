@@ -5,7 +5,18 @@ const bcrypt = require("bcryptjs");
 const { User, UserDetail, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 const fs = require("fs");
+const fetch = require("node-fetch");
 module.exports = {
+      users: (req, res) => {
+            User.findAll({
+                  include: [{ association: "userdetail" }],
+            }).then((users) => {
+                  return res.render("admin/adminusers", { users, session: req.session });
+            });
+      },
+      updateAdmin: (req, res) => {
+            res.send("En construccion");
+      },
       login: (req, res) => {
             return res.render("users/login", { session: req.session });
       },
@@ -73,6 +84,9 @@ module.exports = {
                         });
                   });
             } else {
+                  if (req.file) {
+                        fs.existsSync(`${req.file.destination}/${req.file.filename}`) && fs.unlinkSync(`${req.file.destination}/${req.file.filename}`);
+                  }
                   res.render("users/registro", {
                         errors: errors.mapped(),
                         old: req.body,
@@ -91,14 +105,16 @@ module.exports = {
             });
             //let user = dbUsers.find((user) => user.id === req.session.user.id);
       },
-      profileEdit: (req, res) => {
-            User.findByPk(req.session.user.id, {
+      profileEdit: async (req, res) => {
+            const user = await User.findByPk(req.session.user.id, {
                   include: [{ association: "userdetail" }],
-            }).then((user) => {
-                  return res.render("users/userProfileEdit", {
-                        session: req.session,
-                        user,
-                  });
+            });
+            const data = await fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id").then((response) => response.json());
+
+            return res.render("users/userProfileEdit", {
+                  session: req.session,
+                  provinces: data.provincias,
+                  user,
             });
 
             //let user = dbUsers.find((user) => user.id === req.session.user.id);
@@ -173,16 +189,61 @@ module.exports = {
                         })
                         .catch((error) => console.log(error));
             } else {
+                  if (req.file) {
+                        fs.existsSync(`${req.file.destination}/${req.file.filename}`) && fs.unlinkSync(`${req.file.destination}/${req.file.filename}`);
+                  }
                   User.findByPk(req.session.user.id, {
                         include: [{ association: "userdetail" }],
                   }).then((user) => {
-                        return res.render("users/userProfileEdit", {
-                              session: req.session,
-                              user,
-                              errors: errors.mapped(),
+                        const users = User.findByPk(req.session.user.id, { include: [{ association: "userdetail" }] });
+                        const datas = fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id").then((response) => response.json());
+
+                        Promise.all([users, datas]).then(([user, data]) => {
+                              return res.render("users/userProfileEdit", {
+                                    session: req.session,
+                                    user,
+                                    provinces: data.provincias,
+                                    old: req.body,
+                                    errors: errors.mapped(),
+                              });
                         });
                   });
                   //                  let user = dbUsers.find((user) => user.id === req.session.user.id);
             }
+      },
+      destroy: (req, res) => {
+            const ID_USER = parseInt(req.params.id);
+            User.findByPk(ID_USER, {
+                  include: [{ association: "userdetail" }],
+            }).then((user) => {
+                  if (user) {
+                        if (user.userdetail.avatar != "default-image.png") {
+                              const MATCH = fs.existsSync(`./public/img/avatar/`, user.userdetail.avatar);
+                              if (MATCH) {
+                                    try {
+                                          fs.unlinkSync(`./public/img/avatar/${user.userdetail.avatar}`);
+                                    } catch (error) {
+                                          throw new Error(error);
+                                    }
+                              }
+                        }
+                  } else {
+                        console.log("No se encontró el archivo");
+                  }
+                  UserDetail.destroy({
+                        where: {
+                              idUser: ID_USER,
+                        },
+                  });
+                  User.destroy({
+                        where: {
+                              idUser: ID_USER,
+                        },
+                  })
+                        .then(() => {
+                              return res.redirect("/admin/users");
+                        })
+                        .catch((error) => console.log(error));
+            });
       },
 };

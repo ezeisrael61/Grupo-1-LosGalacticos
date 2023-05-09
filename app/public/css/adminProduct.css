@@ -8,12 +8,33 @@
       padding-right: 15px 0;
       width: 25%;
 }
+/* .navMain ul {
+      display: flex;
+      font-size: 10px;
+      justify-content: space-between;
+} */
 .navMain ul li {
       margin-top: 5px;
 }
-
 .navMain ul li a {
       text-align: left;
 
       color: #184b44;
+}
+.navMain ul li a:hover {
+      color: rgb(17, 153, 15);
+}
+table tbody tr td {
+      vertical-align: middle;
+      font-size: 13px;
+}
+.btn-width {
+      width: 40px;
+      margin: 0;
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
 }

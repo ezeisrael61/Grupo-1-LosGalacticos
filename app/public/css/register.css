@@ -1,4 +1,4 @@
-@import url("forms.css");
+/* @import url("forms.css"); */
 
 main {
       display: flex;
@@ -12,3 +12,4 @@ main {
 main div.form-container img.image-register {
       width: 25%;
 }
+

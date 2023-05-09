@@ -15,6 +15,7 @@ app.use(
       session({
             secret: "Pico y Pala",
             resave: false,
+
             saveUninitialized: true,
       })
 );
@@ -29,7 +30,7 @@ app.set("views", "./src/views");
 /* ROUTERS */
 const homeRouter = require("./routes/home");
 const productosRouter = require("./routes/productos");
-const usuariosRouter = require("./routes/usuarios");
+const usuariosRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 const categoriesRoutesApi = require("./routes/api/categoriesRoutes");
 const subCategoriesRoutesApi = require("./routes/api/subCategoriesRoutes");
@@ -37,7 +38,7 @@ const subCategoriesRoutesApi = require("./routes/api/subCategoriesRoutes");
 /* MIDDLEWARES ROUTES */
 app.use("/", homeRouter);
 app.use("/productos", productosRouter);
-app.use("/usuarios", usuariosRouter);
+app.use("/users", usuariosRouter);
 app.use("/admin", adminRouter);
 app.use("/api/v1", categoriesRoutesApi);
 app.use("/api/v1", subCategoriesRoutesApi);

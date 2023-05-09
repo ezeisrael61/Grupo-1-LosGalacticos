@@ -1,6 +1,22 @@
 const { Subcategory } = require("../../database/models");
 module.exports = {
-      list: {},
+      index: async (req, res) => {
+            try {
+                  const RESULT = await Subcategory.findAll({
+                        include: [{ association: "products" }, { association: "category" }],
+                  });
+                  return res.status(201).json({
+                        meta: {
+                              status: 201,
+                              url: "api/v1/subcategories/list",
+                              msg: "Listado de SubCategorias",
+                        },
+                        data: RESULT,
+                  });
+            } catch (error) {
+                  console.error(error);
+            }
+      },
       category: async (req, res) => {
             try {
                   const RESULT = await Subcategory.findAll({ where: { idCategory: req.params.id } });

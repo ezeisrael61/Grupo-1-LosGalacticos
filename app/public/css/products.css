@@ -18,7 +18,7 @@ main.main-section section.vip-products div.container-title {
       font-size: 14px;
       margin-right: 5px;
 } */
-main.main-section section.vip-products div.container-title h1.title {
+h1.title {
       margin-top: 15px;
       color: #184b44;
       font-weight: bold;
@@ -95,7 +95,7 @@ main.main-section section.vip-products article.product h2.name {
 /* Media queries */
 @media (min-width: 768px) {
       /* PRODUCTS */
-      main.main-section section.vip-products div.container-title h1.title {
+      h1.title {
             font-size: 36px;
       }
       main.main-section section.vip-products div.container-title h3.title {

@@ -11,15 +11,15 @@ window.addEventListener("load", () => {
                   selectSubcategory.innerHTML = "";
 
                   const obtenerOption = (subCategory) => {
-                        return `<option value='${subCategory.idSubCategoria}'>${subCategory.name}</option>`;
+                        return `<option value='${subCategory.idSubCategory}'>${subCategory.name}</option>`;
                   };
 
                   data.forEach((subCategory) => {
                         selectSubcategory.innerHTML += obtenerOption(subCategory);
                   });
             } catch (error) {
-                  //alert("Hubo un error");
                   console.log(error);
             }
       });
+      selectCategory.dispatchEvent(new Event("change"));
 });
