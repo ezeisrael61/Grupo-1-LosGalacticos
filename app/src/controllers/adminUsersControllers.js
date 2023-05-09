@@ -12,6 +12,6 @@ module.exports = {
             });
       },
       updateUserAdmin: (req, res) => {
-            res.send("En construcción, pronto estara funcional");
+            res.send("Aca se podra modificar el mail, y el tipo de acceso del Usuario , pronto estara funcional");
       },
 };

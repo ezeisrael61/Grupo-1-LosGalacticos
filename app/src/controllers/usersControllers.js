@@ -211,4 +211,39 @@ module.exports = {
                   //                  let user = dbUsers.find((user) => user.id === req.session.user.id);
             }
       },
+      destroy: (req, res) => {
+            const ID_USER = parseInt(req.params.id);
+            User.findByPk(ID_USER, {
+                  include: [{ association: "userdetail" }],
+            }).then((user) => {
+                  if (user) {
+                        if (user.userdetail.avatar != "default-image.png") {
+                              const MATCH = fs.existsSync(`./public/img/avatar/`, user.userdetail.avatar);
+                              if (MATCH) {
+                                    try {
+                                          fs.unlinkSync(`./public/img/avatar/${user.userdetail.avatar}`);
+                                    } catch (error) {
+                                          throw new Error(error);
+                                    }
+                              }
+                        }
+                  } else {
+                        console.log("No se encontró el archivo");
+                  }
+                  UserDetail.destroy({
+                        where: {
+                              idUser: ID_USER,
+                        },
+                  });
+                  User.destroy({
+                        where: {
+                              idUser: ID_USER,
+                        },
+                  })
+                        .then(() => {
+                              return res.redirect("/admin/users");
+                        })
+                        .catch((error) => console.log(error));
+            });
+      },
 };

@@ -165,10 +165,6 @@ module.exports = {
             }
       },
       destroy: (req, res) => {
-            // obtengo el id del req.params
-            if (req.method === "GET") {
-                  return res.status(400).send("La eliminación de productos solo está permitida a través de una solicitud DELETE");
-            }
             const ID_PRODUCT = parseInt(req.params.id);
             Product.findByPk(ID_PRODUCT, {
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
