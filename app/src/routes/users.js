@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { login, storeLogin, logout, register, store, profile, profileEdit, profileUpdate } = require("../controllers/usuariosControllers");
+const { login, storeLogin, logout, register, store, profile, profileEdit, profileUpdate } = require("../controllers/usersControllers");
 const { uploadAvatar } = require("../middlewares/uploadAvatar");
 const usersValidator = require("../validator/usersValidator");
 const loginValidator = require("../validator/loginValidator");

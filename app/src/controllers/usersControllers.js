@@ -7,6 +7,16 @@ const { Op } = Sequelize;
 const fs = require("fs");
 const fetch = require("node-fetch");
 module.exports = {
+      users: (req, res) => {
+            User.findAll({
+                  include: [{ association: "userdetail" }],
+            }).then((users) => {
+                  return res.render("admin/adminusers", { users, session: req.session });
+            });
+      },
+      updateAdmin: (req, res) => {
+            res.send("En construccion");
+      },
       login: (req, res) => {
             return res.render("users/login", { session: req.session });
       },
@@ -74,6 +84,9 @@ module.exports = {
                         });
                   });
             } else {
+                  if (req.file) {
+                        fs.existsSync(`${req.file.destination}/${req.file.filename}`) && fs.unlinkSync(`${req.file.destination}/${req.file.filename}`);
+                  }
                   res.render("users/registro", {
                         errors: errors.mapped(),
                         old: req.body,
@@ -176,13 +189,23 @@ module.exports = {
                         })
                         .catch((error) => console.log(error));
             } else {
+                  if (req.file) {
+                        fs.existsSync(`${req.file.destination}/${req.file.filename}`) && fs.unlinkSync(`${req.file.destination}/${req.file.filename}`);
+                  }
                   User.findByPk(req.session.user.id, {
                         include: [{ association: "userdetail" }],
                   }).then((user) => {
-                        return res.render("users/userProfileEdit", {
-                              session: req.session,
-                              user,
-                              errors: errors.mapped(),
+                        const users = User.findByPk(req.session.user.id, { include: [{ association: "userdetail" }] });
+                        const datas = fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id").then((response) => response.json());
+
+                        Promise.all([users, datas]).then(([user, data]) => {
+                              return res.render("users/userProfileEdit", {
+                                    session: req.session,
+                                    user,
+                                    provinces: data.provincias,
+                                    old: req.body,
+                                    errors: errors.mapped(),
+                              });
                         });
                   });
                   //                  let user = dbUsers.find((user) => user.id === req.session.user.id);

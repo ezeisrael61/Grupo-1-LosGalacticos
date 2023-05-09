@@ -49,6 +49,35 @@ body {
       margin: auto;
 }
 
+.img-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+}
+.img-product {
+      width: 100%;
+      height: 100%;
+}
+
+.img-container {
+      width: 200px;
+      height: 200px;
+      border: thin solid gray;
+      border-radius: 50%;
+      text-align: center;
+      margin: 15px 0;
+}
+.img-container-product {
+      width: 100%;
+      height: 200px;
+      border: thin solid gray;
+
+      text-align: center;
+      margin: 15px 0;
+}
+.tabla-container {
+      width: 100%;
+}
 /* END  GENERALES */
 
 /* HEADER */

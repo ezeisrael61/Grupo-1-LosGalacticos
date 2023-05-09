@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { category, store, update, destroy } = require("../../controllers/api/subCategoriesControllers");
+const { index, category, store, update, destroy } = require("../../controllers/api/subCategoriesControllers");
 
+router.get("/subCategories/index", index);
 router.get("/subCategories/category/:id", category);
 router.post("/subCategories/create", store);
 router.put("/subCategories/update/:id", update);

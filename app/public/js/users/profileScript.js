@@ -1,4 +1,4 @@
-let qy = (elemento) => {
+let qs = (elemento) => {
       return document.querySelector(elemento);
 };
 
@@ -6,15 +6,19 @@ window.addEventListener("load", () => {
       let selectProvincias = document.querySelector("#province");
       let selectLocalidades = document.querySelector("#city");
       const API_BASE_URL = "https://apis.datos.gob.ar/georef/api/";
-      let $inputName = qy("#name"),
-            $nameErrors = qy("#nameErrors"),
-            $inputLastname = qy("#lastname"),
-            $lastnameErrors = qy("#lastnameErrors"),
-            $form = qy("#form"),
-            $file = qy("#image"),
-            $fileErrors = qy("#fileErrors"),
-            $imgPreview = qy("#img-preview");
-      (regExName = /^[a-zA-Z\sñáéíóúü ]{2,30}$/), (regExLastName = /^[a-zA-Z\sñáéíóúü ]{2,20}$/);
+      let $inputName = qs("#name"),
+            $nameErrors = qs("#nameErrors"),
+            $inputLastname = qs("#lastname"),
+            $lastnameErrors = qs("#lastnameErrors"),
+            $pass = qs("#pass"),
+            $passErrors = qs("#passErrors"),
+            $pass2 = qs("#pass2"),
+            $pass2Errors = qs("#pass2Errors"),
+            $form = qs("#form"),
+            $file = qs("#image"),
+            $fileErrors = qs("#fileErrors"),
+            $imgPreview = qs("#img-preview");
+      (regExName = /^[a-zA-Z\sñáéíóúü ]{2,30}$/), (regExLastName = /^[a-zA-Z\sñáéíóúü ]{2,20}$/), (regExPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,12}$/);
 
       $inputName.addEventListener("blur", () => {
             switch (true) {
@@ -50,6 +54,36 @@ window.addEventListener("load", () => {
                         break;
             }
       });
+      $pass.addEventListener("blur", () => {
+            switch (true) {
+                  case !$pass.value.trim():
+                        $pass.classList.add("is-valid");
+                        break;
+                  case !regExPass.test($pass.value):
+                        $passErrors.innerText = "El campo contraseña debe contener entre 8 o 12 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial";
+                        $pass.classList.add("is-invalid");
+                        break;
+                  default:
+                        $pass.classList.remove("is-invalid");
+                        $pass.classList.add("is-valid");
+                        $passErrors.innerText = "";
+                        break;
+            }
+      });
+
+      $pass2.addEventListener("blur", () => {
+            switch (true) {
+                  case $pass2.value != $pass.value:
+                        $pass2Errors.innerText = "Los campos contraseñas no coinciden";
+                        $pass2.classList.add("is-invalid");
+                        break;
+                  default:
+                        $pass2.classList.remove("is-invalid");
+                        $pass2.classList.add("is-valid");
+                        $pass2Errors.innerText = "";
+                        break;
+            }
+      });
 
       selectProvincias.addEventListener("change", async (event) => {
             let provinceId = event.target.value;
@@ -79,7 +113,7 @@ window.addEventListener("load", () => {
             for (let index = 0; index < FORM_ELEMENTS.length - 1; index++) {
                   const element = FORM_ELEMENTS[index];
                   if (element.value === "" && element.type !== "file") {
-                        element.classList.add("is-invalid");
+                        //element.classList.add("is-invalid");
                         element.dispatchEvent(new Event("blur"));
                   }
             }
@@ -117,4 +151,8 @@ window.addEventListener("load", () => {
                   }
             }
       });
+      /*  let $option = qs("#option");
+      const localidad = $option.value;
+      selectProvincias.dispatchEvent(new Event("change"));
+      $option.innerHTML = "<option value=" + localidad + " selected>" + localidad + "</option>"; */
 });

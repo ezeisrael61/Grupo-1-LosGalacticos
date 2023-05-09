@@ -18,8 +18,8 @@ window.addEventListener("load", () => {
                         selectSubcategory.innerHTML += obtenerOption(subCategory);
                   });
             } catch (error) {
-                  //alert("Hubo un error");
                   console.log(error);
             }
       });
+      selectCategory.dispatchEvent(new Event("change"));
 });

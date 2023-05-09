@@ -1,6 +1,6 @@
 const { Category } = require("../../database/models");
 module.exports = {
-      list: async (req, res) => {
+      index: async (req, res) => {
             try {
                   const RESULT = await Category.findAll({});
                   return res.status(201).json({

@@ -94,7 +94,11 @@
                                                             <%= locals.errors && locals.errors.stock ? locals.errors.stock.msg : null %>
                                                       </span>
                                                 </div>
+                                                <div class="img-container-product" id="img-preview">
+
+                                                </div>
                                                 <div class="input-container">
+                                                      <label for="img" class="form-label ">Imagen:</label>
                                                       <div class="input-file-container">
                                                             <p>Agregar Imagen</p>
                                                             <input class="input-file form-control" type="file" id="image" name="image">
@@ -117,7 +121,7 @@
                               <%- include("../partials/scripts") %>
             </div>
             <script src="/js/products.js"></script>
-            <!-- <script src="/js/products/productScript.js"></script> -->
+            <script src="/js/products/productCreateScript.js"></script>
       </body>
 
 </html>

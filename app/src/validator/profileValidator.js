@@ -1,4 +1,4 @@
-const { check } = require("express-validator");
+const { check, body } = require("express-validator");
 const path = require("path");
 
 module.exports = [
@@ -15,6 +15,21 @@ module.exports = [
             }
             return true;
       }),
-      check("province").notEmpty().withMessage("Seleccione una Provincia"),
-      check("city").notEmpty().withMessage("Seleccione una Localidad"),
+
+      check("pass").custom((value, { req }) => {
+            if (!value) {
+                  return true; // permite que el campo esté en blanco
+            } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]).{8,12}$/.test(value)) {
+                  throw new Error("La contraseña debe contener entre 8 o 12 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial");
+            }
+            return true;
+      }),
+
+      body("pass2")
+            .optional()
+            .custom((value, { req }) => (value !== req.body.pass ? false : true))
+            .withMessage("Las contraseñas no coinciden"),
+
+      /* check("province").notEmpty().withMessage("Seleccione una Provincia"),
+      check("city").notEmpty().withMessage("Seleccione una Localidad"), */
 ];
