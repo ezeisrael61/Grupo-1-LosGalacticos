@@ -12,6 +12,18 @@ module.exports = {
             });
       },
       updateUserAdmin: (req, res) => {
-            res.send("Aca se podra modificar el mail, y el tipo de acceso del Usuario , pronto estara funcional");
+            const idUser = req.params.id;
+            User.update(
+                  {
+                        typeOfAccess: req.body.typeOfAccess,
+                  },
+                  {
+                        where: { idUser },
+                  }
+            )
+                  .then(() => {
+                        res.redirect(`/admin/users`);
+                  })
+                  .catch((error) => console.log(error));
       },
 };

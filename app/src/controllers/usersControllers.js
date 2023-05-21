@@ -80,7 +80,7 @@ module.exports = {
                               avatar: req.file ? req.file.filename : "default-image.png",
                               idUser: user.idUser,
                         }).then(() => {
-                              return res.redirect("/usuarios/login");
+                              return res.redirect("/users/login");
                         });
                   });
             } else {

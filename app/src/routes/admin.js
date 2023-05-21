@@ -34,7 +34,7 @@ router.get("/subcategories/edit/:id", adminNotSessionCheck, updateSucategoryAdmi
 /**** USERS ****/
 router.get("/users", adminNotSessionCheck, users);
 
-router.get("/users/edit/:id", adminNotSessionCheck, updateUserAdmin);
+router.put("/users/edit/:id", adminNotSessionCheck, updateUserAdmin);
 
 /*router.delete("/users/delete/:id", destroy);*/
 

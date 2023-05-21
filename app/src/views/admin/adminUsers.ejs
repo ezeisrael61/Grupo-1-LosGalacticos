@@ -35,10 +35,18 @@
                                                             <td><%- user.email%></td>
                                                             <td><%- user.typeOfAccess%></td>
                                                             <td>
-                                                                  <a href="/admin/users/edit/<%= user.idUser %> ">
-                                                                        <button type="button" class="btn btn-confirm btn-width"><i
-                                                                                    class="fa-solid fa-pen-to-square"></i></button>
-                                                                  </a>
+                                                                  <form action="/admin/users/edit/<%= user.idUser %>?_method=PUT" method="POST">
+                                                                        <select name="typeOfAccess" id="typeOfAccess">
+                                                                              <option selected hidden value="<%= user.typeOfAccess %>">
+                                                                                    <%= user.typeOfAccess %>
+                                                                              </option>
+                                                                              <option value="admin">admin</option>
+                                                                              <option value="user">user</option>
+                                                                        </select>
+                                                                        <button type="submit" class="btn btn-confirm btn-width"><i
+                                                                                    class="fa-solid fa-pen-to-square"></i>
+                                                                        </button>
+                                                                  </form>
                                                             </td>
                                                             <td>
                                                                   <form action="/users/delete/<%= user.idUser %>?_method=DELETE" method="POST"
