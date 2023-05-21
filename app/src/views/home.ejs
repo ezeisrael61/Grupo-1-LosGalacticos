@@ -13,40 +13,17 @@
                               <!-- banner -->
 
                               <%- include("partials/carousel")%>
-                              <!-- Llama a products.ejs que esta en la carpeta partials, y en el segundo parametro paso un
+                                    <!-- Llama a products.ejs que esta en la carpeta partials, y en el segundo parametro paso un
                                objeto literal con la propiedad title que es un string y la propiedad products que recibe un array 
                                que viene de productosController.js -->
-                              <%- include("partials/product", {title:"✨Productos Destacados ✨", products: featured }) %>
-                                    <a href="productos/featured">ver mas...</a>
+                                    <%- include("partials/product", {title:"✨Productos Destacados ✨", products: featured }) %>
+                                          <a href="productos/featured">ver mas...</a>
 
-                                    <%- include("partials/product", {title:"🔥 ¡Ofertas Sólo Por Hoy! 🔥", products: inSale }) %>
-                                          <a href="productos/inSale">ver mas...</a>
+                                          <%- include("partials/product", {title:"🔥 ¡Ofertas Sólo Por Hoy! 🔥", products: inSale }) %>
+                                                <a href="productos/inSale">ver mas...</a>
 
 
-                                          <!-- Register to our offers  -->
-                                          <div class="form-container">
-                                                <h4>RECIBA NUESTRAS OFERTAS</h4>
-                                                <hr>
-                                                <span class="require">* Requerido</span>
-                                                <form action="/users/register" method="GET">
-                                                      <div class="form">
-                                                            <div class="input-container">
-                                                                  <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                                                                  <span class="error-message">Debe ingresar su email</span>
-                                                            </div>
-                                                            <div class="check">
-                                                                  <input type="checkbox" name="recordar" id="recordar">
-                                                                  <label for="recordar"> Quiero recibir las mejores ofertas en mi correo </label>
-                                                                  <span class="error-message">Debe aceptar las ofertas</span>
-                                                            </div>
-                                                            <div class="button-container">
-                                                                  <span class="error-message">Credenciales inválidas</span>
-                                                                  <button type="submit" class="btn btn-submit">Registrarme</button>
-                                                            </div>
-                                                            <span><a href="/users/login">Ya tengo cuenta</a></span>
-                                                      </div>
-                                                </form>
-                                          </div>
+
                         </main>
 
                         <%- include("partials/footer") %>

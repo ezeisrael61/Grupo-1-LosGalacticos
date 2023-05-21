@@ -1,17 +1,9 @@
-document.addEventListener("keyup", e=>{
+document.addEventListener("keyup", (e) => {
+      if (e.target.matches("#search")) {
+            if (e.key === "Escape") e.target.value = "";
 
-    if (e.target.matches("#search")){
-  
-        if (e.key ==="Escape")e.target.value = ""
-  
-        document.querySelectorAll(".articulo").forEach(fruta =>{
-  
-            fruta.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-              ?fruta.classList.remove("filtro")
-              :fruta.classList.add("filtro")
-        })
-  
-    }
-  
-  
-  })
+            document.querySelectorAll(".articulo").forEach((fruta) => {
+                  fruta.textContent.toLowerCase().includes(e.target.value.toLowerCase()) ? fruta.classList.remove("filtro") : fruta.classList.add("filtro");
+            });
+      }
+});
