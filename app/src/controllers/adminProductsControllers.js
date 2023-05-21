@@ -165,7 +165,7 @@ module.exports = {
             }
       },
       destroy: (req, res) => {
-            const ID_PRODUCT = parseInt(req.params.id);
+            const ID_PRODUCT = (req.params.id);
             Product.findByPk(ID_PRODUCT, {
                   include: [{ association: "subcategory", include: [{ association: "category" }] }, { association: "images" }],
             }).then((product) => {

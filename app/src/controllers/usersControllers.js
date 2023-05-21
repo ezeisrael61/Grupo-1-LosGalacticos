@@ -212,7 +212,7 @@ module.exports = {
             }
       },
       destroy: (req, res) => {
-            const ID_USER = parseInt(req.params.id);
+            const ID_USER = req.params.id;
             User.findByPk(ID_USER, {
                   include: [{ association: "userdetail" }],
             }).then((user) => {
