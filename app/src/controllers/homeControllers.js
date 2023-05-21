@@ -2,6 +2,7 @@
 //const { readJSON } = require("../database");
 
 //const dbProducts = readJSON("products.json");
+const { carousel } = require("../database");
 
 const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
@@ -41,6 +42,7 @@ module.exports = {
                   .then(([featured, inSale, imageMain]) => {
                         //return res.render("pruebaproduct", { featured, inSale, imageMain, session: req.session });
                         return res.render("home", {
+                              carousel,
                               featured,
                               inSale,
                               imageMain,

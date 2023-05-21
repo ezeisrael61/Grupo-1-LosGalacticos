@@ -7,6 +7,8 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
+      carousel: JSON.parse(fs.readFileSync(path.join(__dirname, "/banner.json"), "utf-8")),
+
       readJSON: (json) => {
             return JSON.parse(fs.readFileSync(path.resolve(__dirname, json)));
       },
