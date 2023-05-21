@@ -67,10 +67,33 @@
 
       <div class="main-search">
             <div>
+                  <div class="d-flex align-items-center">
+                        <!-- Avatar -->
 
-                  <a href="#" class="toggle-nav">
+                        <div class="dropdown">
+                              <a class="toggle-nav dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+                                    role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                                    <img src="/img/menu.png" height="25" width="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                                    </i><span class="session"></span>
+                              </a>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+
+                                    <li> <a class="dropdown-item" href="/productos/Todos los Productos">Productos</a> </li>
+                                    <li> <a class="dropdown-item" href="/productos/Climatización"></i>Climatización</a> </li>
+                                    <li> <a class="dropdown-item" href="/productos/Jardín y piscinas"></i>Jardín y Piscinas</a></li>
+                                    <li> <a class="dropdown-item" href="/productos/Para el hogar"></i> Para el Hogar</a></li>
+                                    <li> <a class="dropdown-item" href="/productos/Eléctricidad"></i>Eléctricidad</a> </li>
+                                    <li> <a class="dropdown-item" href="/productos/Herramientas"></i>Herramientas</a></li>
+                                    <li> <a class="dropdown-item" href="/productos/Ferretería"></i>Ferretería</a></li>
+
+
+                              </ul>
+
+                        </div>
+                  </div>
+                  <!-- <a href="#" class="toggle-nav">
                         <span class="fas fa-bars"></span>
-                  </a>
+                  </a> -->
             </div>
             <div class="search-container">
                   <form action="/productos/buscar" method="GET">
