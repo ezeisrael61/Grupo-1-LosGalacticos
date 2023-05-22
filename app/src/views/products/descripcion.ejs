@@ -45,16 +45,22 @@
 
                                                 <% if ( session.user && session.user.typeOfAccess=="admin" ){ %>
 
-                                                      <div class="button-container">
-                                                            <button class="btn btn-confirm">
-                                                                  <a href="/admin/products/edit/<%- product.idProduct %>" class="editarProduc">EDITAR
-                                                                        PRODUCTO</a>
-                                                            </button>
+                                                      <div class="form">
+                                                            <div class="button-container">                                                     
+                                                                  <button class="btn btn-confirm">
+                                                                        <a href="/admin/products/edit/<%- product.idProduct %>" class="editarProduc">EDITAR
+                                                                              PRODUCTO</a>
+                                                                  </button>
+                                                            </div>
                                                       </div>
-                                                      <form action="/admin/products/delete/<%- product.idProduct %>?_method=DELETE" method="POST"
-                                                            style="display: inline-flex">
-                                                            <button type="submit" class="btn btn-submit">ELIMINAR PRODUCTO</button>
-                                                      </form>
+                                                      <div class="form">
+                                                            <div class="button-container"> 
+                                                                  <form action="/admin/products/delete/<%- product.idProduct %>?_method=DELETE" method="POST"
+                                                                        style="display: inline-flex;width: 100%;" >
+                                                                        <button type="submit" class="btn btn-submit">ELIMINAR PRODUCTO</button>
+                                                                  </form>                                                                                                    
+                                                            </div>
+                                                      </div>
 
                                                       <% } %>
 
