@@ -34,6 +34,7 @@ const usuariosRouter = require("./routes/users");
 const adminRouter = require("./routes/admin");
 const categoriesRoutesApi = require("./routes/api/categoriesRoutes");
 const subCategoriesRoutesApi = require("./routes/api/subCategoriesRoutes");
+const orderApi = require("./routes/api/orderRutes");
 
 /* MIDDLEWARES ROUTES */
 app.use("/", homeRouter);
@@ -42,6 +43,7 @@ app.use("/users", usuariosRouter);
 app.use("/admin", adminRouter);
 app.use("/api/v1", categoriesRoutesApi);
 app.use("/api/v1", subCategoriesRoutesApi);
+app.use("/api/v1", orderApi);
 
 app.listen(PORT, () =>
       console.log(`Servidor funcionando en puerto ${PORT} 

@@ -8,14 +8,11 @@ el cual itero con un forEach y cargo cada campo donde corresponde  -->
             </h1>
       </div>
       <% for( let i=0; i < products.length; i++ ) { %>
-
             <article class="product">
                   <div class="product-container">
                         <a class="photo-container" href="/productos/descripcion/<%- products[i].idProduct  %> ">
-
                               <img class="photo" src="/img/<%- products[i].subcategory.category.name %>/<%- products[i].images.name %>" alt="">
                         </a>
-
 
                         <div class="valoracion">
                               <% if (products[i].sold>5 & products[i].sold<=10) { %>
@@ -30,9 +27,7 @@ el cual itero con un forEach y cargo cada campo donde corresponde  -->
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i><i
                                                                                     class="fa-sharp fa-solid fa-star"></i>
-                                                                              <% } else if (products[i].sold>40 &
-                                                                                    products[i].sold
-                                                                                    >50){ %>
+                                                                              <% } else if (products[i].sold>40 & products[i].sold >50){ %>
                                                                                     <i class="fa-sharp fa-solid fa-star"></i><i
                                                                                           class="fa-sharp fa-solid fa-star"></i><i
                                                                                           class="fa-sharp fa-solid fa-star"></i><i
@@ -48,23 +43,14 @@ el cual itero con un forEach y cargo cada campo donde corresponde  -->
                               <% } %>
 
                   </div>
-                  <h2 class="name"><%- products[i].name %></h2>
-                  <p class="price">$ <%- products[i].price %></p>
-                  <p class="send">Envio Gratis</p>
+                  <div class="name-price-container">
+
+                        <h2 class="name"><%- products[i].name %></h2>
+                        <div class="pp">
+                              <p class="price">$ <%- products[i].price %></p>
+                              <p class="send">Envio Gratis</p>
+                        </div>
+                  </div>
             </article>
-
-
-
-
-
-
             <% } %>
-
-
-
-
-
-
-
-
 </section>
