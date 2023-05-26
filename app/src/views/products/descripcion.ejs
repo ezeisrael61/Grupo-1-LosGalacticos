@@ -23,25 +23,30 @@
 
                                     <div class="compra-container">
                                           <div class="form-container">
-                                                <form action="" method="">
-                                                      <div class="form">
-                                                            <div class="select-container">
-                                                                  <label for="cantidad">Cantidad: </label>
-                                                                  <select name="cantidad" class="input-select" id="cantidad">
-                                                                        <option value="" hidden selected>1</option>
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                  </select>
-                                                                  <a href="/productos/carrito"><i class="fa-solid fa-cart-shopping"></i>+</a>
-                                                            </div>
-                                                            <div class="button-container">
-                                                                  <button type="submit" class="btn btn-confirm">Confirmar Compra</button>
-                                                            </div>
+                                                <!-- <div class="form"> -->
+                                                <div class="select-container">
+                                                      <form action="/productos/carrito/<%- product.idProduct %>" method="POST">
+                                                            <label for="quantity">Cantidad: </label>
+                                                            <select name="quantity" class="input-select" id="quantity">
+                                                                  <option value="1" hidden selected>1</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                                  <option value="4">4</option>
+                                                                  <option value="5">5</option>
+                                                            </select>
+
+                                                            <button type="submit" class="btn btn-confirm" style="width: 50px;"><i
+                                                                        class="fa-solid fa-cart-shopping"></i></button>
+                                                      </form>
+                                                </div>
+
+                                                <form action="/productos/compra" method="POST">
+                                                      <div class="button-container">
+                                                            <button type="submit" class="btn btn-confirm">Confirmar Compra</button>
                                                       </div>
                                                 </form>
+                                                <!-- </div> -->
 
                                                 <% if ( session.user && session.user.typeOfAccess=="admin" ){ %>
 
@@ -108,6 +113,7 @@
                               <%- include("../partials/scripts") %>
 
             </div>
+
       </body>
 
 </html>

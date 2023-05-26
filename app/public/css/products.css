@@ -87,6 +87,7 @@ main.main-section section.vip-products article.product h2.name {
       border-top: 1px solid var(--gris-medio);
       /* height: 50px; */
 }
+
 .descuento p {
       margin-bottom: 0;
 }
@@ -112,6 +113,7 @@ main.main-section section.vip-products article.product h2.name {
       }
       main.main-section section.vip-products article.product h2.name {
             font-size: 12px;
+            height: 90px;
       }
 
       /* END PRODUCTS */

@@ -1,5 +1,7 @@
 const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
+const { deleteOrder, getOrderById, getOrderByUser, getOrders, insertOrder, updateOrder } = require("../services/order.service");
+const { deleteOrderItem, getOrderItemById, getOrderItemsByOrder, getOrderItemsByProduct, insertOrderItem, updateOrderItem, bulkDeleteOrderItems } = require("../services/orderItems.service");
 
 const INSALE_PROMISE = Product.findAll({
       where: {
@@ -13,8 +15,79 @@ const INSALE_PROMISE = Product.findAll({
 });
 
 module.exports = {
-      carrito: (req, res) => {
-            res.render("products/carrito", { inSale, session: req.session });
+      carrito: async (req, res) => {
+            try {
+                  const idUser = req.session.user.id;
+                  const order = await getOrderByUser(idUser);
+                  //return res.send(order);
+                  res.render("products/carrito", { order, session: req.session });
+            } catch (error) {
+                  return res.status(500).json({ Error: `Error del Servidor ${error}` });
+            }
+      },
+      addToOrder: async (req, res) => {
+            //            //return res.send(`pp ${req.params.idProduct}`);
+            try {
+                  // id usuario
+                  const idUser = req.session.user.id;
+                  const order = await getOrderByUser(idUser);
+
+                  // id producto + quantity
+                  const idProduct = req.params.idProduct;
+                  const quantity = req.body.quantity;
+
+                  //return res.send(`${idProduct}  - ${quantity} - ${idUser}`);
+
+                  // Verificar si existe una orden para el usuario
+                  if (order) {
+                        let dataItem;
+                        // Si existe una orden, agregar el item
+                        // id orden
+                        const idOrder = order.idOrder;
+                        const item = await getOrderItemsByProduct(idProduct);
+                        if (item) {
+                              dataItem = {
+                                    idOrder,
+                                    idProduct,
+                                    quantity: item.quantity + quantity,
+                              };
+                              const updateOrderItemFetch = await updateOrderItem(dataItem, item.idOrderItem);
+                              return res.status(200).json("Producto incrementado correctamenete");
+                        } else {
+                              dataItem = {
+                                    idOrder,
+                                    idProduct,
+                                    quantity,
+                              };
+                              const createOrderItem = await insertOrderItem(dataItem);
+                              const idUser = req.session.user.id;
+                              const order = await getOrderByUser(idUser);
+                              return res.render("products/carrito", { order, session: req.session });
+                        }
+                  } else {
+                        // Si No existe una orden, crear la orden y agregar el item
+                        const data = {
+                              idUser,
+                              state: "PENDING",
+                        };
+                        const createOrder = await insertOrder(data);
+                        if (createOrder) {
+                              let dataItem = {
+                                    idOrder: createOrder.idOrder,
+                                    idProduct,
+                                    quantity,
+                              };
+                              const createOrderItem = await insertOrderItem(dataItem);
+                              const idUser = req.session.user.id;
+                              const order = await getOrderByUser(idUser);
+                              return res.render("products/carrito", { order, session: req.session });
+                              return res.status(201).json("Orden creada e item agregado correctamenete");
+                        }
+                        return res.status(400).json(`El usuario con el ID: ${idUser} no tiene ordenes creada`);
+                  }
+            } catch (error) {
+                  return res.status(500).json({ Error: `Error del Servidor ${error}` });
+            }
       },
       description: (req, res) => {
             const PRODUCT_PROMISE = Product.findByPk(req.params.id, {

@@ -19,7 +19,7 @@ main.main-section a.editarProduc {
 }
 main.main-section a {
       color: var(--celeste);
-      margin-bottom: 15px;
+      /* margin-bottom: 15px; */
 }
 section.banner {
       display: block;

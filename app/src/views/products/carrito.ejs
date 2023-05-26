@@ -11,118 +11,44 @@
                         <main class="main-section">
                               <h2 class="titulo-carrito">Carrito de compras</h2>
 
-                              <section class="shopping-cart-container">
+                              <%- include("../partials/cart", {order}) %>
 
-                                    <article class="product">
-                                          <div class="imagen">
-                                                <img class="photo" src="/img/Herramientas/Combo Moladora-Taladro.png" alt="plato nuevo">
-                                          </div>
-                                          <div class="title-container">
-                                                <p class="name">Combo Amoladora Gladiator + Taladro Percutor + 5 Discos</p>
-                                                <p class="envio">Envio Gratis</p>
-                                          </div>
-                                    </article>
+                                    <section class="cupon-container">
+                                          <div class="form-container">
+                                                <form action="" method="">
+                                                      <div class="form">
 
-                                    <div class="form-container">
-                                          <form action="" method="">
-                                                <div class="form">
-
-                                                      <div class="select-container">
-                                                            <label for="cantidad">Cantidad: </label>
-                                                            <select name="cantidad" class="input-select" id="cantidad">
-                                                                  <option value="" hidden selected>1</option>
-                                                                  <option value="1">1</option>
-                                                                  <option value="2">2</option>
-                                                                  <option value="3">3</option>
-                                                                  <option value="4">4</option>
-                                                                  <option value="5">5</option>
-                                                            </select>
-                                                            <p class="price">$ 11.461</p>
-                                                      </div>
-                                                      <div class="total-container">
-                                                            <p class="price-total">Total: $ xxxx,xx</p>
-                                                            <div class="icon-delete"><i class="fa-regular fa-trash-can"></i></div>
-                                                      </div>
-                                                </div>
-                                          </form>
-                                    </div>
-
-                              </section>
-
-                              <section class="shopping-cart-container">
-
-                                    <article class="product">
-                                          <div class="imagen">
-                                                <img class="photo" src="/img/Herramientas/Soldador-Lusqtoff.png" alt="plato nuevo">
-                                          </div>
-                                          <div class="title-container">
-                                                <p class="name">Mega Kit Soldador Iron-100 + Mascara + Escuadras Lusqtoff</p>
-                                                <p class="envio">Envio Gratis</p>
-                                          </div>
-                                    </article>
-
-                                    <div class="form-container">
-                                          <form action="" method="">
-                                                <div class="form">
-
-                                                      <div class="select-container">
-                                                            <label for="cantidad">Cantidad: </label>
-                                                            <select name="cantidad" class="input-select" id="cantidad">
-                                                                  <option value="" hidden selected>1</option>
-                                                                  <option value="1">1</option>
-                                                                  <option value="2">2</option>
-                                                                  <option value="3">3</option>
-                                                                  <option value="4">4</option>
-                                                                  <option value="5">5</option>
-                                                            </select>
-                                                            <p class="price">$ 26.770</p>
-                                                      </div>
-                                                      <div class="total-container">
-                                                            <p class="price-total">Total: $ xxxx,xx</p>
-                                                            <div class="icon-delete"><i class="fa-regular fa-trash-can"></i></div>
-                                                      </div>
-                                                </div>
-                                          </form>
-                                    </div>
-
-                              </section>
-
-                              <section class="cupon-container">
-                                    <div class="form-container">
-                                          <form action="" method="">
-                                                <div class="form">
-
-                                                      <div class="input-container">
-                                                            <input class="input-style" type="text" name="cupon" placeholder="Ingrese su cupon">
-                                                            <span class="error-message">Debe ingresar su cupon</span>
-                                                      </div>
-                                                      <div class="button-container">
-                                                            <button type="submit" class="btn btn-submit">Validar</button>
-                                                      </div>
-                                                      <div class="send-container">
-                                                            <div class="direccion">
-                                                                  <span>Direccion:</span>
-                                                                  <span>Avenida Juan V. Justo 9 B, La Plata, Buenos Aires</span>
+                                                            <div class="input-container">
+                                                                  <input class="input-style" type="text" name="cupon" placeholder="Ingrese su cupon">
+                                                                  <span class="error-message">Debe ingresar su cupon</span>
                                                             </div>
-                                                            <div class="price">
-                                                                  <span>Costo del envio:</span><span>$ ####,##</span>
+                                                            <div class="button-container">
+                                                                  <button type="button" class="btn btn-submit" id="validar">Validar</button>
                                                             </div>
-                                                            <div class="descuento">
-                                                                  <span>Descuento:</span><span>$ ####,##</span>
+                                                            <div class="send-container">
+                                                                  <div class="direccion">
+                                                                        <span>Direccion:</span>
+                                                                        <span>Avenida Juan V. Justo 9 B, La Plata, Buenos Aires</span>
+                                                                  </div>
+                                                                  <div class="price">
+                                                                        <span>Costo del envio: $ </span><span> 0.00</span>
+                                                                  </div>
+                                                                  <div class="descuento">
+                                                                        <span>Descuento: $ </span><span>0.00</span>
+                                                                  </div>
+                                                                  <div class="price-total">
+                                                                        <span>Total: $</span> <span id="totalOrder"> 0</span>
+                                                                  </div>
                                                             </div>
-                                                            <div class="price-total">
-                                                                  <span>Total:</span> <span>$ ####,##</span>
+                                                            <div class="button-container">
+                                                                  <button type="submit" class="btn btn-confirm">Confirmar Compra</button>
                                                             </div>
                                                       </div>
-                                                      <div class="button-container">
-                                                            <button type="submit" class="btn btn-confirm">Confirmar Compra</button>
-                                                      </div>
-                                                </div>
-                                          </form>
-                                    </div>
-                              </section>
+                                                </form>
+                                          </div>
+                                    </section>
 
-                              <%- include("../partials/product", {title:"🔥 ¡OFERTAS SÓLO POR HOY! 🔥", products: inSale }) %>
+
 
                         </main>
 
@@ -130,6 +56,7 @@
 
                               <%- include("../partials/scripts") %>
             </div>
+            <script src="/js/products/cart.js"></script>
       </body>
 
 </html>
