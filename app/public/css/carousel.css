@@ -3,6 +3,7 @@
     position: relative;
     margin:0px;
     width: 95%;
+    z-index: 9998;
 }
 
 /* Esconde las imágenes por default */
