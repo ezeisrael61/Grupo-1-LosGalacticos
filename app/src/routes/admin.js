@@ -37,5 +37,4 @@ router.get("/users", adminNotSessionCheck, users);
 router.put("/users/edit/:id", adminNotSessionCheck, updateUserAdmin);
 
 /*router.delete("/users/delete/:id", destroy);*/
-
 module.exports = router;
