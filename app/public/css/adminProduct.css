@@ -2,6 +2,8 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
+      position: relative;
+      z-index: 9998;
 }
 .container-main-nav {
       margin-left: -15px;

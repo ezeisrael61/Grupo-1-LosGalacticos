@@ -10,6 +10,8 @@ main.main-section {
       margin-bottom: 10px;
       background-color: var(--gris-claro);
       border-radius: 5px;
+      position: relative;
+      z-index: 9998;
 }
 main.main-section a.editarProduc {
       display: block;

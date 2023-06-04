@@ -25,6 +25,7 @@
       margin: 0;
       padding: 0%;
       font-family: var(--fuente);
+      z-index: 9999;
 }
 
 a {
@@ -152,6 +153,7 @@ header.main-header div.main-search {
       justify-content: flex-start;
       align-items: center;
       width: 100%;
+      z-index: 9998;
 }
 header.main-header div.main-search .toggle-nav {
       color: var(--bordo);
@@ -366,6 +368,7 @@ footer.main-footer div.container-footer p {
       }
       header.main-header nav.main-nav {
             display: flex;
+            z-index: 9998;
       }
       header.main-header nav.main-nav ul.menu {
             flex-direction: row;
