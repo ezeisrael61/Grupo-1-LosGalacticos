@@ -81,7 +81,7 @@ main.main-section section.vip-products article.product .product-container img.ph
       padding-top: 25px;
 }
 main.main-section section.vip-products article.product h2.name {
-      color: var(--gris-medio);
+      color: var(--gris-oscuro);
       font-size: 10px;
       font-weight: normal;
       padding: 3px 5px;

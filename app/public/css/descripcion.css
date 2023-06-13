@@ -7,7 +7,8 @@ main.main-section {
       background-color: var(--gris-claro);
       border-radius: 5px;
 }
-main.main-section section.container div.container-title p {
+.container-compra p,
+.conteineir-decription p {
       color: var(--gris-oscuro);
       font-size: 14px;
       margin-bottom: 10px;
